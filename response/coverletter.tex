@@ -1,0 +1,206 @@
+%!TEX root = ../main.tex
+%\vspace*{-2.5em}
+\stitle{\large Dear SIGMOD Meta-Reviewer and Reviewers,}
+
+%\vspace{-0.5ex}
+\stitle{Required Changes.}
+\textit{
+	(1) Expectation for more baselines and extension of the experiments. (2) Minor comments.
+}
+	
+
+	Thanks for the encouraging comments, based on which 
+	we have significantly improved the paper.
+	%
+	The revised parts are highlighted in \add{blue} in the paper.
+	%
+	%
+	%	
+	We have added new experiments in Section~\ref{sec:exp}.
+	
+
+	\bi
+		
+
+	\item [(\textbf{E1})] 
+	\textit{Varying the number of possible worlds.} We have varied the number of possible worlds to test our effectiveness and efficiency in Section 6.4 (see Table~\ref{tbl:pwnum} for more details).
+
+	\item [(\textbf{E2})] 
+    \textit{Convergence rate.} We have reported the loss in Section 6.5 with the number of  iterations increasing to show that the loss variation matches the theoretical result in Section 5.3.
+
+    \item [(\textbf{E3})] 
+    \textit{Non-convexity model.} We have added Experiments in Section 6.6 to discuss more scenarios \wrt non-convexity models.
+	
+	\item [(\textbf{E4})] 
+	\textit{Percentage of incomplete tuples.} We have added experiments about varying the \% of incomplete tuples all the way up to 100\% and varying the \% of missing values.
+	
+	\item [(\textbf{E5})] 
+	\textit{New baselines.} We have added two new baselines \texttt{Origin} and \texttt{MixCore} in Section 6. The results show that our method outperforms them.
+
+	\ei
+	
+
+	\noindent We have addressed minor comments  by the reviewers. We add one extra page because we sufficiently discuss the reviewers' comments. If necessary, we can remove some proofs to make it 12 pages. The code link is https://anonymous.4open.science/r/GoodCore-72A7/.
+
+
+	
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%
+%\vspace{-.5em}
+\stitle{\large Responses to Reviewer \#1}
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+
+%\vspace{-0.5ex}
+\etitle{COMMENT O1:}
+(1) Better  explain the reason for not experimenting with H(G(D)) and A(G(D)). (2) It is better to provide a table to  compare the number of possible worlds. (3) Experiment with varying the number of possible worlds.
+
+%\sstab
+\noindent 
+[\textbf{R}] We have added a new experiment about possible worlds and varies the possible world number in Section~\ref{exp:sec:batchalgo} Table~\ref{tbl:pwnum}. The results demonstrate that the effectiveness is not much sensitive to the possible world number, so we do not need a large number of possible worlds considering the efficiency problem.
+
+%%%%%%%%%%
+\etitle{Minor 1:}
+\textit{Consider clarifying ``convex ML problems''.}
+
+\noindent 
+[\textbf{R}]  We have clarified this in Section 2.2.
+
+%%%%%%%%%%
+\etitle{Minor 2:}
+\textit{Simplify the expression in line 14 of Algorithm 1.}
+
+\noindent 
+[\textbf{R}]  We have modified Algorithm 1.
+
+%%%%%%%%%%
+\etitle{Minor 3 (typo):} Fixed.
+
+
+%%%%%%%%%%
+\etitle{Minor 4:}
+\textit{In 4.2, the definition of $p_k$ is not complete for the trivial case of only complete tuples.}
+
+\noindent 
+[\textbf{R}]  We have made it complete in Section 4.2.
+
+%%%%%%%%%%
+\etitle{Minor 5 (typo):}  Fixed.
+
+
+%%%%%%%%%%
+\etitle{Minor 6:}
+\textit{Evaluation metrics, it is declared that for the datasets (4)-(6), they leverage the expert to impute the missing values. However, later, in Baselines, (4) Complete, they say that it is too expensive to ask the human to impute the missing values.}
+
+\noindent 
+[\textbf{R}] For evaluation metrics, when we have the ground truth, we don't need humans to impute. Otherwise, when the ground truth is absent (datasets 4-6), we use experts to manually impute if it is affordable.
+In terms of baseline algorithms (4) and (5), they require the experts to impute all missing tuples of the entire datasets, which is prohibitively expensive. 
+We have clarified this in Section 6.1.
+
+
+%%%%%%%%%%
+\etitle{Minor 7:}
+\textit{How the coreset is selected for baselines C(H(D)) and C(A(D)).}
+
+\noindent 
+[\textbf{R}]  The two baselines fall into the coreset selection over complete data in Section 2.2, which follows the solution to solve Eq.5 that is an NP-hard problem with the sub-modular property. Hence, we used a greedy algorithm by modifying Algorithm 1 without considering the possible worlds. We have clarified this in Section 6.1.
+
+%%%%%%%%%%%
+%%%%%%%%%%%
+%%%%%%%%%%%
+%%%%%%%%%%%
+\stitle{\large Responses to Reviewer \#2}
+%%%%%%%%%%%
+%%%%%%%%%%%
+%%%%%%%%%%%
+%%%%%%%%%%%
+
+
+\etitle{COMMENT O1:}
+\textit{ 
+  Clarify how to deal with numerical attributes.}
+
+\noindent 
+[\textbf{R}] In fact, we  discussed it in Example 3, \ie binning numerical values to different buckets. We have clarified it more in Section 3.1.
+
+%%%%%%%%%%%
+
+
+\etitle{COMMENT O2:}
+\textit{Add a pointer for coreset size selection before exp.}
+
+\noindent 
+[\textbf{R}] Thanks! We have added this pointer at the end of  Section 3. 
+%%%%%%%%%%%
+
+\etitle{COMMENT O3:}
+\textit{Interesting to compare the actual convergence rate with the theoretical value.}
+
+\noindent 
+[\textbf{R}] We have conducted more Exps in Section 6.5, \ie reporting the loss variation to verify the theoretical result in Section 5.3.
+%%%%%%%%%%%
+
+\etitle{COMMENT O4:}
+\textit{(1) Specify the hyperparameters of the MLP. (2) Interesting to see when GoodCore can  fail due to the non-convexity.}
+
+\noindent 
+[\textbf{R}]  We have specified the hyperparameters of the MLP in Section 6.6. We have also discussed more about the non-convexity scenario. 
+%%%%%%%%%%%
+
+\etitle{COMMENT O5:}
+\textit{Show the entire spectrum where the \% of incomplete tuples is increased all the way up to 100\%.}
+
+\noindent 
+[\textbf{R}] We have addressed this in Section 6.6. We have also conducted new experiment by varying the  percentage of missing values.
+%%%%%%%%%%%
+
+\etitle{Minor 1 (typos):} Fixed. Thanks very much!
+
+
+
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%\vspace{-.25em}
+\stitle{\large Responses to Reviewer \#3}
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+
+\etitle{COMMENT O1:}
+\textit{Several baselines need to be added to further validate the proposed method.
+(1) Why not directly choose the non-missing data instances as coreset? After that, select the data instances with missing values and impute them as needed. 
+(2) Add the model trained on the original dataset (with missing data) as the baseline.
+}
+
+\noindent 
+[\textbf{R}] We have added the two baselines \texttt{Origin} and \texttt{MixCore} in Section 6, and the results show that our method outperforms them.
+
+
+%%%%%%%%%%%%
+
+\etitle{COMMENT O2:}
+\textit{Further  clarifications are needed.
+	(1) What the terms with identical variable parts are, and what Figure 7 means?
+	(2) Refine the related work.
+	(3) In Figure 5, why the imputation of t3 on ``Working years'' is 1? 
+	(4) Make Section 3.1 more concise.
+	}
+
+\noindent 
+[\textbf{R}] For (1), we have clarified the  terms with identical variable parts. Specifically, Combining terms with identical variable parts is for the second equation in Eq. 7. The idea is to combine the possible worlds of $D$ that correspond to the same coreset. Since possible worlds of D is much more than that of $C$ (because $|D|\gg|C|$), this combination significantly reduces computation cost. Specifically, the possible worlds to be combined are denoted as the underlined "terms" in Section 4.2 with an identical part (i.e., $\min_{c_j\in C_k} s_{1j}$) and different probabilities $p_k$. We will combine these terms by mutiplying the identical part with the sum of these probabilities.
+We have revised Fig. 7 and  Example 6 to make them clearer.
+
+For (2), we have  refined the related works, as suggested.
+
+
+For (3), we have clarified  Figure 5. The example can be taken as an excerpt from a table, where the ``Working Years'' ranges from 1 to 10  (10 denotes $\geq$10 years).
+
+
+For (4), we have made  Section 3.1 more concise.
+
+

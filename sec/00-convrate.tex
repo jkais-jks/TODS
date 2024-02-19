@@ -1,0 +1,81 @@
+%!TEX root = ../main.tex
+\subsection{Convergence Rate Analysis}
+\label{sec:proof}
+
+Convergence rate is often used to reflect the speed of finding the optimal parameters for the machine learning algorithm. With a higher convergence rate, we can take fewer epochs to make the model converge. To compute the convergence rate, we have  to compute the distance between the parameter $\hypo$ and the optimal parameter $\hypo^*$ in the $t$-th and the $(t+1)$-th epoch. Since $\fun$ is a strongly convex function, $\forall \hypo, \hypo^{\prime}$ we have
+
+\vspace{-0.5em}
+\begin{equation}
+	\label{eq:convex}
+	\small
+	\fun(\hypo) - \fun(\hypo^{\prime}) \ge  \nabla \fun(\hypo^{\prime}) (\hypo - \hypo^{\prime}) + \frac{\eta}{2} \Vert \hypo - \hypo^{\prime} \Vert^{2}
+\end{equation}
+
+
+\noindent where $\eta$ is a constant.  We denote the stepsize as $\zeta_t = \frac{\zeta_0}{k^\tau}$ for the $t$-th epoch, where $\tau$ is a constant.
+%Then, we have $max_{\hypo \in \vartheta}  \Vert \df_i(\hypo) - \df_{j}(\hypo) \Vert \leq max_{\hypo \in \vartheta}  \Vert \df_i(\hypo) - \sum_{k= 1}^{|\worlds|} p_k (\df_{j \in \core_k}(\hypo)) \Vert$ .  
+%In Section~\ref{sec:pre},  the gradient approximate error can be bounded, \ie $\forall  i, j, \max\limits_{\hypo\in\vartheta}\lVert \df_i(\hypo) - \df_j(\hypo) \rVert \le \epsilon$. 
+After using gradient descent in each step, we have $\Vert \hypo^{t+1} - \hypo^{*} \Vert^{2} 
+= \Vert \hypo^{t} - \zeta_{k} \sum_{j=1}^{\vert \core \vert} w_j \nabla \fun_{\gamma(j)} (\hypo_{j-1}^t) - \hypo^{*} \Vert^{2}$. Then, following Eq.~\ref{eq:convex}, we have 
+
+\vspace{-1em}
+\begin{equation}
+	\label{eq:afterig}
+	\small
+	\begin{aligned}
+		\Vert \hypo^{t+1} - \hypo^{*} \Vert^{2} 
+		\le  \Vert \hypo^{t} - \hypo^{*} \Vert^{2} - 2 \zeta_{t} \sum_{j=1}^{\vert \core \vert} (\fun_{j}(\hypo^{t}) - \fun_{j}(\hypo^{*}))  \\
+		+ 2 \zeta_{t} \sum_{j=1}^{\vert \core \vert} (\fun_{j}(\hypo_{j-1}^{t}) 
+		- \fun_{j}(\hypo^{t})) + \zeta_{t}^{2} \sum_{j=1}^{\vert \core \vert} \Vert w_{j} \nabla \fun_j (\hypo_{j-1}^t) \Vert^{2}
+	\end{aligned}
+\end{equation}
+
+
+
+Recap that we select a coreset that minimizes $\mathrm{E}[C]$ through converting gradient difference to feature distance ($s_{ij}$) computation. Obviously, given a dataset, $s_{ij}$ can be bounded (suppose that $s_{ij} \leq s_{0}$). Then we have
+$\mathrm{E}[\min_{c_j\in C}s_{ij}] = \sum_{k= 1}^{|\worlds|} p_k (\min_{c_j\in C_k}\dist_{ij}) \leq \sum_{k= 1}^{|\worlds|} p_k * s_{0} = s_{0}$, and thus  $\mathrm{E}[C] = \sum_{i=1}^n \mathrm{E}[\min_{c_j\in C}s_{ij}] \leq n * s_{0} = \kappa_1$. Besides, we also have $max_{\hypo \in \vartheta} \Vert \sum_{i=1}^{n} \nabla \fun_{i}(\hypo) - \sum_{j=1}^{\vert \core \vert} w_j \nabla \fun_{\gamma(j)}(\hypo) \Vert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core}\lVert \df_i(\hypo) - \df_{\gamma(j)}(\hypo) \rVert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core} \dist_{ij}  \leq \kappa_1$.
+%Thus, given a coreset $\core$, $\sum\limits_{i=1}^n \min \limits_{c_j\in\core} \dist_{ij}  \leq \sum\limits_{i=1}^n s_{0} \leq n * s_{0} = \kappa_0$.Apparently, we have $\kappa_0 = \kappa_1$. Then, we have $max_{\hypo \in \vartheta} \Vert \sum_{i=1}^{n} \nabla \fun_{i}(\hypo) - \sum_{j=1}^{\vert \core \vert} w_j \nabla \fun_{\gamma(j)}(\hypo) \Vert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core}\lVert \df_i(\hypo) - \df_{\gamma(j)}(\hypo) \rVert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core}\lVert \dist_{ij} \rVert \leq \kappa_1$. In addition, we use incremental gradient method in Algorithm~\ref{alg:framework}, we have $\Vert \hypo_t - \hypo^{*} \Vert \le \kappa_2$.
+Following the definition of  convex function,  we have $\fun_{j}(\hypo^{t}) - \fun_{j}(\hypo^{*}) \leq w_j \nabla \fun_{j}(\hypo^{*})(\hypo^{t} - \hypo^{*}) + \frac{\eta}{2} \Vert \hypo^{t} - \hypo^{*} \Vert^{2}$. Based on the above things, we can apply Cauchy-Schwarz inequlity~\cite{strang2006linear} and derive  
+
+\vspace{-1em}
+\begin{equation}
+	\label{eq:item1}
+	\small
+	\begin{aligned}
+		& - 2 \zeta_{t} \sum_{j=1}^{\vert \core \vert} (\fun_{j}(\hypo^{t}) - \fun_{j}(\hypo^{*}))  \\
+		\le &  - \eta \zeta_{t} \Vert \hypo^{t} - \hypo^{*} \Vert^{2} + 2 \zeta_{t} \Vert \sum_{j=1}^{\vert \core \vert} w_j \nabla \fun_{j}(\hypo^{*}) \Vert \Vert (\hypo^{t} - \hypo^{*}) \Vert \\
+		\le & - \eta \zeta^{t} \Vert \hypo^{t} - \hypo^{*} \Vert^{2} + \frac{2 \zeta^{t} \vert \core \vert \kappa_1 \kappa_2}{\eta}  
+	\end{aligned}
+\end{equation}
+
+\noindent where $\kappa_2$ can be regarded as the upper bound of $\Vert \hypo_t - \hypo^{*} \Vert$.
+Since $\fun$ is convex, thus, for item $\fun_{j}(\hypo_{j-1}^{t}) 
+- \fun_{j}(\hypo^{t})$, we have $\fun_{j}(\hypo_{j-1}^{t}) 
+- \fun_{j}(\hypo^{t}) \leq \Vert w_j \nabla \fun_{j}(\hypo^{t}) \Vert \zeta_t \sum_{i=1}^{j - 1} \Vert w_i \nabla \fun_{i}(\hypo_{i-1}^{t}) \Vert$. In addition, we can assume that $max_{j \in \{ 1, \cdots, \vert \core \vert\}} \Vert \nabla\fun_j(\hypo) \Vert \le \kappa_3$. 
+Then, we have
+
+\vspace{-1em}
+\begin{equation}
+	\label{eq:item2}
+	\small
+	\begin{aligned}
+		& 2 \zeta_{t} \sum_{j=1}^{\vert \core \vert} (\fun_{j}(\hypo_{j-1}^{t}) 
+		- \fun_{j}(\hypo^{t})) + \zeta_{t}^{2} \sum_{j=1}^{\vert \core \vert} \Vert w_{j} \nabla \fun_j (\hypo_{j-1}^t) \Vert^{2} \\
+		\le & 2 \zeta_{t} \sum_{j=1}^{\vert \core \vert} \Vert w_j \nabla \fun_{j}(\hypo^{t}) \Vert \zeta_t \sum_{i=1}^{j - 1} \Vert w_i \nabla \fun_{i}(\hypo_{i-1}^{t}) \Vert + \zeta_{t}^{2} \sum_{j=1}^{\vert \core \vert} \Vert w_{j} \nabla \fun_j (\hypo_{j-1}^t) \Vert^{2}\\
+		\le & 2 \zeta_t^2 (\vert \core \vert^2 - \vert \core \vert) w_{max}^2 \kappa_3^2 + \zeta_t^2 \vert \core \vert w_{max}^2 \kappa_3^2
+	\end{aligned}
+\end{equation}
+
+Thus, from Eq.~\ref{eq:afterig} to Eq.~\ref{eq:item2}, we can get
+
+\vspace{-0.5em}
+\begin{equation}
+	\small
+	\begin{aligned}
+		\Vert \hypo^{t+1} - \hypo^{*} \Vert
+		\le  (1 - \eta \zeta_t)\Vert \hypo^{t} - \hypo^{*} \Vert^{2} + \frac{2 \zeta_{t} \vert \core \vert \kappa_1 \kappa_2 }{\eta}  + \zeta_t^2 \vert \core \vert^2 w_{max}^2 \kappa_3^2 
+	\end{aligned}
+\end{equation}
+
+%Finally, following Lemma 4 in~\cite{chung1954stochastic}, the convergence rate of Algorithm~\ref{alg:framework} is at the same rate of $O(\frac{1}{\sqrt{k}})$ as the  convergence rate for incremental gradient descent on the entire dataset~\cite{nedic2001convergence}.
+Finally, following Lemma 4 in~\cite{chung1954stochastic}, the convergence rate of Algorithm~\ref{alg:framework} is at the same rate of $O(\frac{1}{\sqrt{k}})$ as the  convergence rate on the entire dataset~\cite{nedic2001convergence}. Therefore, theoretically, the selected coreset can converge with the same number of epochs as training on the full data. In this way, since  coreset has a much smaller size than the full data, the efficiency can be much improved.

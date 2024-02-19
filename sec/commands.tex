@@ -1,0 +1,223 @@
+%!TEX root = ../main.tex
+\newcommand{\eat}[1]{}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{epsfig}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pifont}
+\usepackage{bm}
+
+%\usepackage{algorithmicx}
+\usepackage{xparse}
+
+\usepackage[lined,boxed,vlined,ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmicx}
+\usepackage{paralist}
+\usepackage{enumerate}
+\usepackage{ifthen}
+\usepackage{ulem}
+\usepackage{makecell}
+
+%response command
+\newcommand{\stitle}[1]{\vspace{1.2ex}\noindent{\bf #1}}
+\newcommand{\etitle}[1]{\vspace{0.8ex}\noindent{\underline{\textit{#1}}}}
+\newcommand{\ititle}[1]{\vspace{1ex}\noindent\textbf{\textit{#1}}}
+\newcommand{\overwrite}[1]{\textcolor{blue}{#1}}
+\newcommand{\bfit}[1]{\textbf{\textit{#1}}}
+\newcommand{\re}[1]{\noindent{\textbf{\textit{#1}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DO NOT DELETE!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{tikz}
+%\usetikzlibrary{trees}
+
+\usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{url}
+
+\usepackage[color,matrix,arrow,all]{xy}
+%\usepackage[all,cmtip]{xy}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{calc}
+
+\newtheorem{example}{Example}
+\newtheorem{theorem}{Theorem}
+
+\newcommand{\add}[1]{\textcolor{blue}{#1}}
+\newcommand{\lgl}[1]{\textcolor{blue}{#1}}
+\NewDocumentCommand{\cc}{ mO{} }{\textcolor{red}{\textsuperscript{\textit{CC}}\textsf{\textbf{\small[#1]}}}}
+
+\newcommand{\addnew}[1]{\textcolor{red}{#1}}
+
+
+\NewDocumentCommand{\wjy}{ mO{} }{\textcolor{violet}{\textsuperscript{\textit{WJY}}\textsf{\textbf{\small[#1]}}}}
+
+\NewDocumentCommand{\nan}{ mO{} }{\textcolor{blue}{\textsuperscript{\textit{Nan}}\textsf{\textbf{\small[#1]}}}}
+
+\sloppy
+\newcommand{\rtable}[1]{\ensuremath{\mathsf{#1}}}
+\newcommand{\ratt}[1]{\ensuremath{\mathit{#1}}}
+\newcommand{\stt}[1]{\texttt{\small{#1}}}
+\newcommand{\at}[1]{\protect\ensuremath{\mathsf{#1}}\xspace}
+\newcommand{\myhrule}{\rule[.5pt]{\hsize}{.5pt}}
+\newcommand{\oneurl}[1]{\texttt{#1}}
+\newcommand{\tabstrut}{\rule{0pt}{4pt}\vspace{-0.1in}}
+\newcommand{\stab}{\vspace{1.2ex}\noindent}
+\newcommand{\sstab}{\rule{0pt}{8pt}\\[-2.2ex]}
+\newcommand{\vs}{\vspace{1ex}}
+\newcommand{\exa}[2]{{\tt\begin{tabbing}\hspace{#1}\=\+\kill #2\end{tabbing}}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\match}{\rightleftharpoons}
+
+\newcommand{\true}{\kw{true}}
+\newcommand{\kop}{\kw{op}}
+\newcommand{\nil}{\kw{nil}}
+\newcommand{\Op}{\kw{Op}}
+
+\newcommand{\la}{\leftarrow}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\mat}[2]{{\begin{tabbing}\hspace{#1}\=\+\kill #2\end{tabbing}}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\beqn}{\begin{eqnarray*}}
+\newcommand{\eeqn}{\end{eqnarray*}}
+
+\newcommand{\ie}{$i.e.$,\xspace}
+\newcommand{\eg}{$e.g.$,\xspace}
+\newcommand{\wrt}{w.r.t.\xspace}
+\newcommand{\aka}{a.k.a.\xspace}
+\newcommand{\kwlog}{\emph{w.l.o.g.}\xspace}
+
+\newcommand{\eop}{\hspace*{\fill}\mbox{$\Box$}\vspace{1ex}}     % End of proof
+
+\makeatletter
+    \newcommand\figcaption{\def\@captype{figure}\caption}
+    \newcommand\tabcaption{\def\@captype{table}\caption}
+\makeatother
+
+\newcommand{\reminder}[1]{ {\mbox{$<==$}} [[[ \bluefont{ \bf #1 } ]]] {\mbox{$==>$}}}
+
+\definecolor{shadecolor}{RGB}{220,220,220}
+\newcommand{\mybox}[1]{\vspace{1.5ex}\par\noindent\colorbox{shadecolor}
+    {\parbox{\dimexpr\columnwidth-2\fboxsep\relax}{#1}}\vspace{1ex}}
+    
+
+\tikzstyle{mybox} = [draw=black, fill=black!5, thick,
+    rectangle, rounded corners, inner sep=0pt, inner ysep=2pt]
+\tikzstyle{fancytitle} =[fill=black, text=white]
+
+% RCoreset commands 有一些在main.tex里
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\df}{\ensuremath{\nabla \fun}}
+\newcommand{\map}{\ensuremath{\phi_{\hypo}}}
+\newcommand{\w}{\ensuremath{\bm{\omega}}}
+\newcommand{\mSigma}{\ensuremath{ \mathop{\Sigma}\limits_}}
+
+% RCoreset commands
+\newcommand{\ours}{\texttt{GoodCore}\xspace}
+\newcommand{\corefunc}{\mathbf{C}\xspace}
+\newcommand{\goodfunc}{\mathbf{G}\xspace}
+\newcommand{\humanfunc}{\mathbf{H}\xspace}
+\newcommand{\autofunc}{\mathbf{A}\xspace}
+\newcommand{\train}{D}
+\newcommand{\trainc}{D_c}
+
+
+\newcommand{\X}{\ensuremath{\bm{X}}}
+\newcommand{\A}{\ensuremath{\bm{A}}}
+\newcommand{\V}{\ensuremath{\bm{V}}}
+\renewcommand{\P}{\ensuremath{\bm{P}}}
+
+\newcommand{\R}{\ensuremath{\mathcal{R}}}
+\newcommand{\core}{C}
+\newcommand{\numcore}{K}
+\newcommand{\hypo}{\theta}
+\newcommand{\fun}{f}
+\newcommand{\mapping}{\phi}
+\newcommand{\cands}{\mathcal{T}}
+\newcommand{\sampleset}{\mathcal{S}}
+\newcommand{\numsample}{S}
+\newcommand{\weightset}{\mathbb{W}}
+%\newcommand{\dist}{\mathcal{CG}}
+\newcommand{\dist}{s}
+\newcommand{\fea}{\mathbf{x}}
+\newcommand{\attr}{\mathcal{A}}
+\newcommand{\worlds}{\mathcal{I_W}}
+\newcommand{\world}{W}
+
+\newcommand{\brazil}{{\tt Brazil}\xspace}
+\newcommand{\imdb}{{\tt IMDB}\xspace}
+\newcommand{\imdbl}{{\tt IMDB-Large}\xspace}
+\newcommand{\stack}{{\tt Stack}\xspace}
+\newcommand{\taxi}{{\tt Taxi}\xspace}
+
+\newcommand{\sample}{{\tt Sample-Join}\xspace}
+\newcommand{\craig}{{\tt Join-Coreset}\xspace}
+\newcommand{\arda}{{\tt ARDA}\xspace}
+\newcommand{\base}{{\tt Base}\xspace}
+\newcommand{\full}{{\tt Full}\xspace}
+\newcommand{\corejoin}{{\tt Coreset-Join}\xspace}
+\newcommand{\factML}{{\tt FML}\xspace}
+
+\newcommand{\mi}{{\tt Movie\_info}\xspace}
+\newcommand{\mix}{{\tt Movie\_info\_idx}\xspace}
+\newcommand{\ci}{{\tt Cast\_info}\xspace}
+\newcommand{\mc}{{\tt Movie\_companies}\xspace}
+\newcommand{\name}{{\tt Name}\xspace}
+\newcommand{\cn}{{\tt Company\_name}\xspace}
+\newcommand{\Title}{{\tt Title}\xspace}
+\newcommand{\upvotes}{{\tt upvotes}\xspace}
+\newcommand{\downvotes}{{\tt downvotes}\xspace}
+\newcommand{\user}{{\tt User}\xspace}
+\newcommand{\question}{{\tt Question}\xspace}
+\newcommand{\answer}{{\tt Answer}\xspace}
+\newcommand{\score}{{\tt score}\xspace}
+\newcommand{\datetime}{{\tt datetime}\xspace}
+\newcommand{\Review}{{\tt Review}\xspace}
+\newcommand{\Order}{{\tt Order}\xspace}
+\newcommand{\Product}{{\tt Product}\xspace}
+\newcommand{\OrderItem}{{\tt OrderItem}\xspace}
+\newcommand{\oid}{{\tt order\_id}\xspace}
+\newcommand{\pid}{{\tt product\_id}\xspace}
+
+
+\newcommand{\nursery}{{\tt Nursery} \xspace}
+\newcommand{\hr}{{\tt HR} \xspace}
+\newcommand{\adult}{{\tt Adult}\xspace}
+\newcommand{\credit}{{\tt Credit} \xspace}
+\newcommand{\bike}{{\tt BikeShare} \xspace}
+\newcommand{\air}{{\tt Air} \xspace}
+
+
+\newcommand{\noclean}{{\tt Origin}}
+\newcommand{\mixcore}{{\tt MixCore}}
+\newcommand{\truth}{{\tt Complete}}
+\newcommand{\mice}{{\tt MICE} \xspace}
+\newcommand{\missf}{{\tt MissForest} \xspace}
+\newcommand{\actclean}{{\tt ActiveClean}\xspace}
+\newcommand{\rand}{{\tt Random} \xspace}
+\newcommand{\autocore}{{\tt Clean+Coreset} \xspace}
+\newcommand{\truthcore}{{\tt True+Coreset} \xspace}
+\newcommand{\boostclean}{{\tt BoostClean} \xspace}
+\newcommand{\gain}{{\tt Best-Auto} \xspace}
+
+\newcommand{\one}{\corefunc(\humanfunc(\train))}
+\newcommand{\two}{\corefunc(\autofunc(\train))}
+\newcommand{\three}{\humanfunc(\corefunc(D))}
+\newcommand{\four}{\autofunc(\corefunc(D))}
+\newcommand{\five}{\humanfunc(\goodfunc(\train))}
+\newcommand{\six}{\autofunc(\goodfunc(\train))}
+\newcommand{\seven}{\goodfunc(\train,\circlearrowleft^\humanfunc)}
+\newcommand{\eight}{\goodfunc(\train,\circlearrowleft^\autofunc)}
+
+\newcommand{\sevenbatch}{\goodfunc(\train,\circlearrowleft^\humanfunc_{b})}

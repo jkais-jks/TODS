@@ -1,0 +1,53 @@
+%!TEX root = ../main.tex
+
+ \begin{figure}[!t]
+ \vspace{-1em}
+	\begin{algorithm}[H]
+		\normalem
+	\caption{Batch algorithm of \ours~\label{alg:batch}}
+		{\small
+			\KwIn{$\train$, $\numcore$, $h$, batch size $b$.}
+			\KwOut{A coreset $\core$, weight $\weightset$.}
+			
+			$C=\emptyset$, $cnt = 0$;\\\nllabel{batch:batchinit1}
+			
+			\While{$|\core|< \numcore$}
+			{\nllabel{batch:batchloop1}
+				
+				%/*1st loop*/ \\
+				Sample $h$ tuples as $T_{sample} \subseteq \train \setminus \core$\\\nllabel{batch:sample}
+				\For{ each tuple $t \in T_{sample}$} 
+				{\nllabel{batch:loop2}
+					%/*2nd loop*/ 
+					
+					%	}
+				$\mathrm{E}[t|\core]=\texttt{ComputeUtility}(t, C,D)$;\\\nllabel{batch:loop3}% /*3rd loop*/  
+			}		
+			
+			$t^*$ = $\argmax_{t\in T_{sample}}\mathrm{E}[t|\core]$ ;\\\nllabel{batch:maxmulti}
+			
+			$\core = \core \cup \{t^*\}$; \\\nllabel{batch:addcoreset}
+			
+			\If{$\mathbb{I}[t^*] = 1$}
+			{ \nllabel{batch:ifincomp}
+				$cnt++$; \\\nllabel{batch:batchadd}
+			}
+			
+			\If{$cnt = b$}
+			{\nllabel{batch:batchenough}
+				Ask the human to impute the incomplete tuples;\\\nllabel{batch:batchoracle}
+				$cnt = 0$; \\\nllabel{batch:batchzero}
+			}			
+			
+		}
+	
+	 Compute the weight $\weightset$.\\\nllabel{batch:weight}
+	\iffalse	\For{$j = 1$ to $|\core|$} 
+		{\nllabel{batch:cc0}
+			$w_j = \sum_{i=1}^{n}\mathbb{I}[j=\argmin_{c_{j'}\in\core}  \max\limits_{\hypo\in\vartheta}\lVert \df_i(\hypo) - \df_{\gamma(j')}(\hypo) \rVert ]$;\\\nllabel{batch:cc}
+		} \fi
+		\Return $\core,\weightset$;\\\nllabel{batch:batchreturn}
+		}
+	\end{algorithm}
+\vspace{-2em}
+\end{figure}

@@ -1,0 +1,32 @@
+%!TEX root = ../main.tex
+
+ \begin{figure}[!t]
+ \vspace{-1em}
+	\begin{algorithm}[H]
+		\normalem
+	\caption{\texttt{ComputeUtility} (3rd-loop to compute $\mathrm{E}[t|\core]$) \label{alg:one}}
+		{\small
+		\KwIn{Incomplete train data $\train$, current coreset $\core$, a sampled tuple $t$.}
+		\KwOut{The expectation $\mathrm{E}[t|\core]$.}
+		    $\hat{\core} = \core \cup \{t\}$;\\\nllabel{one:initc}
+		    $\mathrm{E}[\hat{\core}] = 0$; \\\nllabel{one:inite}
+			\For{ each tuple $t_i \in \train$} 
+			{\nllabel{one:loop}    
+                \If{$\mathbb{I}[t]$ = 0 and $\mathbb{I}[t_i]$ = 0  \nllabel{one:clean}} 
+                {
+                   $\mathrm{E}[\hat{\core}] +\!\!= \min_{c_j\in \hat{\core}}\dist_{ij}$;\\\nllabel{one:cleansum}
+                }
+                \Else 
+                {
+                	Get the possible worlds of $\hat{\core} \cup \{t_i\}$;\\\nllabel{one:enumw}
+                	Compute $\mathrm{E}[\min_{c_j\in \hat{\core}}s_{ij}]$ using these possible worlds and their probabilities;\\\nllabel{one:exp4pw}
+                	$\mathrm{E}[\hat{\core}] +\!\!= \mathrm{E}[\min_{c_j\in \hat{\core}}s_{ij}]$;\\\nllabel{one:dirtysum}
+                } 
+			}	
+		
+	 	$\mathrm{E}[t|\core] = \mathrm{E}[\core] - \mathrm{E}[\hat{\core}]$;\\\nllabel{one:expt}
+		\Return $\mathrm{E}[t|\core]$;\\\nllabel{one:return}
+		}
+	\end{algorithm}
+\vspace{-2em}
+\end{figure}
