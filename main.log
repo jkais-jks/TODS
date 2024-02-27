@@ -1,0 +1,2793 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.7)  27 FEB 2024 17:18
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main
+(./main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (./acmart.cls
+Document Class: acmart 2024/01/21 v2.02 Typesetting articles for the Association for Computing Machinery
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count181
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count182
+\decimalpart=\count183
+)
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+Package acmart Info: Not using screen mode on input line 76.
+Package acmart Info: Using breaking urls on hyphens on input line 84.
+Package acmart Info: Requiring acmthm on input line 92.
+Package acmart Info: Not using review mode on input line 101.
+Package acmart Info: Not using authorversion mode on input line 109.
+Package acmart Info: Not using nonacm mode on input line 121.
+Package acmart Info: Explicitly selecting natbib mode on input line 137.
+Package acmart Info: Not using anonymous mode on input line 145.
+Package acmart Info: Not using timestamp mode on input line 153.
+Package acmart Info: Not using authordraft mode on input line 163.
+Class acmart Info: Using format acmsmall, number 1 on input line 178.
+Class acmart Info: Using fontsize 10pt on input line 277.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2020/05/29 v2.20.6
+\linespacing=\dimen140
+\normalparindent=\dimen141
+\normaltopskip=\skip48
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen142
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count184
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count185
+\leftroot@=\count186
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count187
+\DOTSCASE@=\count188
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count189
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count190
+\dotsspace@=\muskip16
+\c@parentequation=\count191
+\dspbrk@lvl=\count192
+\tag@help=\toks19
+\row@=\count193
+\column@=\count194
+\maxfields@=\count195
+\andhelp@=\toks20
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 397.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\copyins=\insert199
+\abstractbox=\box53
+\listisep=\skip52
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count266
+\c@paragraph=\count267
+\c@subparagraph=\count268
+\c@figure=\count269
+\c@table=\count270
+\abovecaptionskip=\skip53
+\belowcaptionskip=\skip54
+\captionindent=\dimen151
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks28
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count271
+)
+\MT@toks=\toks29
+\MT@tempbox=\box54
+\MT@count=\count272
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
+LaTeX Info: Redefining \leftprotrusion on input line 1060.
+\MT@prot@toks=\toks30
+LaTeX Info: Redefining \rightprotrusion on input line 1078.
+LaTeX Info: Redefining \textls on input line 1368.
+\MT@outer@kern=\dimen152
+LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+\MT@listname@count=\count273
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/microtype-xetex.def
+File: microtype-xetex.def 2023/03/13 v3.1a Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 238.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen153
+\lightrulewidth=\dimen154
+\cmidrulewidth=\dimen155
+\belowrulesep=\dimen156
+\belowbottomsep=\dimen157
+\aboverulesep=\dimen158
+\abovetopsep=\dimen159
+\cmidrulesep=\dimen160
+\cmidrulekern=\dimen161
+\defaultaddspace=\dimen162
+\@cmidla=\count274
+\@cmidlb=\count275
+\@aboverulesep=\dimen163
+\@belowrulesep=\dimen164
+\@thisruleclass=\count276
+\@lastruleclass=\count277
+\@thisrulewidth=\dimen165
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/totpages/totpages.sty
+Package: totpages 2005/09/19 v2.00 Totpages Package (muewi)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/everyshi/everyshi.sty
+Package: everyshi 2020/11/18 v4.00 EveryShipout Package
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2022/07/10 v1.03 Text only upper/lower case changing (DPC)
+Package textcase Info: Defining Legacy names on input line 20.
+)
+\@ACM@acmcp@delta=\dimen166
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip58
+\bibsep=\skip59
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count278
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count279
+)
+\@linkdim=\dimen167
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count282
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4060.
+Package hyperref Info: Option `unicode' set `true' on input line 4060.
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count283
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen168
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count284
+\Field@Width=\dimen169
+\Fld@charsize=\dimen170
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2023-02-07 v7.00v Hyperref driver for XeTeX
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\pdfm@box=\box55
+\c@Hy@AnnotLevel=\count288
+\HyField@AnnotCount=\count289
+\Fld@listcount=\count290
+\c@bookmark@seq@number=\count291
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip60
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperxmp/hyperxmp.sty
+Package: hyperxmp 2022/10/16 v5.11 Store hyperref metadata in XMP format
+\hyxmp@aep@toks=\toks31
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@hyxmp@count=\count292
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/oberdiek/ifdraft.sty
+Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count293
+\Gm@cntv=\count294
+\c@Gm@tempcnt=\count295
+\Gm@bindingoffset=\dimen173
+\Gm@wd@mp=\dimen174
+\Gm@odd@mp=\dimen175
+\Gm@even@mp=\dimen176
+\Gm@layoutwidth=\dimen177
+\Gm@layoutheight=\dimen178
+\Gm@layouthoffset=\dimen179
+\Gm@layoutvoffset=\dimen180
+\Gm@dimlist=\toks32
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/ncctools/manyfoot.sty
+Package: manyfoot 2019/08/03 v1.11 Many Footnote Levels Package (NCC)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/ncctools/nccfoots.sty
+Package: nccfoots 2005/02/03 v1.2 NCC Footnotes Package (NCC)
+)
+\MFL@columnwidth=\dimen181
+)
+\footinsauthorsaddresses=\insert252
+\c@footnoteauthorsaddresses=\count296
+\footinscopyrightpermission=\insert251
+\c@footnotecopyrightpermission=\count297
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 112.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/newtxmath.sty
+Package: newtxmath 2022/01/16 v1.71
+ `newtxmath' v1.71, 2022/01/16 Math macros based originally on txfonts (msharpe) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+\tx@cntz=\count298
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/kastrup/binhex.tex)
+\tx@Isdigit=\count299
+\tx@IsAlNum=\count300
+\tx@tA=\toks33
+\tx@tB=\toks34
+\tx@su=\read2
+
+amsthm NOT loaded
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 376.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/minlibertine/m/n on input line 376.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/minlibertine/m/n on input line 376.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/minlibertine/m/n --> OT1/minlibertine/b/n on input line 377.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 383.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/lmss/m/n on input line 383.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/lmss/m/n on input line 383.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 384.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/minlibertine/m/it on input line 384.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/minlibertine/m/it on input line 384.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 385.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/lmtt/m/n on input line 385.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/lmtt/m/n on input line 385.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/minlibertine/b/n on input line 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/minlibertine/b/n on input line 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/minlibertine/m/it --> OT1/minlibertine/b/it on input line 388.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 389.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 390.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 407.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/nxlmi/m/it on input line 407.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/nxlmi/m/it on input line 407.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/nxlmi/m/it --> OML/nxlmi/b/it on input line 408.
+\symlettersA=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 547.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 549.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 568.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 568.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 568.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 568.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 568.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 569.
+\symAMSm=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 594.
+\symsymbolsC=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 615.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 628.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 628.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 628.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 628.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 628.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 629.
+\symlargesymbolsTXA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
+(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 643.
+\tx@sbptoks=\toks35
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 866.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 867.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 874.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 878.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 879.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 950.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 951.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 2020.
+LaTeX Info: Redefining \Bbbk on input line 2810.
+LaTeX Info: Redefining \not on input line 2959.
+LaTeX Info: Redefining \textsquare on input line 2989.
+LaTeX Info: Redefining \openbox on input line 2991.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/libertine/libertine.sty
+Package: libertine 2022/09/12 (Bob Tennent) Supports Libertine and Biolinum fonts for all LaTeX engines.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-02-22 L3 programming layer (loader) 
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
+\g__graphics_track_int=\count301
+\l__pdf_internal_box=\box56
+\g__pdf_backend_object_int=\count302
+\g__pdf_backend_annotation_int=\count303
+\g__pdf_backend_link_int=\count304
+))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count305
+\l__fontspec_language_int=\count306
+\l__fontspec_strnum_int=\count307
+\l__fontspec_tmp_int=\count308
+\l__fontspec_tmpa_int=\count309
+\l__fontspec_tmpb_int=\count310
+\l__fontspec_tmpc_int=\count311
+\l__fontspec_em_int=\count312
+\l__fontspec_emdef_int=\count313
+\l__fontspec_strong_int=\count314
+\l__fontspec_strongdef_int=\count315
+\l__fontspec_tmpa_dim=\dimen182
+\l__fontspec_tmpb_dim=\dimen183
+\l__fontspec_tmpc_dim=\dimen184
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+
+Package fontspec Info: Font family 'LinLibertine(0)' created for font
+(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
+(fontspec)             =
+(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Ligatures=TeX,Numbers
+(fontspec)             = {Monospaced,Lining},Scale = 1,UprightFont =
+(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
+(fontspec)             *_RBI].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 307.
+
+Package fontspec Info: Font family 'LinBiolinum(0)' created for font
+(fontspec)             'LinBiolinum' with options [Ligatures = TeX,Extension =
+(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Ligatures=TeX,Numbers
+(fontspec)             = {Monospaced, Lining},Scale = 1,UprightFont =
+(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
+(fontspec)             *_RBO].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinLibertine(1)' created for font
+(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
+(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
+(fontspec)             {Monospaced,Lining},Scale = 1,UprightFont =
+(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
+(fontspec)             *_RBI].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinLibertine(2)' created for font
+(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
+(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
+(fontspec)             { Monospaced, Lining},Scale = 1,UprightFont =
+(fontspec)             *_RZ,ItalicFont = *_RZI,BoldFont = *_RB,BoldItalicFont
+(fontspec)             = *_RBI].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RZ.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RZ.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RZI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RZI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinLibertine(3)' created for font
+(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
+(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
+(fontspec)             {Monospaced,OldStyle},Scale = 1,UprightFont =
+(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
+(fontspec)             *_RBI].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinLibertine(4)' created for font
+(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
+(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
+(fontspec)             {Monospaced,Lining},UprightFont = *_DR,ItalicFont =
+(fontspec)             *_RI,BoldFont = *_RB,BoldItalicFont = *_RBI].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_DR.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinBiolinum(1)' created for font
+(fontspec)             'LinBiolinum' with options [Ligatures = TeX,Extension =
+(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
+(fontspec)             {Monospaced, Lining},Scale = 1,UprightFont =
+(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
+(fontspec)             *_RBO].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinBiolinum(2)' created for font
+(fontspec)             'LinBiolinum' with options [Ligatures = TeX,Extension =
+(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
+(fontspec)             {Monospaced, OldStyle},Scale = 1,UprightFont =
+(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
+(fontspec)             *_RBO].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'LinLibertine(5)' created for font
+(fontspec)             'LinLibertine' with options [Extension =
+(fontspec)             .otf,HyphenChar=None,Scale = 1,UprightFont =
+(fontspec)             *_M,ItalicFont = *_MO,BoldFont = *_MB,BoldItalicFont =
+(fontspec)             *_MBO].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_M.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_MB.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_MO.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[LinLibertine_MBO.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+
+Package fontspec Info: Font family 'LinBiolinum_K(0)' created for font
+(fontspec)             'LinBiolinum_K' with options [Extension =
+(fontspec)             .otf,HyphenChar=None,BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[LinBiolinum_K.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+
+Package fontspec Info: Font family 'LinLibertine_I(0)' created for font
+(fontspec)             'LinLibertine_I' with options [Extension =
+(fontspec)             .otf,HyphenChar=None,BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[LinLibertine_I.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+LaTeX Info: Redefining \oldstylenums on input line 473.
+LaTeX Info: Redefining \liningnums on input line 474.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/libertine/LinLibertine_R.tex) (/usr/local/texlive/2023/texmf-dist/tex/latex/libertine/LinBiolinum_R.tex) (/usr/local/texlive/2023/texmf-dist/tex/latex/libertine/LinBiolinum_K.tex) (/usr/local/texlive/2023/texmf-dist/tex/latex/libertine/LinLibertine_I.tex) (/usr/local/texlive/2023/texmf-dist/tex/latex/libertine/LKey.tex)) (/usr/local/texlive/2023/texmf-dist/tex/latex/inconsolata/inconsolata.fontspec)
+
+Package fontspec Info: Font family 'inconsolata(0)' created for font
+(fontspec)             'inconsolata' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=WordSpace,Extension
+(fontspec)             = .otf,UprightFont = Inconsolatazi4-Regular,BoldFont =
+(fontspec)             Inconsolatazi4-Bold,StylisticSet=3].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[Inconsolatazi4-Regular.otf]/OT:script=latn;language=dflt;+ss03;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[Inconsolatazi4-Bold.otf]/OT:script=latn;language=dflt;+ss03;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen185
+\captionmargin=\dimen186
+\caption@leftmargin=\dimen187
+\caption@rightmargin=\dimen188
+\caption@width=\dimen189
+\caption@indent=\dimen190
+\caption@parindent=\dimen191
+\caption@hangindent=\dimen192
+Package caption Info: AMS or SMF document class detected.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-ams-smf.sto
+File: caption-ams-smf.sto 2020/08/22 v2.0 Adaption of the caption package to the AMS and SMF document classes (AR)
+))
+\c@caption@flags=\count316
+\c@continuedfloat=\count317
+Package caption Info: hyperref package is loaded.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count318
+\float@exts=\toks36
+\float@box=\box57
+\@float@everytoks=\toks37
+\@floatcapt=\box58
+)
+\@float@every@sidebar=\toks38
+\c@sidebar=\count319
+\fulltextwidth=\dimen193
+\@ACM@labelwidth=\dimen194
+\listisep=\skip61
+\num@authorgroups=\count320
+\num@authors=\count321
+\@ACM@badge@width=\skip62
+\@ACM@title@width=\skip63
+\@ACM@badge@skip=\skip64
+Class acmart Info: Printing CCS on input line 1736.
+Class acmart Info: Printing bibformat on input line 1736.
+Class acmart Info: Printing folios on input line 1741.
+Class acmart Info: Setting authorsperrow to 0 on input line 1746.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment') Excluding comment 'CCSXML'
+\c@@concepts=\count322
+\mktitle@bx=\box59
+\@ACM@acmcpbox=\box60
+\@ACM@commabox=\box61
+\author@bx=\box62
+\author@bx@wd=\dimen195
+\author@bx@sep=\skip65
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip66
+\f@nch@O@elh=\skip67
+\f@nch@O@erh=\skip68
+\f@nch@O@olh=\skip69
+\f@nch@O@orh=\skip70
+\f@nch@O@elf=\skip71
+\f@nch@O@erf=\skip72
+\f@nch@O@olf=\skip73
+\f@nch@O@orf=\skip74
+) Special comment 'acks')
+Class acmart Info: Using journal code jacm on input line 15.
+ (./sec/commands.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen196
+\ar@mcellbox=\box63
+\extrarowheight=\dimen197
+\NC@list=\toks39
+\extratabsurround=\skip75
+\backup@length=\skip76
+\ar@cellbox=\box64
+)
+\everycr=\toks40
+\minrowclearance=\skip77
+\rownum=\count323
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen198
+\epsfysize=\dimen256
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip78
+\subfigcapskip=\skip79
+\subfigcaptopadj=\dimen257
+\subfigbottomskip=\skip80
+\subfigcapmargin=\dimen258
+\subfiglabelskip=\skip81
+\c@subfigure=\count324
+\c@lofdepth=\count325
+\c@subtable=\count326
+\c@lotdepth=\count327
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2023/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip82
+\subfig@bottom=\skip83
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2022/01/05 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup11
+\symboldletters=\mathgroup12
+\symboldsymbols=\mathgroup13
+\symboldlargesymbols=\mathgroup14
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count328
+\algocf@hangindent=\skip84
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count329
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+LaTeX Info: Redefining \larger on input line 150.
+LaTeX Info: Redefining \smaller on input line 151.
+)
+\skiptotal=\skip85
+\skiplinenumber=\skip86
+\skiprule=\skip87
+\skiphlne=\skip88
+\skiptext=\skip89
+\skiplength=\skip90
+\algomargin=\skip91
+\skipalgocfslide=\skip92
+\algowidth=\dimen259
+\inoutsize=\dimen260
+\inoutindent=\dimen261
+\interspacetitleruled=\dimen262
+\interspacealgoruled=\dimen263
+\interspacetitleboxruled=\dimen264
+\algocf@ruledwidth=\skip93
+\algocf@inoutbox=\box65
+\algocf@inputbox=\box66
+\AlCapSkip=\skip94
+\AlCapHSkip=\skip95
+\algoskipindent=\skip96
+\algocf@nlbox=\box67
+\algocf@hangingbox=\box68
+\algocf@untilbox=\box69
+\algocf@skipuntil=\skip97
+\algocf@capbox=\box70
+\algocf@lcaptionbox=\skip98
+\algoheightruledefault=\skip99
+\algoheightrule=\skip100
+\algotitleheightruledefault=\skip101
+\algotitleheightrule=\skip102
+\c@algocfline=\count330
+\c@algocfproc=\count331
+\c@algocf=\count332
+\algocf@algoframe=\box71
+\algocf@algobox=\box72
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count333
+\c@ALG@rem=\count334
+\c@ALG@nested=\count335
+\ALG@tlm=\skip103
+\ALG@thistlm=\skip104
+\c@ALG@Lnr=\count336
+\c@ALG@blocknr=\count337
+\c@ALG@storecount=\count338
+\c@ALG@tmpcounter=\count339
+\ALG@tmplength=\skip105
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip106
+\plpartopsep=\skip107
+\plitemsep=\skip108
+\plparsep=\skip109
+\pl@lab=\toks41
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks42
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box73
+\UL@hyphenbox=\box74
+\UL@skip=\skip110
+\UL@hook=\toks43
+\UL@height=\dimen265
+\UL@pe=\count340
+\UL@pixel=\dimen266
+\ULC@box=\box75
+Package: ulem 2019/11/18
+\ULdepth=\dimen267
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen268
+\c@nlinenum=\count341
+\TeXr@lab=\toks44
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip111
+\multirow@cntb=\count342
+\multirow@dima=\skip112
+\bigstrutjot=\dimen269
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xy.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes, docmode, (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyrecat.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen270
+\Y@c=\dimen271
+\U@c=\dimen272
+\D@c=\dimen273
+\L@c=\dimen274
+\R@c=\dimen275
+\Edge@c=\toks45
+\X@p=\dimen276
+\Y@p=\dimen277
+\U@p=\dimen278
+\D@p=\dimen279
+\L@p=\dimen280
+\R@p=\dimen281
+\Edge@p=\toks46
+\X@origin=\dimen282
+\Y@origin=\dimen283
+\X@xbase=\dimen284
+\Y@xbase=\dimen285
+\X@ybase=\dimen286
+\Y@ybase=\dimen287
+\X@min=\dimen288
+\Y@min=\dimen289
+\X@max=\dimen290
+\Y@max=\dimen291
+\lastobjectbox@=\box76
+\zerodotbox@=\box77
+\almostz@=\dimen292
+ direction,
+\d@X=\dimen293
+\d@Y=\dimen294
+\K@=\count343
+\KK@=\count344
+\Direction=\count345
+\K@dXdY=\dimen295
+\K@dYdX=\dimen296
+\xyread@=\read3
+\xywrite@=\write4
+\csp@=\count346
+\quotPTK@=\dimen297
+ utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks47
+\connectobjectbox@@=\box78
+ objects,
+\styletoks@=\toks48
+ decorations; kernel objects: directionals, circles, text; options; algorithms: directions, edges, connections;  Xy-pic loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.14
+\Row=\count347
+\Col=\count348
+\queue@=\toks49
+\queue@@=\toks50
+\qcount@=\count349
+\qcount@@=\count350
+\matrixsize@=\count351
+ loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyarrow.tex  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyall.tex  Xy-pic option: All features v.3.8 (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xycurve.tex  Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count352
+\crvpts@=\toks51
+\splinebox@=\box79
+\splineval@=\dimen298
+\splinedepth@=\dimen299
+\splinetol@=\dimen300
+\splinelength@=\dimen301
+ circles,
+\L@=\dimen302
+ loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7 (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyline.tex  Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen303
+ loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded) (/usr/local/texlive/2023/texmf-dist/tex/generic/xypic/xygraph.tex  Xy-pic option: Graph feature v.3.11 loaded) loaded)) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks52
+\pgfutil@tempdima=\dimen304
+\pgfutil@tempdimb=\dimen305
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box80
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks53
+\pgfkeys@temptoks=\toks54
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks55
+))
+\pgf@x=\dimen306
+\pgf@y=\dimen307
+\pgf@xa=\dimen308
+\pgf@ya=\dimen309
+\pgf@xb=\dimen310
+\pgf@yb=\dimen311
+\pgf@xc=\dimen312
+\pgf@yc=\dimen313
+\pgf@xd=\dimen314
+\pgf@yd=\dimen315
+\w@pgf@writea=\write5
+\r@pgf@reada=\read4
+\c@pgf@counta=\count353
+\c@pgf@countb=\count354
+\c@pgf@countc=\count355
+\c@pgf@countd=\count356
+\t@pgf@toka=\toks56
+\t@pgf@tokb=\toks57
+\t@pgf@tokc=\toks58
+\pgf@sys@id@count=\count357
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-xetex.def
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count358
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count359
+\pgfsyssoftpath@bigbuffer@items=\count360
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen316
+\pgfmath@count=\count361
+\pgfmath@box=\box81
+\pgfmath@toks=\toks59
+\pgfmath@stack@operand=\toks60
+\pgfmath@stack@operation=\toks61
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count362
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen317
+\pgf@picmaxx=\dimen318
+\pgf@picminy=\dimen319
+\pgf@picmaxy=\dimen320
+\pgf@pathminx=\dimen321
+\pgf@pathmaxx=\dimen322
+\pgf@pathminy=\dimen323
+\pgf@pathmaxy=\dimen324
+\pgf@xx=\dimen325
+\pgf@xy=\dimen326
+\pgf@yx=\dimen327
+\pgf@yy=\dimen328
+\pgf@zx=\dimen329
+\pgf@zy=\dimen330
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen331
+\pgf@path@lasty=\dimen332
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen333
+\pgf@shorten@start@additional=\dimen334
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box82
+\pgf@hbox=\box83
+\pgf@layerbox@main=\box84
+\pgf@picture@serial@count=\count363
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen335
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen336
+\pgf@pt@y=\dimen337
+\pgf@pt@temp=\dimen338
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen339
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen340
+\pgf@sys@shading@range@num=\count364
+\pgf@shadingcount=\count365
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box85
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box86
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen341
+\pgf@nodesepend=\dimen342
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen343
+\pgffor@skip=\dimen344
+\pgffor@stack=\toks62
+\pgffor@toks=\toks63
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count366
+\pgfplotmarksize=\dimen345
+)
+\tikz@lastx=\dimen346
+\tikz@lasty=\dimen347
+\tikz@lastxsaved=\dimen348
+\tikz@lastysaved=\dimen349
+\tikz@lastmovetox=\dimen350
+\tikz@lastmovetoy=\dimen351
+\tikzleveldistance=\dimen352
+\tikzsiblingdistance=\dimen353
+\tikz@figbox=\box87
+\tikz@figbox@bg=\box88
+\tikz@tempbox=\box89
+\tikz@tempbox@bg=\box90
+\tikztreelevel=\count367
+\tikznumberofchildren=\count368
+\tikznumberofcurrentchild=\count369
+\tikz@fig@count=\count370
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count371
+\pgfmatrixcurrentcolumn=\count372
+\pgf@matrix@numberofcolumns=\count373
+)
+\tikz@expandcount=\count374
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box91
+\pgfnodeparttwobox=\box92
+\pgfnodepartthreebox=\box93
+\pgfnodepartfourbox=\box94
+\pgfnodeparttwentybox=\box95
+\pgfnodepartnineteenbox=\box96
+\pgfnodeparteighteenbox=\box97
+\pgfnodepartseventeenbox=\box98
+\pgfnodepartsixteenbox=\box99
+\pgfnodepartfifteenbox=\box100
+\pgfnodepartfourteenbox=\box101
+\pgfnodepartthirteenbox=\box102
+\pgfnodeparttwelvebox=\box103
+\pgfnodepartelevenbox=\box104
+\pgfnodeparttenbox=\box105
+\pgfnodepartninebox=\box106
+\pgfnodeparteightbox=\box107
+\pgfnodepartsevenbox=\box108
+\pgfnodepartsixbox=\box109
+\pgfnodepartfivebox=\box110
+))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnakes.code.tex
+File: tikzlibrarysnakes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the decoration libraries instead of the snakes library on input line 14.
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen354
+\pgfdecoratedremainingdistance=\dimen355
+\pgfdecoratedinputsegmentcompleteddistance=\dimen356
+\pgfdecoratedinputsegmentremainingdistance=\dimen357
+\pgf@decorate@distancetomove=\dimen358
+\pgf@decorate@repeatstate=\count375
+\pgfdecorationsegmentamplitude=\dimen359
+\pgfdecorationsegmentlength=\dimen360
+)
+\tikz@lib@dec@box=\box111
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.shapes.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.shapes.code.tex))) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+\c@example=\count376
+\c@theorem=\count377
+)
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 23.
+ Excluding comment 'screenonly' Include comment 'printonly' Include comment 'anonsuppress'
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 23.
+LaTeX Font Info:    Trying to load font information for OML+nxlmi on input line 23.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/omlnxlmi.fd
+File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxexa.fd
+File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/lmxntxexx.fd
+File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+minlibertine on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/ot1minlibertine.fd
+File: ot1minlibertine.fd 2013/10/12 v1.0
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 23.
+
+LaTeX Info: Command `\dddot' is already robust on input line 23.
+LaTeX Info: Command `\ddddot' is already robust on input line 23.
+LaTeX Info: Redefining \microtypecontext on input line 23.
+Package microtype Info: Applying patch `item' on input line 23.
+Package microtype Info: Applying patch `toc' on input line 23.
+Package microtype Info: Applying patch `eqnum' on input line 23.
+Package microtype Info: Applying patch `footnote' on input line 23.
+Package microtype Info: Applying patch `verbatim' on input line 23.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LinLibertine' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package hyperref Info: Link coloring OFF on input line 23.
+(./main.out) (./main.out)
+\@outlinefile=\write6
+\openout6 = `main.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot twoside heightrounded 
+* h-part:(L,W,R)=(46.0pt, 395.8225pt, 46.0pt)
+* v-part:(T,H,B)=(58.0pt, 620.7pt, 44.0pt)
+* \paperwidth=487.8225pt
+* \paperheight=722.7pt
+* \textwidth=395.8225pt
+* \textheight=574.0pt
+* \oddsidemargin=-26.26999pt
+* \evensidemargin=-26.26999pt
+* \topmargin=-14.26999pt
+* \headheight=13.0pt
+* \headsep=14.0pt
+* \topskip=10.0pt
+* \footskip=24.0pt
+* \marginparwidth=24.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=7.0pt plus 11.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Excluding 'CCSXML' comment.
+Class acmart Info: Printing folios on input line 92.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 93.
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 93.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LinBiolinum' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 93.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 93.
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 93.
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 93.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 93.
+
+
+Class acmart Warning: No city present for an affiliation.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `inconsolata' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
+(Font)              scaled to size 9.0pt on input line 93.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `minlibertine' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/7.3'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/5.5'.
+(microtype)             Ignoring protrusion settings for this character.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/7.3'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/5.5'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
+(Font)              scaled to size 9.0pt on input line 93.
+
+
+LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 93.
+
+(./sec/intro.tex
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 2.
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 2.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 15.
+
+
+Package natbib Warning: Citation `mlops' on page 1 undefined on input line 15.
+
+
+Package natbib Warning: Citation `cleaning4ml' on page 1 undefined on input line 15.
+
+
+Package natbib Warning: Citation `chai2022data' on page 1 undefined on input line 15.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/abs-2011-09384' on page 1 undefined on input line 17.
+
+
+Package natbib Warning: Citation `munteanu2018coresets' on page 1 undefined on input line 17.
+
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 19.
+
+Package natbib Warning: Citation `chai2022data' on page 1 undefined on input line 19.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/YoonJS18' on page 1 undefined on input line 19.
+
+
+Package natbib Warning: Citation `miao2022experimental' on page 1 undefined on input line 19.
+
+[1.1] <xymatrix
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+ 5x7 630> <xymatrix 5x3 332>
+
+Class acmart Warning: A possible image without description on input line 118.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 121.
+
+
+LaTeX Warning: Reference `fig:sequential' on page 2 undefined on input line 125.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 128.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 136.
+
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 142.
+[2.2]
+
+LaTeX Warning: Reference `fig:comparison' on page 3 undefined on input line 154.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 157.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 164.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 3 undefined on input line 165.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 168.
+
+
+LaTeX Warning: Reference `fig:ours' on page 3 undefined on input line 171.
+
+
+LaTeX Warning: Reference `fig:ours' on page 3 undefined on input line 179.
+
+
+LaTeX Warning: Reference `fig:comparison' on page 3 undefined on input line 187.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 190.
+
+
+LaTeX Warning: Reference `sec:overview' on page 3 undefined on input line 196.
+
+[3.3]
+
+LaTeX Warning: Reference `sec:without' on page 4 undefined on input line 200.
+
+
+LaTeX Warning: Reference `sec:human' on page 4 undefined on input line 204.
+
+
+LaTeX Warning: Reference `sec:exp' on page 4 undefined on input line 211.
+
+) (./sec/00-background.tex
+
+Package natbib Warning: Citation `lemarechal2012cauchy' on page 4 undefined on input line 10.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 15.
+
+
+LaTeX Warning: Reference `eqa:loss' on page 4 undefined on input line 20.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 30.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/abs-2011-09384' on page 4 undefined on input line 32.
+
+
+Package natbib Warning: Citation `munteanu2018coresets' on page 4 undefined on input line 32.
+
+
+Package natbib Warning: Citation `DBLP:conf/aaai/KillamsettySRI21' on page 4 undefined on input line 36.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 4 undefined on input line 36.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 64.
+
+
+LaTeX Warning: Reference `eqa:coreset' on page 4 undefined on input line 68.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 72.
+
+[4.4]
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 7.3pt on input line 81.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
+(Font)              scaled to size 5.5pt on input line 81.
+
+
+LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 97.
+
+
+LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 100.
+
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/sc' will be
+(Font)              scaled to size 10.0pt on input line 104.
+
+LaTeX Warning: Reference `fig:overviewSingle' on page 5 undefined on input line 105.
+
+
+LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 105.
+
+File: figs/coresetExample.pdf Graphic file (type pdf)
+<use figs/coresetExample.pdf>
+
+Class acmart Warning: A possible image without description on input line 116.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 118.
+
+
+LaTeX Warning: Reference `example:singletable' on page 5 undefined on input line 118.
+
+
+Package natbib Warning: Citation `rdusseeun1987clustering' on page 5 undefined on input line 119.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 122.
+
+
+LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 122.
+
+
+LaTeX Warning: Reference `eqa:triangle' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `hofmann2015variance' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `allen2016exploiting' on page 5 undefined on input line 122.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 5 undefined on input line 122.
+
+
+LaTeX Warning: Reference `equation:convex' on page 5 undefined on input line 122.
+
+[5.5]
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 124.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 125.
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 132.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/0.73'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/m/n/0.55'.
+(microtype)             Ignoring protrusion settings for this character.
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 132.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <0.73> not available
+(Font)              size <5> substituted on input line 132.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <0.55> not available
+(Font)              size <5> substituted on input line 132.
+
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/0.73'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `AE ' is missing
+(microtype)             in font `OT1/minlibertine/b/n/0.55'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 140.
+
+
+Package natbib Warning: Citation `hofmann2015variance' on page 6 undefined on input line 140.
+
+
+Package natbib Warning: Citation `allen2016exploiting' on page 6 undefined on input line 140.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 6 undefined on input line 140.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 142.
+
+
+LaTeX Warning: Reference `eqa:triangle' on page 6 undefined on input line 150.
+
+
+LaTeX Warning: Reference `equation:convex' on page 6 undefined on input line 150.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 152.
+
+
+LaTeX Warning: Reference `eqa:coreset2' on page 6 undefined on input line 159.
+
+
+LaTeX Warning: Reference `equation:convex' on page 6 undefined on input line 161.
+
+
+Package natbib Warning: Citation `allen2016exploiting' on page 6 undefined on input line 161.
+
+
+Package natbib Warning: Citation `hofmann2015variance' on page 6 undefined on input line 161.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 169.
+
+
+LaTeX Warning: Reference `sec:exp' on page 6 undefined on input line 173.
+
+
+LaTeX Warning: Reference `subsec:problem' on page 6 undefined on input line 181.
+
+
+LaTeX Warning: Reference `subsec:framework' on page 6 undefined on input line 181.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 190.
+
+[6.6]
+
+LaTeX Warning: Reference `fig:missing' on page 7 undefined on input line 198.
+
+
+LaTeX Font Warning: Font shape `TU/inconsolata(0)/m/it' undefined
+(Font)              using `TU/inconsolata(0)/m/n' instead on input line 198.
+
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
+(Font)              scaled to size 7.3pt on input line 198.
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
+(Font)              scaled to size 5.5pt on input line 198.
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 200.
+
+File: figs/missExample.pdf Graphic file (type pdf)
+<use figs/missExample.pdf>
+
+Class acmart Warning: A possible image without description on input line 211.
+
+
+LaTeX Warning: Reference `example:incomplete' on page 7 undefined on input line 213.
+
+
+Package natbib Warning: Citation `DBLP:journals/tods/DengFG16' on page 7 undefined on input line 227.
+
+
+Package natbib Warning: Citation `DBLP:conf/pods/ArenasBC99' on page 7 undefined on input line 227.
+
+
+Package natbib Warning: Citation `DBLP:series/synthesis/2011Bertossi' on page 7 undefined on input line 227.
+
+
+Package natbib Warning: Citation `DBLP:conf/pods/Bertossi19' on page 7 undefined on input line 227.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 237.
+
+[7.7]
+
+LaTeX Warning: Reference `fig:missing' on page 8 undefined on input line 247.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 249.
+
+
+LaTeX Warning: Reference `subset:sigletable' on page 8 undefined on input line 255.
+
+
+LaTeX Warning: Reference `fig:missing' on page 8 undefined on input line 261.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 263.
+
+
+LaTeX Warning: Reference `exam:diffscores' on page 8 undefined on input line 266.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 271.
+
+
+LaTeX Warning: Reference `fig:missing' on page 8 undefined on input line 283.
+
+
+LaTeX Warning: Reference `eqa:expectation' on page 8 undefined on input line 283.
+
+File: figs/Overview.pdf Graphic file (type pdf)
+<use figs/Overview.pdf>
+
+Class acmart Warning: A possible image without description on input line 361.
+
+[8.8]
+
+LaTeX Warning: Reference `eqa:expectation' on page 9 undefined on input line 364.
+
+
+LaTeX Warning: Reference `sec:without' on page 9 undefined on input line 365.
+
+
+LaTeX Warning: Reference `fig:overview' on page 9 undefined on input line 370.
+
+
+LaTeX Warning: Reference `alg:framework' on page 9 undefined on input line 370.
+
+(./sec/algo-craig.tex
+LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
+(Font)              scaled to size 6.0pt on input line 12.
+
+
+Class acmart Warning: A possible image without description on input line 66.
+
+)
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 376.
+
+
+LaTeX Warning: Reference `craig1:loop1' on page 9 undefined on input line 376.
+
+
+LaTeX Warning: Reference `craig1:add2' on page 9 undefined on input line 376.
+
+
+LaTeX Warning: Reference `fig:overview' on page 9 undefined on input line 378.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 381.
+
+[9.9]
+
+LaTeX Warning: Reference `craig1:loop2' on page 10 undefined on input line 381.
+
+
+LaTeX Warning: Reference `craig1:loop3' on page 10 undefined on input line 381.
+
+
+LaTeX Warning: Reference `craig1:sample' on page 10 undefined on input line 382.
+
+
+LaTeX Warning: Reference `craig1:maxmulti' on page 10 undefined on input line 382.
+
+
+Package natbib Warning: Citation `mirzasoleiman2015lazier' on page 10 undefined on input line 382.
+
+
+LaTeX Warning: Reference `fig:overview' on page 10 undefined on input line 384.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 387.
+
+
+LaTeX Warning: Reference `craig1:loop3' on page 10 undefined on input line 387.
+
+
+LaTeX Warning: Reference `sec:without' on page 10 undefined on input line 387.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 391.
+
+
+LaTeX Warning: Reference `craig1:oracle' on page 10 undefined on input line 391.
+
+
+LaTeX Warning: Reference `sec:intro' on page 10 undefined on input line 391.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 396.
+
+
+LaTeX Warning: Reference `craig1:cc0' on page 10 undefined on input line 396.
+
+
+LaTeX Warning: Reference `craig1:cc' on page 10 undefined on input line 396.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 399.
+
+
+LaTeX Warning: Reference `sec:without' on page 10 undefined on input line 399.
+
+
+LaTeX Warning: Reference `sec:human' on page 10 undefined on input line 399.
+
+
+LaTeX Warning: Reference `exp:sec:end2end' on page 10 undefined on input line 399.
+
+) (./sec/00-problem.tex) (./sec/00-method.tex
+
+LaTeX Warning: Reference `eqa:expectation' on page 10 undefined on input line 5.
+
+
+LaTeX Warning: Reference `subsec:complexity' on page 10 undefined on input line 5.
+
+
+LaTeX Warning: Reference `subsec:exp' on page 10 undefined on input line 5.
+
+
+LaTeX Warning: Reference `eqa:expectation' on page 10 undefined on input line 9.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 12.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 14.
+
+
+Package natbib Warning: Citation `dinur2005hardness' on page 10 undefined on input line 18.
+
+
+Package natbib Warning: Citation `mirzasoleiman2020coresets' on page 10 undefined on input line 18.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 10 undefined on input line 18.
+
+[10.10]
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 23.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 25.
+
+
+Package natbib Warning: Citation `mirzasoleiman2020coresets' on page 11 undefined on input line 29.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 11 undefined on input line 29.
+
+
+Package natbib Warning: Citation `killamsetty2021grad' on page 11 undefined on input line 29.
+
+
+Package natbib Warning: Citation `lin2011class' on page 11 undefined on input line 29.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 31.
+
+
+LaTeX Warning: Reference `alg:framework' on page 11 undefined on input line 34.
+
+
+LaTeX Warning: Reference `subsec:exp' on page 11 undefined on input line 34.
+
+
+Package natbib Warning: Citation `miao2022experimental' on page 11 undefined on input line 40.
+
+
+Package natbib Warning: Citation `miao2022experimental' on page 11 undefined on input line 41.
+
+
+Package natbib Warning: Citation `datawig' on page 11 undefined on input line 43.
+
+
+Package natbib Warning: Citation `datawigpy' on page 11 undefined on input line 43.
+
+
+LaTeX Warning: Reference `fig:missing' on page 11 undefined on input line 76.
+
+File: figs/expectation.pdf Graphic file (type pdf)
+<use figs/expectation.pdf>
+
+Class acmart Warning: A possible image without description on input line 90.
+
+[11.11]
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 96.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 99.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 101.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 119.
+
+
+LaTeX Warning: Reference `fig:expectation' on page 12 undefined on input line 125.
+
+
+LaTeX Warning: Reference `fig:expectation' on page 12 undefined on input line 125.
+
+
+LaTeX Warning: Reference `eqa:tuple' on page 12 undefined on input line 125.
+
+[12.12]
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 150.
+
+) (./sec/00-human.tex
+
+LaTeX Warning: Reference `alg:framework' on page 13 undefined on input line 6.
+
+(./sec/algo-one.tex
+
+Class acmart Warning: A possible image without description on input line 32.
+
+)
+
+LaTeX Warning: Reference `alg:framework' on page 13 undefined on input line 21.
+
+
+LaTeX Warning: Reference `sec:without' on page 13 undefined on input line 22.
+
+
+LaTeX Warning: Reference `craig1:oracle1' on page 13 undefined on input line 22.
+
+
+LaTeX Warning: Reference `craig1:oracle' on page 13 undefined on input line 22.
+
+
+LaTeX Warning: Reference `craig1:add2' on page 13 undefined on input line 22.
+
+
+LaTeX Warning: Reference `craig1:loop3' on page 13 undefined on input line 27.
+
+
+LaTeX Warning: Reference `alg:framework' on page 13 undefined on input line 27.
+
+[13.13]
+
+LaTeX Warning: Reference `alg:one' on page 14 undefined on input line 32.
+
+
+LaTeX Warning: Reference `one:loop' on page 14 undefined on input line 32.
+
+
+LaTeX Warning: Reference `one:dirtysum' on page 14 undefined on input line 32.
+
+
+LaTeX Warning: Reference `one:expt' on page 14 undefined on input line 32.
+
+
+LaTeX Warning: Reference `subsec:exp' on page 14 undefined on input line 35.
+
+
+LaTeX Warning: Reference `one:clean' on page 14 undefined on input line 35.
+
+
+LaTeX Warning: Reference `one:cleansum' on page 14 undefined on input line 35.
+
+
+LaTeX Warning: Reference `one:enumw' on page 14 undefined on input line 36.
+
+
+LaTeX Warning: Reference `one:exp4pw' on page 14 undefined on input line 36.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 39.
+
+
+LaTeX Warning: Reference `alg:one' on page 14 undefined on input line 39.
+
+(./sec/algo-batch.tex
+
+Class acmart Warning: A possible image without description on input line 53.
+
+)
+
+LaTeX Warning: Reference `subsec:one' on page 14 undefined on input line 53.
+
+
+LaTeX Warning: Reference `subsec:exp' on page 14 undefined on input line 53.
+
+
+LaTeX Warning: Reference `alg:batch' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `subsec:one' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `alg:batch' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `alg:batch' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `batch:addcoreset' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `batch:batchenough' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `batch:batchzero' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `batch:weight' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `batch:loop3' on page 14 undefined on input line 55.
+
+
+LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
+
+[14.14]
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 57.
+
+
+Package natbib Warning: Citation `miao2022experimental' on page 15 undefined on input line 58.
+
+
+LaTeX Warning: Reference `sec:without' on page 15 undefined on input line 59.
+
+
+LaTeX Warning: Reference `exp:sec:batchalgo' on page 15 undefined on input line 59.
+
+) (./sec/00-convrate.tex
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 7.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 10.
+
+
+LaTeX Warning: Reference `eq:convex' on page 15 undefined on input line 19.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 21.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 24.
+
+
+Package natbib Warning: Citation `strang2006linear' on page 15 undefined on input line 38.
+
+[15.15]
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 40.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 43.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 57.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 60.
+
+
+LaTeX Warning: Reference `eq:afterig' on page 16 undefined on input line 69.
+
+
+LaTeX Warning: Reference `eq:item2' on page 16 undefined on input line 69.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 71.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 73.
+
+
+Package natbib Warning: Citation `chung1954stochastic' on page 16 undefined on input line 81.
+
+
+LaTeX Warning: Reference `alg:framework' on page 16 undefined on input line 81.
+
+
+Package natbib Warning: Citation `nedic2001convergence' on page 16 undefined on input line 81.
+
+) (./sec/00-exp.tex
+File: figs/effectiveness_new.png Graphic file (type bmp)
+<figs/effectiveness_new.png>
+
+
+Class acmart Warning: A possible image without description on input line 48.
+
+File: figs/efficiency_new.png Graphic file (type bmp)
+<figs/efficiency_new.png>
+
+Class acmart Warning: A possible image without description on input line 68.
+
+(./sec/exp-01-setting.tex
+
+Package natbib Warning: Citation `DBLP:conf/icde/LiRBZCZ21' on page 16 undefined on input line 4.
+
+
+Package natbib Warning: Citation `liu2021adaptive' on page 16 undefined on input line 4.
+
+
+Package natbib Warning: Citation `DBLP:journals/pvldb/KrishnanWWFG16' on page 16 undefined on input line 4.
+
+
+Package natbib Warning: Citation `DBLP:journals/pvldb/KarlasLWGC0020' on page 16 undefined on input line 4.
+
+
+LaTeX Warning: Reference `tbl:dataset' on page 16 undefined on input line 4.
+
+
+Package natbib Warning: Citation `nursery' on page 16 undefined on input line 10.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 10.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+Package natbib Warning: Citation `chai2022selective' on page 16 undefined on input line 11.
+
+
+Package natbib Warning: Citation `adult' on page 16 undefined on input line 12.
+
+
+Package natbib Warning: Citation `kaggle' on page 16 undefined on input line 13.
+
+
+Package natbib Warning: Citation `bike' on page 16 undefined on input line 14.
+
+
+Package natbib Warning: Citation `auctus' on page 16 undefined on input line 15.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--16
+\TU/LinLibertine(0)/b/n/10 (1) \TU/inconsolata(0)/m/it/10 Nursery \TU/LinLibertine(0)/m/n/10 [\TU/LinLibertine(0)/b/n/10 ? \TU/LinLibertine(0)/m/n/10 ] is a multi-classification task, which predicts “\TU/LinLibertine(0)/m/it/10 the level of recom-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--16
+\TU/LinLibertine(0)/m/it/10 mendation for whether a child goes to school\TU/LinLibertine(0)/m/n/10 ”. There are five different levels, $\OML/nxlmi/m/it/10 i:e:$\TU/LinLibertine(0)/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 10--16
+\LMS/ntxsy/m/n/10 f[]g$\TU/LinLibertine(0)/m/n/10 . \TU/LinLibertine(0)/b/n/10 (2) \TU/inconsolata(0)/m/it/10 HR \TU/LinLibertine(0)/m/n/10 [\TU/LinLibertine(0)/b/n/10 ? \TU/LinLibertine(0)/m/n/10 ] is a binary clas-
+ []
+
+[16.16]
+
+Package natbib Warning: Citation `DBLP:journals/jbd/KhanH20' on page 17 undefined on input line 19.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/YoonJS18' on page 17 undefined on input line 19.
+
+
+Package natbib Warning: Citation `DBLP:conf/mlsys/WuZIR20' on page 17 undefined on input line 19.
+
+
+LaTeX Warning: Reference `exp:sec:sensitivity' on page 17 undefined on input line 19.
+
+
+Package natbib Warning: Citation `DBLP:journals/pvldb/KrishnanWWFG16' on page 17 undefined on input line 47.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/abs-1711-01299' on page 17 undefined on input line 49.
+
+
+Package natbib Warning: Citation `royston2011multiple' on page 17 undefined on input line 49.
+
+
+Package natbib Warning: Citation `DBLP:journals/bioinformatics/StekhovenB12' on page 17 undefined on input line 49.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/YoonJS18' on page 17 undefined on input line 49.
+
+[17.17]
+
+Package natbib Warning: Citation `royston2011multiple' on page 18 undefined on input line 52.
+
+
+Package natbib Warning: Citation `DBLP:journals/bioinformatics/StekhovenB12' on page 18 undefined on input line 52.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/YoonJS18' on page 18 undefined on input line 52.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 18 undefined on input line 65.
+
+
+Package natbib Warning: Citation `royston2011multiple' on page 18 undefined on input line 72.
+
+
+LaTeX Warning: Reference `subsec:batch' on page 18 undefined on input line 80.
+
+
+LaTeX Warning: Reference `exp:sec:batchalgo' on page 18 undefined on input line 80.
+
+
+LaTeX Warning: Reference `exp:sec:sensitivity' on page 18 undefined on input line 97.
+
+
+LaTeX Warning: Reference `exp:sec:sensitivity' on page 18 undefined on input line 97.
+
+)
+File: figs/e2e.pdf Graphic file (type pdf)
+<use figs/e2e.pdf>
+
+
+Class acmart Warning: A possible image without description on input line 82.
+
+File: figs/batchsize.pdf Graphic file (type pdf)
+<use figs/batchsize.pdf>
+File: figs/vary_l_effectiveness.pdf Graphic file (type pdf)
+<use figs/vary_l_effectiveness.pdf>
+File: figs/vary_l_efficiency.pdf Graphic file (type pdf)
+<use figs/vary_l_efficiency.pdf>
+
+Class acmart Warning: A possible image without description on input line 112.
+
+(./sec/exp-02-baselines.tex
+
+LaTeX Warning: Reference `exp:sec:end2end' on page 18 undefined on input line 35.
+
+[18.18]
+LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 54.
+
+
+LaTeX Warning: Reference `fig:effectiveness' on page 19 undefined on input line 54.
+
+
+Underfull \hbox (badness 4531) in paragraph at lines 54--56
+ \TU/LinBiolinum(0)/m/it/10 6.2.1 Evaluation of model accuracy.[] \TU/LinLibertine(0)/m/n/10 The results are provided in Figure []. To summa-
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 54--56
+\TU/LinLibertine(0)/m/n/10 rize, the result could be generally ranked as $\OT1/minlibertine/b/n/10 G\LMS/ntxsy/m/n/10 ¹\OML/nxlmi/m/it/10 D; \U/ntxsym/m/n/10 ^^89[]\LMS/ntxsy/m/n/10 º^^9d\OT1/minlibertine/b/n/10 C\LMS/ntxsy/m/n/10 ¹\OT1/minlibertine/b/n/10 H\LMS/ntxsy/m/n/10 ¹\OML/nxlmi/m/it/10 D\LMS/ntxsy/m/n/10 ºº^^9d[] \OML/nxlmi/m/it/10 >$ $\OT1/minlibertine/b/n/10 G\LMS/ntxsy/m/n/10 ¹\OML/nxlmi/m/it/10 D; \U/ntxsym/m/n/10 ^^89[]
+ []
+
+
+LaTeX Warning: Reference `sec:exp:efficiency' on page 19 undefined on input line 58.
+
+
+LaTeX Warning: Reference `fig:efficiency' on page 19 undefined on input line 71.
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 71--73
+\TU/LinLibertine(0)/b/n/10 Machine cost. \TU/LinLibertine(0)/m/n/10 Machine cost is shown in Figure []. The results could be ranked as
+ []
+
+[19.19]
+
+LaTeX Warning: Reference `tbl:humancost' on page 20 undefined on input line 75.
+
+
+LaTeX Warning: Reference `tbl:humancost' on page 20 undefined on input line 84.
+
+) (./sec/exp-03-end2end.tex
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 2.
+
+
+LaTeX Warning: Reference `fig:e2e' on page 20 undefined on input line 14.
+
+
+LaTeX Warning: Reference `exp:sec:overall' on page 20 undefined on input line 16.
+
+
+LaTeX Warning: Reference `fig:e2e' on page 20 undefined on input line 21.
+
+[20.20])
+File: figs/converge.pdf Graphic file (type pdf)
+<use figs/converge.pdf>
+
+
+Class acmart Warning: A possible image without description on input line 145.
+
+File: figs/realloss.pdf Graphic file (type pdf)
+<use figs/realloss.pdf>
+
+Class acmart Warning: A possible image without description on input line 155.
+
+File: figs/samplesize.pdf Graphic file (type pdf)
+<use figs/samplesize.pdf>
+File: figs/downstream_all.pdf Graphic file (type pdf)
+<use figs/downstream_all.pdf>
+
+Class acmart Warning: A possible image without description on input line 176.
+
+File: figs/missingrate_all.pdf Graphic file (type pdf)
+<use figs/missingrate_all.pdf>
+
+Class acmart Warning: A possible image without description on input line 206.
+
+File: figs/missingrate_real.pdf Graphic file (type pdf)
+<use figs/missingrate_real.pdf>
+
+Class acmart Warning: A possible image without description on input line 215.
+
+(./sec/exp-04-batchalg.tex
+
+LaTeX Warning: Reference `exp:sec:overall' on page 21 undefined on input line 6.
+
+
+LaTeX Warning: Reference `alg:batch' on page 21 undefined on input line 6.
+
+
+LaTeX Warning: Reference `subsec:batch' on page 21 undefined on input line 8.
+
+
+LaTeX Warning: Reference `fig:batchalg' on page 21 undefined on input line 10.
+
+
+LaTeX Warning: Reference `alg:batch' on page 21 undefined on input line 10.
+
+[21.21]
+
+LaTeX Warning: Reference `fig:vary_l_effect' on page 22 undefined on input line 13.
+
+
+LaTeX Warning: Reference `fig:vary_l_efficient' on page 22 undefined on input line 13.
+
+
+LaTeX Warning: Reference `tbl:pwnum' on page 22 undefined on input line 15.
+
+) (./sec/exp-05-converge.tex
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 2.
+
+
+LaTeX Warning: Reference `sec:proof' on page 22 undefined on input line 5.
+
+
+LaTeX Warning: Reference `fig:converge' on page 22 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sec:proof' on page 22 undefined on input line 6.
+
+
+LaTeX Warning: Reference `fig:real_loss' on page 22 undefined on input line 11.
+
+) (./sec/exp-06-sensitive.tex
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 2.
+
+[22.22]
+
+LaTeX Warning: Reference `fig:samplesize' on page 23 undefined on input line 6.
+
+
+LaTeX Warning: Reference `fig:downmodel' on page 23 undefined on input line 10.
+
+
+LaTeX Warning: Reference `fig:downmodel' on page 23 undefined on input line 11.
+
+
+LaTeX Warning: Reference `fig:downmodel' on page 23 undefined on input line 11.
+
+
+LaTeX Warning: Reference `fig:vary_misstuple_all' on page 23 undefined on input line 19.
+
+
+LaTeX Warning: Reference `fig:realmissrate' on page 23 undefined on input line 23.
+
+
+LaTeX Warning: Reference `fig:vary_misstuple_all' on page 23 undefined on input line 23.
+
+)) (./sec/related.tex
+
+Package natbib Warning: Citation `DBLP:journals/tsmc/FarhangfarKP07' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:conf/sigmod/MayfieldNP10' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `altman1992introduction' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:journals/artmed/JerezMGARMF10' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:conf/isese/TwalaCS05' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:journals/bioinformatics/StekhovenB12' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `royston2011multiple' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:conf/icde/ZhangSSW19' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/GondaraW17' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `mccoy2018variational' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:journals/pr/NazabalOGV20' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:journals/nn/SpinelliSU20' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/YoonJS18' on page 23 undefined on input line 6.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/HuangHLFD21' on page 23 undefined on input line 9.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/CampbellB18' on page 23 undefined on input line 11.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/BravermanFL16' on page 23 undefined on input line 11.
+
+
+Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 23 undefined on input line 12.
+
+
+Package natbib Warning: Citation `DBLP:conf/nips/MirzasoleimanCL20' on page 23 undefined on input line 12.
+
+
+Package natbib Warning: Citation `DBLP:conf/emnlp/KirchhoffB14' on page 23 undefined on input line 12.
+
+
+LaTeX Warning: Reference `subset:sigletable' on page 23 undefined on input line 12.
+
+[23.23]
+
+Package natbib Warning: Citation `DBLP:journals/debu/KrishnanWFGKM015' on page 24 undefined on input line 18.
+
+
+Package natbib Warning: Citation `DBLP:journals/pvldb/KarlasLWGC0020' on page 24 undefined on input line 20.
+
+
+Package natbib Warning: Citation `DBLP:journals/corr/abs-1711-01299' on page 24 undefined on input line 22.
+
+
+Package natbib Warning: Citation `DBLP:journals/pvldb/KrishnanWWFG16' on page 24 undefined on input line 24.
+
+
+LaTeX Warning: Reference `sec:exp' on page 24 undefined on input line 26.
+
+
+Package natbib Warning: Citation `chai2020crowdchart' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `liu2021automatic' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `chai2022selective' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `liu2022feature' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `hao2020outdated' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `chai2020human' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `chai2016cost' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `chai2018partial' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `li2018cdb' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `miao2022experimental' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `gao2018query' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `miao2018incomplete' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `miao2021efficient' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `wu2022interactive' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `ge2020hybrid' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `qin2020interactively' on page 24 undefined on input line 35.
+
+
+Package natbib Warning: Citation `qin2021ranking' on page 24 undefined on input line 35.
+
+) (./sec/00-conclusion.tex) [24.24]
+No file main.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
+Class acmart Warning: Some images may lack descriptions.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 113.
+
+[25.25
+
+] (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-utf32be.def
+File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
+) [26.25] (./main.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.45pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 1672631F7C8BEB6289AB9B3E6A3A5F30;4601.
+ ) 
+Here is how much of TeX's memory you used:
+ 48681 strings out of 476683
+ 978788 string characters out of 5804047
+ 1908018 words of memory out of 5000000
+ 67843 multiletter control sequences out of 15000+600000
+ 587087 words of font info for 248 fonts, out of 8000000 for 9000
+ 1509 hyphenation exceptions out of 8191
+ 102i,21n,131p,1493b,32911s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (26 pages).

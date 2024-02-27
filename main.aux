@@ -1,0 +1,236 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\citation{mlops}
+\citation{cleaning4ml,chai2022data}
+\citation{DBLP:journals/corr/abs-2011-09384,munteanu2018coresets}
+\citation{chai2022data,DBLP:conf/icml/YoonJS18,miao2022experimental}
+\HyPL@Entry{0<</S/D>>}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Sequential methods.\relax }}{2}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:sequential}{{1}{2}{Sequential methods.\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A comparison of different approaches (1--4: sequential methods; 5--8: our solutions).\relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:comparison}{{2}{2}{A comparison of different approaches (1--4: sequential methods; 5--8: our solutions).\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Our proposal and its variants.\relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:ours}{{3}{2}{Our proposal and its variants.\relax }{figure.caption.2}{}}
+\citation{DBLP:conf/icml/MirzasoleimanBL20}
+\citation{lemarechal2012cauchy}
+\citation{DBLP:journals/corr/abs-2011-09384,munteanu2018coresets}
+\citation{DBLP:conf/aaai/KillamsettySRI21,DBLP:conf/icml/MirzasoleimanBL20}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background of Coreset Selection}{4}{section.2}\protected@file@percent }
+\newlabel{sec:pre}{{2}{4}{Background of Coreset Selection}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Gradient Descent for Machine Learning}{4}{subsection.2.1}\protected@file@percent }
+\newlabel{eqa:loss}{{1}{4}{Gradient Descent for Machine Learning}{equation.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Coreset over Complete Data}{4}{subsection.2.2}\protected@file@percent }
+\newlabel{subset:sigletable}{{2.2}{4}{Coreset over Complete Data}{subsection.2.2}{}}
+\citation{rdusseeun1987clustering}
+\citation{hofmann2015variance,allen2016exploiting,DBLP:conf/icml/MirzasoleimanBL20}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Example of coreset selection.\relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:overviewSingle}{{4}{5}{Example of coreset selection.\relax }{figure.caption.3}{}}
+\newlabel{eqa:coreset}{{2}{5}{Coreset over Complete Data}{equation.2.2}{}}
+\newlabel{example:singletable}{{1}{5}{}{example.1}{}}
+\citation{hofmann2015variance,allen2016exploiting,DBLP:conf/icml/MirzasoleimanBL20}
+\citation{allen2016exploiting,hofmann2015variance}
+\newlabel{eqa:triangle}{{3}{6}{Coreset over Complete Data}{equation.2.3}{}}
+\newlabel{equation:convex}{{4}{6}{Coreset over Complete Data}{equation.2.4}{}}
+\newlabel{eqa:coreset2}{{5}{6}{Coreset over Complete Data}{equation.2.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Coreset Over Incomplete Data}{6}{section.3}\protected@file@percent }
+\newlabel{sec:overview}{{3}{6}{Coreset Over Incomplete Data}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Definition}{6}{subsection.3.1}\protected@file@percent }
+\newlabel{subsec:problem}{{3.1}{6}{Problem Definition}{subsection.3.1}{}}
+\citation{DBLP:journals/tods/DengFG16,DBLP:conf/pods/ArenasBC99,DBLP:series/synthesis/2011Bertossi,DBLP:conf/pods/Bertossi19}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Example of coreset selection with missing values\relax }}{7}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:missing}{{5}{7}{Example of coreset selection with missing values\relax }{figure.caption.4}{}}
+\newlabel{example:incomplete}{{2}{7}{}{example.2}{}}
+\newlabel{exam:diffscores}{{4}{8}{}{example.4}{}}
+\newlabel{eqa:expectation}{{6}{8}{Problem Definition}{equation.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The \texttt  {GoodCore}\xspace  framework.\relax }}{9}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:overview}{{6}{9}{The \ours framework.\relax }{figure.caption.5}{}}
+\newlabel{alg:framework}{{1}{9}{Goodcore Framework}{algocf.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces \texttt  {GoodCore}\xspace  Framework \relax }}{9}{algocf.1}\protected@file@percent }
+\newlabel{alg1:init1}{{1}{9}{Goodcore Framework}{AlgoLine.1.1}{}}
+\newlabel{craig1:loop1}{{2}{9}{Goodcore Framework}{AlgoLine.1.2}{}}
+\newlabel{craig1:sample}{{4}{9}{Goodcore Framework}{AlgoLine.1.4}{}}
+\newlabel{craig1:loop2}{{5}{9}{Goodcore Framework}{AlgoLine.1.5}{}}
+\newlabel{craig1:loop3}{{7}{9}{Goodcore Framework}{AlgoLine.1.7}{}}
+\newlabel{craig1:maxmulti}{{8}{9}{Goodcore Framework}{AlgoLine.1.8}{}}
+\newlabel{craig1:add2}{{9}{9}{Goodcore Framework}{AlgoLine.1.9}{}}
+\newlabel{craig1:goodcore1}{{10}{9}{Goodcore Framework}{AlgoLine.1.10}{}}
+\newlabel{craig1:oracle1}{{11}{9}{Goodcore Framework}{AlgoLine.1.11}{}}
+\newlabel{craig1:oracle}{{12}{9}{Goodcore Framework}{AlgoLine.1.12}{}}
+\newlabel{craig1:cc0}{{13}{9}{Goodcore Framework}{AlgoLine.1.13}{}}
+\newlabel{craig1:cc}{{16}{9}{Goodcore Framework}{AlgoLine.1.16}{}}
+\newlabel{craig1:return}{{17}{9}{Goodcore Framework}{AlgoLine.1.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Goodcore Framework}{9}{subsection.3.2}\protected@file@percent }
+\newlabel{subsec:framework}{{3.2}{9}{Goodcore Framework}{subsection.3.2}{}}
+\citation{mirzasoleiman2015lazier}
+\citation{dinur2005hardness,mirzasoleiman2020coresets,DBLP:conf/icml/MirzasoleimanBL20}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Goodcore Algorithm}{10}{section.4}\protected@file@percent }
+\newlabel{sec:without}{{4}{10}{Goodcore Algorithm}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Problem Complexity}{10}{subsection.4.1}\protected@file@percent }
+\newlabel{subsec:complexity}{{4.1}{10}{Problem Complexity}{subsection.4.1}{}}
+\citation{mirzasoleiman2020coresets,DBLP:conf/icml/MirzasoleimanBL20,killamsetty2021grad}
+\citation{lin2011class}
+\citation{miao2022experimental}
+\citation{miao2022experimental}
+\citation{datawig}
+\citation{datawigpy}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Expectation Computation}{11}{subsection.4.2}\protected@file@percent }
+\newlabel{subsec:exp}{{4.2}{11}{Expectation Computation}{subsection.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Tuple-based expectation computation.\relax }}{12}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:expectation}{{7}{12}{Tuple-based expectation computation.\relax }{figure.caption.7}{}}
+\newlabel{eqa:tuple}{{7}{12}{Expectation Computation}{equation.4.7}{}}
+\newlabel{alg:one}{{2}{13}{Optimized Goodcore with Imputation-in-the-loop}{algocf.2}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces \texttt  {ComputeUtility} (3rd-loop to compute $\mathrm  {E}[t|C]$) \relax }}{13}{algocf.2}\protected@file@percent }
+\newlabel{one:initc}{{1}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.1}{}}
+\newlabel{one:inite}{{2}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.2}{}}
+\newlabel{one:loop}{{3}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.3}{}}
+\newlabel{one:clean}{{4}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.4}{}}
+\newlabel{one:cleansum}{{5}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.5}{}}
+\newlabel{one:enumw}{{7}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.7}{}}
+\newlabel{one:exp4pw}{{8}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.8}{}}
+\newlabel{one:dirtysum}{{9}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.9}{}}
+\newlabel{one:expt}{{10}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.10}{}}
+\newlabel{one:return}{{11}{13}{Optimized Goodcore with Imputation-in-the-loop}{AlgoLine.2.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Optimized Goodcore with Imputation-in-the-loop}{13}{section.5}\protected@file@percent }
+\newlabel{sec:human}{{5}{13}{Optimized Goodcore with Imputation-in-the-loop}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}One Tuple Each Iteration}{13}{subsection.5.1}\protected@file@percent }
+\newlabel{subsec:one}{{5.1}{13}{One Tuple Each Iteration}{subsection.5.1}{}}
+\newlabel{alg:batch}{{3}{14}{One Tuple Each Iteration}{algocf.3}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Batch algorithm of \texttt  {GoodCore}\xspace  \nonbreakingspace \relax }}{14}{algocf.3}\protected@file@percent }
+\newlabel{batch:batchinit1}{{1}{14}{One Tuple Each Iteration}{AlgoLine.3.1}{}}
+\newlabel{batch:batchloop1}{{2}{14}{One Tuple Each Iteration}{AlgoLine.3.2}{}}
+\newlabel{batch:sample}{{3}{14}{One Tuple Each Iteration}{AlgoLine.3.3}{}}
+\newlabel{batch:loop2}{{4}{14}{One Tuple Each Iteration}{AlgoLine.3.4}{}}
+\newlabel{batch:loop3}{{5}{14}{One Tuple Each Iteration}{AlgoLine.3.5}{}}
+\newlabel{batch:maxmulti}{{6}{14}{One Tuple Each Iteration}{AlgoLine.3.6}{}}
+\newlabel{batch:addcoreset}{{7}{14}{One Tuple Each Iteration}{AlgoLine.3.7}{}}
+\newlabel{batch:ifincomp}{{8}{14}{One Tuple Each Iteration}{AlgoLine.3.8}{}}
+\newlabel{batch:batchadd}{{9}{14}{One Tuple Each Iteration}{AlgoLine.3.9}{}}
+\newlabel{batch:batchenough}{{10}{14}{One Tuple Each Iteration}{AlgoLine.3.10}{}}
+\newlabel{batch:batchoracle}{{11}{14}{One Tuple Each Iteration}{AlgoLine.3.11}{}}
+\newlabel{batch:batchzero}{{12}{14}{One Tuple Each Iteration}{AlgoLine.3.12}{}}
+\newlabel{batch:weight}{{13}{14}{One Tuple Each Iteration}{AlgoLine.3.13}{}}
+\newlabel{batch:batchreturn}{{14}{14}{One Tuple Each Iteration}{AlgoLine.3.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}One Batch Each Iteration with Human-in-the-loop}{14}{subsection.5.2}\protected@file@percent }
+\newlabel{subsec:batch}{{5.2}{14}{One Batch Each Iteration with Human-in-the-loop}{subsection.5.2}{}}
+\citation{miao2022experimental}
+\citation{strang2006linear}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Convergence Rate Analysis}{15}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:proof}{{5.3}{15}{Convergence Rate Analysis}{subsection.5.3}{}}
+\newlabel{eq:convex}{{8}{15}{Convergence Rate Analysis}{equation.5.8}{}}
+\newlabel{eq:afterig}{{9}{15}{Convergence Rate Analysis}{equation.5.9}{}}
+\citation{chung1954stochastic}
+\citation{nedic2001convergence}
+\citation{DBLP:conf/icde/LiRBZCZ21,liu2021adaptive,DBLP:journals/pvldb/KrishnanWWFG16,DBLP:journals/pvldb/KarlasLWGC0020}
+\citation{nursery}
+\citation{chai2022selective}
+\citation{adult}
+\citation{kaggle}
+\citation{bike}
+\citation{auctus}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Statistics of datasets\relax }}{16}{table.caption.10}\protected@file@percent }
+\newlabel{tbl:dataset}{{1}{16}{Statistics of datasets\relax }{table.caption.10}{}}
+\newlabel{eq:item1}{{10}{16}{Convergence Rate Analysis}{equation.5.10}{}}
+\newlabel{eq:item2}{{11}{16}{Convergence Rate Analysis}{equation.5.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experiment}{16}{section.6}\protected@file@percent }
+\newlabel{sec:exp}{{6}{16}{Experiment}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Experimental Settings}{16}{subsection.6.1}\protected@file@percent }
+\citation{DBLP:journals/jbd/KhanH20,DBLP:conf/icml/YoonJS18,DBLP:conf/mlsys/WuZIR20}
+\citation{DBLP:journals/pvldb/KrishnanWWFG16}
+\citation{DBLP:journals/corr/abs-1711-01299}
+\citation{royston2011multiple}
+\citation{DBLP:journals/bioinformatics/StekhovenB12}
+\citation{DBLP:conf/icml/YoonJS18}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Effectiveness of different methods.\relax }}{17}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:effectiveness}{{8}{17}{Effectiveness of different methods.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Efficiency of different methods. Note that only machine cost (i.e., runtime of machine) is considered.\relax }}{17}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:efficiency}{{9}{17}{Efficiency of different methods. Note that only machine cost (i.e., runtime of machine) is considered.\relax }{figure.caption.12}{}}
+\citation{royston2011multiple}
+\citation{DBLP:journals/bioinformatics/StekhovenB12}
+\citation{DBLP:conf/icml/YoonJS18}
+\citation{DBLP:conf/icml/MirzasoleimanBL20}
+\citation{royston2011multiple}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces  Coreset size selection of \texttt  {GoodCore}\xspace  .\relax }}{18}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:e2e}{{10}{18}{Coreset size selection of \ours .\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Overall Evaluation}{18}{subsection.6.2}\protected@file@percent }
+\newlabel{exp:sec:overall}{{6.2}{18}{Overall Evaluation}{subsection.6.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \texttt  {GoodCore}\xspace  for batch algorithm.\relax }}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:batchalg}{{11}{19}{\ours for batch algorithm.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Effectiveness when varying $l$.\relax }}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:vary_l_effect}{{12}{19}{Effectiveness when varying $l$.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Efficiency when varying $l$.\relax }}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:vary_l_efficient}{{13}{19}{Efficiency when varying $l$.\relax }{figure.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Human cost of different methods\relax }}{19}{table.caption.15}\protected@file@percent }
+\newlabel{tbl:humancost}{{2}{19}{Human cost of different methods\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Evaluation of model accuracy.}{19}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}Evaluation of the efficiency.}{19}{subsubsection.6.2.2}\protected@file@percent }
+\newlabel{sec:exp:efficiency}{{6.2.2}{19}{Evaluation of the efficiency}{subsubsection.6.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Coreset Size Selection of \texttt  {GoodCore}\xspace  }{20}{subsection.6.3}\protected@file@percent }
+\newlabel{exp:sec:end2end}{{6.3}{20}{Coreset Size Selection of \ours }{subsection.6.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Convergence of \texttt  {GoodCore}\xspace  .\relax }}{21}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:converge}{{14}{21}{Convergence of \ours .\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Loss of \texttt  {GoodCore}\xspace  .\relax }}{21}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:real_loss}{{15}{21}{Loss of \ours .\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Varying sample size.\relax }}{21}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:samplesize}{{16}{21}{Varying sample size.\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Varying downstream model.\relax }}{21}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:downmodel}{{17}{21}{Varying downstream model.\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Varying missing tuple rate.\relax }}{21}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:vary_misstuple_all}{{18}{21}{Varying missing tuple rate.\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Batch Algorithm of \texttt  {GoodCore}\xspace  }{21}{subsection.6.4}\protected@file@percent }
+\newlabel{exp:sec:batchalgo}{{6.4}{21}{Batch Algorithm of \ours }{subsection.6.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Varying missing value rate.\relax }}{22}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:realmissrate}{{19}{22}{Varying missing value rate.\relax }{figure.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The number of possible worlds on different datasets\relax }}{22}{table.caption.21}\protected@file@percent }
+\newlabel{tbl:pwnum}{{3}{22}{The number of possible worlds on different datasets\relax }{table.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Convergence Evaluation}{22}{subsection.6.5}\protected@file@percent }
+\citation{DBLP:journals/tsmc/FarhangfarKP07,DBLP:conf/sigmod/MayfieldNP10}
+\citation{altman1992introduction,DBLP:journals/artmed/JerezMGARMF10,DBLP:conf/isese/TwalaCS05}
+\citation{DBLP:journals/bioinformatics/StekhovenB12}
+\citation{royston2011multiple}
+\citation{DBLP:conf/icde/ZhangSSW19}
+\citation{DBLP:journals/corr/GondaraW17,mccoy2018variational,DBLP:journals/pr/NazabalOGV20}
+\citation{DBLP:journals/nn/SpinelliSU20,DBLP:conf/icml/YoonJS18}
+\citation{DBLP:conf/icml/HuangHLFD21}
+\citation{DBLP:conf/icml/CampbellB18,DBLP:journals/corr/BravermanFL16}
+\citation{DBLP:conf/icml/MirzasoleimanBL20,DBLP:conf/nips/MirzasoleimanCL20,DBLP:conf/emnlp/KirchhoffB14}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Sensitivity Analysis}{23}{subsection.6.6}\protected@file@percent }
+\newlabel{exp:sec:sensitivity}{{6.6}{23}{Sensitivity Analysis}{subsection.6.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{23}{section.7}\protected@file@percent }
+\newlabel{sec:related}{{7}{23}{Related Work}{section.7}{}}
+\citation{DBLP:journals/debu/KrishnanWFGKM015}
+\citation{DBLP:journals/pvldb/KarlasLWGC0020}
+\citation{DBLP:journals/corr/abs-1711-01299}
+\citation{DBLP:journals/pvldb/KrishnanWWFG16}
+\citation{chai2020crowdchart}
+\citation{liu2021automatic,chai2022selective,liu2022feature}
+\citation{hao2020outdated,chai2020human}
+\citation{chai2016cost,chai2018partial,li2018cdb}
+\citation{miao2022experimental,gao2018query,miao2018incomplete,miao2021efficient,wu2022interactive,ge2020hybrid}
+\citation{qin2020interactively,qin2021ranking}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{24}{section.8}\protected@file@percent }
+\bibstyle{ACM-Reference-Format}
+\bibdata{DA}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{4.65pt}
+\newlabel{tocindent2}{11.5pt}
+\newlabel{tocindent3}{20.22pt}
+\newlabel{TotPages}{{25}{25}{}{page.25}{}}
+\gdef \@abspage@last{25}
