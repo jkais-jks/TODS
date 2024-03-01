@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.7)  27 FEB 2024 17:18
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.7)  1 MAR 2024 13:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1391,13 +1391,12 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@theorem=\count377
 )
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 23.
- Excluding comment 'screenonly' Include comment 'printonly' Include comment 'anonsuppress'
-No file main.aux.
+ Excluding comment 'screenonly' Include comment 'printonly' Include comment 'anonsuppress' (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 23.
 LaTeX Font Info:    Trying to load font information for OML+nxlmi on input line 23.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/omlnxlmi.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/omlnxlmi.fd
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
 LaTeX Font Info:    ... okay on input line 23.
@@ -1496,9 +1495,6 @@ Package hyperref Info: Link coloring OFF on input line 23.
 \openout6 = `main.out'.
 
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1596,11 +1592,7 @@ Package microtype Info: Character `AE ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
 (Font)              scaled to size 9.0pt on input line 93.
-
-
-LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 93.
-
-(./sec/intro.tex
+ (./sec/intro.tex
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
 (Font)              scaled to size 10.0pt on input line 2.
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/b/n' will be
@@ -1649,9 +1641,6 @@ Class acmart Warning: A possible image without description on input line 118.
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 121.
 
 
-LaTeX Warning: Reference `fig:sequential' on page 2 undefined on input line 125.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 128.
 
 
@@ -1660,9 +1649,6 @@ Class acmart Warning: \vspace should only be used to provide space above/below s
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 142.
 [2.2]
-
-LaTeX Warning: Reference `fig:comparison' on page 3 undefined on input line 154.
-
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 157.
 
@@ -1676,39 +1662,14 @@ Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 3 un
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 168.
 
 
-LaTeX Warning: Reference `fig:ours' on page 3 undefined on input line 171.
-
-
-LaTeX Warning: Reference `fig:ours' on page 3 undefined on input line 179.
-
-
-LaTeX Warning: Reference `fig:comparison' on page 3 undefined on input line 187.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 190.
 
-
-LaTeX Warning: Reference `sec:overview' on page 3 undefined on input line 196.
-
-[3.3]
-
-LaTeX Warning: Reference `sec:without' on page 4 undefined on input line 200.
-
-
-LaTeX Warning: Reference `sec:human' on page 4 undefined on input line 204.
-
-
-LaTeX Warning: Reference `sec:exp' on page 4 undefined on input line 211.
-
-) (./sec/00-background.tex
+[3.3]) (./sec/00-background.tex
 
 Package natbib Warning: Citation `lemarechal2012cauchy' on page 4 undefined on input line 10.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 15.
-
-
-LaTeX Warning: Reference `eqa:loss' on page 4 undefined on input line 20.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 30.
@@ -1729,9 +1690,6 @@ Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 4 un
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 64.
 
 
-LaTeX Warning: Reference `eqa:coreset' on page 4 undefined on input line 68.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 72.
 
 [4.4]
@@ -1739,23 +1697,11 @@ LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
 (Font)              scaled to size 7.3pt on input line 81.
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
 (Font)              scaled to size 5.5pt on input line 81.
-
-
-LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 100.
-
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 104.
-
-LaTeX Warning: Reference `fig:overviewSingle' on page 5 undefined on input line 105.
-
-
-LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 105.
-
 File: figs/coresetExample.pdf Graphic file (type pdf)
 <use figs/coresetExample.pdf>
+
 
 Class acmart Warning: A possible image without description on input line 116.
 
@@ -1763,19 +1709,10 @@ Class acmart Warning: A possible image without description on input line 116.
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 118.
 
 
-LaTeX Warning: Reference `example:singletable' on page 5 undefined on input line 118.
-
-
 Package natbib Warning: Citation `rdusseeun1987clustering' on page 5 undefined on input line 119.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 122.
-
-
-LaTeX Warning: Reference `eqa:coreset' on page 5 undefined on input line 122.
-
-
-LaTeX Warning: Reference `eqa:triangle' on page 5 undefined on input line 122.
 
 
 Package natbib Warning: Citation `hofmann2015variance' on page 5 undefined on input line 122.
@@ -1785,9 +1722,6 @@ Package natbib Warning: Citation `allen2016exploiting' on page 5 undefined on in
 
 
 Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 5 undefined on input line 122.
-
-
-LaTeX Warning: Reference `equation:convex' on page 5 undefined on input line 122.
 
 [5.5]
 
@@ -1843,19 +1777,7 @@ Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 6 un
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 142.
 
 
-LaTeX Warning: Reference `eqa:triangle' on page 6 undefined on input line 150.
-
-
-LaTeX Warning: Reference `equation:convex' on page 6 undefined on input line 150.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 152.
-
-
-LaTeX Warning: Reference `eqa:coreset2' on page 6 undefined on input line 159.
-
-
-LaTeX Warning: Reference `equation:convex' on page 6 undefined on input line 161.
 
 
 Package natbib Warning: Citation `allen2016exploiting' on page 6 undefined on input line 161.
@@ -1867,21 +1789,9 @@ Package natbib Warning: Citation `hofmann2015variance' on page 6 undefined on in
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 169.
 
 
-LaTeX Warning: Reference `sec:exp' on page 6 undefined on input line 173.
-
-
-LaTeX Warning: Reference `subsec:problem' on page 6 undefined on input line 181.
-
-
-LaTeX Warning: Reference `subsec:framework' on page 6 undefined on input line 181.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 190.
 
 [6.6]
-
-LaTeX Warning: Reference `fig:missing' on page 7 undefined on input line 198.
-
 
 LaTeX Font Warning: Font shape `TU/inconsolata(0)/m/it' undefined
 (Font)              using `TU/inconsolata(0)/m/n' instead on input line 198.
@@ -1897,9 +1807,6 @@ File: figs/missExample.pdf Graphic file (type pdf)
 <use figs/missExample.pdf>
 
 Class acmart Warning: A possible image without description on input line 211.
-
-
-LaTeX Warning: Reference `example:incomplete' on page 7 undefined on input line 213.
 
 
 Package natbib Warning: Citation `DBLP:journals/tods/DengFG16' on page 7 undefined on input line 227.
@@ -1918,51 +1825,20 @@ Class acmart Warning: \vspace should only be used to provide space above/below s
 
 [7.7]
 
-LaTeX Warning: Reference `fig:missing' on page 8 undefined on input line 247.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 249.
-
-
-LaTeX Warning: Reference `subset:sigletable' on page 8 undefined on input line 255.
-
-
-LaTeX Warning: Reference `fig:missing' on page 8 undefined on input line 261.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 263.
 
 
-LaTeX Warning: Reference `exam:diffscores' on page 8 undefined on input line 266.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 271.
-
-
-LaTeX Warning: Reference `fig:missing' on page 8 undefined on input line 283.
-
-
-LaTeX Warning: Reference `eqa:expectation' on page 8 undefined on input line 283.
 
 File: figs/Overview.pdf Graphic file (type pdf)
 <use figs/Overview.pdf>
 
 Class acmart Warning: A possible image without description on input line 361.
 
-[8.8]
-
-LaTeX Warning: Reference `eqa:expectation' on page 9 undefined on input line 364.
-
-
-LaTeX Warning: Reference `sec:without' on page 9 undefined on input line 365.
-
-
-LaTeX Warning: Reference `fig:overview' on page 9 undefined on input line 370.
-
-
-LaTeX Warning: Reference `alg:framework' on page 9 undefined on input line 370.
-
-(./sec/algo-craig.tex
+[8.8] (./sec/algo-craig.tex
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
 (Font)              scaled to size 6.0pt on input line 12.
 
@@ -1974,88 +1850,25 @@ Class acmart Warning: A possible image without description on input line 66.
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 376.
 
 
-LaTeX Warning: Reference `craig1:loop1' on page 9 undefined on input line 376.
-
-
-LaTeX Warning: Reference `craig1:add2' on page 9 undefined on input line 376.
-
-
-LaTeX Warning: Reference `fig:overview' on page 9 undefined on input line 378.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 381.
 
 [9.9]
 
-LaTeX Warning: Reference `craig1:loop2' on page 10 undefined on input line 381.
-
-
-LaTeX Warning: Reference `craig1:loop3' on page 10 undefined on input line 381.
-
-
-LaTeX Warning: Reference `craig1:sample' on page 10 undefined on input line 382.
-
-
-LaTeX Warning: Reference `craig1:maxmulti' on page 10 undefined on input line 382.
-
-
 Package natbib Warning: Citation `mirzasoleiman2015lazier' on page 10 undefined on input line 382.
-
-
-LaTeX Warning: Reference `fig:overview' on page 10 undefined on input line 384.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 387.
 
 
-LaTeX Warning: Reference `craig1:loop3' on page 10 undefined on input line 387.
-
-
-LaTeX Warning: Reference `sec:without' on page 10 undefined on input line 387.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 391.
-
-
-LaTeX Warning: Reference `craig1:oracle' on page 10 undefined on input line 391.
-
-
-LaTeX Warning: Reference `sec:intro' on page 10 undefined on input line 391.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 396.
 
 
-LaTeX Warning: Reference `craig1:cc0' on page 10 undefined on input line 396.
-
-
-LaTeX Warning: Reference `craig1:cc' on page 10 undefined on input line 396.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 399.
 
-
-LaTeX Warning: Reference `sec:without' on page 10 undefined on input line 399.
-
-
-LaTeX Warning: Reference `sec:human' on page 10 undefined on input line 399.
-
-
-LaTeX Warning: Reference `exp:sec:end2end' on page 10 undefined on input line 399.
-
 ) (./sec/00-problem.tex) (./sec/00-method.tex
-
-LaTeX Warning: Reference `eqa:expectation' on page 10 undefined on input line 5.
-
-
-LaTeX Warning: Reference `subsec:complexity' on page 10 undefined on input line 5.
-
-
-LaTeX Warning: Reference `subsec:exp' on page 10 undefined on input line 5.
-
-
-LaTeX Warning: Reference `eqa:expectation' on page 10 undefined on input line 9.
-
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 12.
 
@@ -2094,12 +1907,6 @@ Package natbib Warning: Citation `lin2011class' on page 11 undefined on input li
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 31.
 
 
-LaTeX Warning: Reference `alg:framework' on page 11 undefined on input line 34.
-
-
-LaTeX Warning: Reference `subsec:exp' on page 11 undefined on input line 34.
-
-
 Package natbib Warning: Citation `miao2022experimental' on page 11 undefined on input line 40.
 
 
@@ -2111,18 +1918,15 @@ Package natbib Warning: Citation `datawig' on page 11 undefined on input line 43
 
 Package natbib Warning: Citation `datawigpy' on page 11 undefined on input line 43.
 
-
-LaTeX Warning: Reference `fig:missing' on page 11 undefined on input line 76.
-
 File: figs/expectation.pdf Graphic file (type pdf)
 <use figs/expectation.pdf>
 
 Class acmart Warning: A possible image without description on input line 90.
 
-[11.11]
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 96.
 
+[11.11]
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 99.
 
@@ -2132,145 +1936,28 @@ Class acmart Warning: \vspace should only be used to provide space above/below s
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 119.
 
-
-LaTeX Warning: Reference `fig:expectation' on page 12 undefined on input line 125.
-
-
-LaTeX Warning: Reference `fig:expectation' on page 12 undefined on input line 125.
-
-
-LaTeX Warning: Reference `eqa:tuple' on page 12 undefined on input line 125.
-
 [12.12]
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 150.
 
-) (./sec/00-human.tex
-
-LaTeX Warning: Reference `alg:framework' on page 13 undefined on input line 6.
-
-(./sec/algo-one.tex
+) (./sec/00-human.tex (./sec/algo-one.tex
 
 Class acmart Warning: A possible image without description on input line 32.
 
-)
-
-LaTeX Warning: Reference `alg:framework' on page 13 undefined on input line 21.
-
-
-LaTeX Warning: Reference `sec:without' on page 13 undefined on input line 22.
-
-
-LaTeX Warning: Reference `craig1:oracle1' on page 13 undefined on input line 22.
-
-
-LaTeX Warning: Reference `craig1:oracle' on page 13 undefined on input line 22.
-
-
-LaTeX Warning: Reference `craig1:add2' on page 13 undefined on input line 22.
-
-
-LaTeX Warning: Reference `craig1:loop3' on page 13 undefined on input line 27.
-
-
-LaTeX Warning: Reference `alg:framework' on page 13 undefined on input line 27.
-
-[13.13]
-
-LaTeX Warning: Reference `alg:one' on page 14 undefined on input line 32.
-
-
-LaTeX Warning: Reference `one:loop' on page 14 undefined on input line 32.
-
-
-LaTeX Warning: Reference `one:dirtysum' on page 14 undefined on input line 32.
-
-
-LaTeX Warning: Reference `one:expt' on page 14 undefined on input line 32.
-
-
-LaTeX Warning: Reference `subsec:exp' on page 14 undefined on input line 35.
-
-
-LaTeX Warning: Reference `one:clean' on page 14 undefined on input line 35.
-
-
-LaTeX Warning: Reference `one:cleansum' on page 14 undefined on input line 35.
-
-
-LaTeX Warning: Reference `one:enumw' on page 14 undefined on input line 36.
-
-
-LaTeX Warning: Reference `one:exp4pw' on page 14 undefined on input line 36.
-
+) [13.13]
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 39.
-
-
-LaTeX Warning: Reference `alg:one' on page 14 undefined on input line 39.
 
 (./sec/algo-batch.tex
 
 Class acmart Warning: A possible image without description on input line 53.
 
-)
-
-LaTeX Warning: Reference `subsec:one' on page 14 undefined on input line 53.
-
-
-LaTeX Warning: Reference `subsec:exp' on page 14 undefined on input line 53.
-
-
-LaTeX Warning: Reference `alg:batch' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `subsec:one' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `alg:batch' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `alg:batch' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `batch:addcoreset' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `batch:batchenough' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `batch:batchzero' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `batch:weight' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `batch:loop3' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `alg:framework' on page 14 undefined on input line 55.
-
-[14.14]
+) [14.14]
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 57.
 
 
 Package natbib Warning: Citation `miao2022experimental' on page 15 undefined on input line 58.
-
-
-LaTeX Warning: Reference `sec:without' on page 15 undefined on input line 59.
-
-
-LaTeX Warning: Reference `exp:sec:batchalgo' on page 15 undefined on input line 59.
 
 ) (./sec/00-convrate.tex
 
@@ -2278,9 +1965,6 @@ Class acmart Warning: \vspace should only be used to provide space above/below s
 
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 10.
-
-
-LaTeX Warning: Reference `eq:convex' on page 15 undefined on input line 19.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 21.
@@ -2305,12 +1989,6 @@ Class acmart Warning: \vspace should only be used to provide space above/below s
 LaTeX Font Warning: Command \small invalid in math mode on input line 60.
 
 
-LaTeX Warning: Reference `eq:afterig' on page 16 undefined on input line 69.
-
-
-LaTeX Warning: Reference `eq:item2' on page 16 undefined on input line 69.
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 71.
 
 
@@ -2318,9 +1996,6 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 73.
 
 
 Package natbib Warning: Citation `chung1954stochastic' on page 16 undefined on input line 81.
-
-
-LaTeX Warning: Reference `alg:framework' on page 16 undefined on input line 81.
 
 
 Package natbib Warning: Citation `nedic2001convergence' on page 16 undefined on input line 81.
@@ -2349,9 +2024,6 @@ Package natbib Warning: Citation `DBLP:journals/pvldb/KrishnanWWFG16' on page 16
 
 
 Package natbib Warning: Citation `DBLP:journals/pvldb/KarlasLWGC0020' on page 16 undefined on input line 4.
-
-
-LaTeX Warning: Reference `tbl:dataset' on page 16 undefined on input line 4.
 
 
 Package natbib Warning: Citation `nursery' on page 16 undefined on input line 10.
@@ -2406,9 +2078,6 @@ Package natbib Warning: Citation `DBLP:conf/icml/YoonJS18' on page 17 undefined 
 Package natbib Warning: Citation `DBLP:conf/mlsys/WuZIR20' on page 17 undefined on input line 19.
 
 
-LaTeX Warning: Reference `exp:sec:sensitivity' on page 17 undefined on input line 19.
-
-
 Package natbib Warning: Citation `DBLP:journals/pvldb/KrishnanWWFG16' on page 17 undefined on input line 47.
 
 
@@ -2439,18 +2108,6 @@ Package natbib Warning: Citation `DBLP:conf/icml/MirzasoleimanBL20' on page 18 u
 
 Package natbib Warning: Citation `royston2011multiple' on page 18 undefined on input line 72.
 
-
-LaTeX Warning: Reference `subsec:batch' on page 18 undefined on input line 80.
-
-
-LaTeX Warning: Reference `exp:sec:batchalgo' on page 18 undefined on input line 80.
-
-
-LaTeX Warning: Reference `exp:sec:sensitivity' on page 18 undefined on input line 97.
-
-
-LaTeX Warning: Reference `exp:sec:sensitivity' on page 18 undefined on input line 97.
-
 )
 File: figs/e2e.pdf Graphic file (type pdf)
 <use figs/e2e.pdf>
@@ -2467,20 +2124,12 @@ File: figs/vary_l_efficiency.pdf Graphic file (type pdf)
 
 Class acmart Warning: A possible image without description on input line 112.
 
-(./sec/exp-02-baselines.tex
-
-LaTeX Warning: Reference `exp:sec:end2end' on page 18 undefined on input line 35.
-
-[18.18]
+(./sec/exp-02-baselines.tex [18.18]
 LaTeX Font Info:    Font shape `TU/LinBiolinum(0)/m/it' will be
 (Font)              scaled to size 10.0pt on input line 54.
 
-
-LaTeX Warning: Reference `fig:effectiveness' on page 19 undefined on input line 54.
-
-
-Underfull \hbox (badness 4531) in paragraph at lines 54--56
- \TU/LinBiolinum(0)/m/it/10 6.2.1 Evaluation of model accuracy.[] \TU/LinLibertine(0)/m/n/10 The results are provided in Figure []. To summa-
+Underfull \hbox (badness 5607) in paragraph at lines 54--56
+ \TU/LinBiolinum(0)/m/it/10 6.2.1 Evaluation of model accuracy.[] \TU/LinLibertine(0)/m/n/10 The results are provided in Figure []8[]. To summa-
  []
 
 
@@ -2489,35 +2138,13 @@ Underfull \hbox (badness 1728) in paragraph at lines 54--56
  []
 
 
-LaTeX Warning: Reference `sec:exp:efficiency' on page 19 undefined on input line 58.
-
-
-LaTeX Warning: Reference `fig:efficiency' on page 19 undefined on input line 71.
-
-
-Underfull \hbox (badness 4168) in paragraph at lines 71--73
-\TU/LinLibertine(0)/b/n/10 Machine cost. \TU/LinLibertine(0)/m/n/10 Machine cost is shown in Figure []. The results could be ranked as
+Underfull \hbox (badness 4954) in paragraph at lines 71--73
+\TU/LinLibertine(0)/b/n/10 Machine cost. \TU/LinLibertine(0)/m/n/10 Machine cost is shown in Figure []9[]. The results could be ranked as
  []
 
-[19.19]
-
-LaTeX Warning: Reference `tbl:humancost' on page 20 undefined on input line 75.
-
-
-LaTeX Warning: Reference `tbl:humancost' on page 20 undefined on input line 84.
-
-) (./sec/exp-03-end2end.tex
+[19.19]) (./sec/exp-03-end2end.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 2.
-
-
-LaTeX Warning: Reference `fig:e2e' on page 20 undefined on input line 14.
-
-
-LaTeX Warning: Reference `exp:sec:overall' on page 20 undefined on input line 16.
-
-
-LaTeX Warning: Reference `fig:e2e' on page 20 undefined on input line 21.
 
 [20.20])
 File: figs/converge.pdf Graphic file (type pdf)
@@ -2548,75 +2175,15 @@ File: figs/missingrate_real.pdf Graphic file (type pdf)
 
 Class acmart Warning: A possible image without description on input line 215.
 
-(./sec/exp-04-batchalg.tex
-
-LaTeX Warning: Reference `exp:sec:overall' on page 21 undefined on input line 6.
-
-
-LaTeX Warning: Reference `alg:batch' on page 21 undefined on input line 6.
-
-
-LaTeX Warning: Reference `subsec:batch' on page 21 undefined on input line 8.
-
-
-LaTeX Warning: Reference `fig:batchalg' on page 21 undefined on input line 10.
-
-
-LaTeX Warning: Reference `alg:batch' on page 21 undefined on input line 10.
-
-[21.21]
-
-LaTeX Warning: Reference `fig:vary_l_effect' on page 22 undefined on input line 13.
-
-
-LaTeX Warning: Reference `fig:vary_l_efficient' on page 22 undefined on input line 13.
-
-
-LaTeX Warning: Reference `tbl:pwnum' on page 22 undefined on input line 15.
-
-) (./sec/exp-05-converge.tex
+(./sec/exp-04-batchalg.tex [21.21]) (./sec/exp-05-converge.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 2.
-
-
-LaTeX Warning: Reference `sec:proof' on page 22 undefined on input line 5.
-
-
-LaTeX Warning: Reference `fig:converge' on page 22 undefined on input line 5.
-
-
-LaTeX Warning: Reference `sec:proof' on page 22 undefined on input line 6.
-
-
-LaTeX Warning: Reference `fig:real_loss' on page 22 undefined on input line 11.
 
 ) (./sec/exp-06-sensitive.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 2.
 
-[22.22]
-
-LaTeX Warning: Reference `fig:samplesize' on page 23 undefined on input line 6.
-
-
-LaTeX Warning: Reference `fig:downmodel' on page 23 undefined on input line 10.
-
-
-LaTeX Warning: Reference `fig:downmodel' on page 23 undefined on input line 11.
-
-
-LaTeX Warning: Reference `fig:downmodel' on page 23 undefined on input line 11.
-
-
-LaTeX Warning: Reference `fig:vary_misstuple_all' on page 23 undefined on input line 19.
-
-
-LaTeX Warning: Reference `fig:realmissrate' on page 23 undefined on input line 23.
-
-
-LaTeX Warning: Reference `fig:vary_misstuple_all' on page 23 undefined on input line 23.
-
-)) (./sec/related.tex
+[22.22])) (./sec/related.tex
 
 Package natbib Warning: Citation `DBLP:journals/tsmc/FarhangfarKP07' on page 23 undefined on input line 6.
 
@@ -2674,9 +2241,6 @@ Package natbib Warning: Citation `DBLP:conf/nips/MirzasoleimanCL20' on page 23 u
 
 Package natbib Warning: Citation `DBLP:conf/emnlp/KirchhoffB14' on page 23 undefined on input line 12.
 
-
-LaTeX Warning: Reference `subset:sigletable' on page 23 undefined on input line 12.
-
 [23.23]
 
 Package natbib Warning: Citation `DBLP:journals/debu/KrishnanWFGKM015' on page 24 undefined on input line 18.
@@ -2689,9 +2253,6 @@ Package natbib Warning: Citation `DBLP:journals/corr/abs-1711-01299' on page 24 
 
 
 Package natbib Warning: Citation `DBLP:journals/pvldb/KrishnanWWFG16' on page 24 undefined on input line 24.
-
-
-LaTeX Warning: Reference `sec:exp' on page 24 undefined on input line 26.
 
 
 Package natbib Warning: Citation `chai2020crowdchart' on page 24 undefined on input line 35.
@@ -2745,7 +2306,6 @@ Package natbib Warning: Citation `qin2020interactively' on page 24 undefined on 
 Package natbib Warning: Citation `qin2021ranking' on page 24 undefined on input line 35.
 
 ) (./sec/00-conclusion.tex) [24.24]
-No file main.bbl.
 
 Package natbib Warning: There were undefined citations.
 
@@ -2755,13 +2315,13 @@ Class acmart Warning: Some images may lack descriptions.
 
 Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 113.
 
-[25.25
-
-] (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+(/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
-) [26.25] (./main.aux)
+) [25.25
+
+] (./main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.45pt have occurred.
@@ -2769,25 +2329,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1672631F7C8BEB6289AB9B3E6A3A5F30;4601.
  ) 
 Here is how much of TeX's memory you used:
- 48681 strings out of 476683
- 978788 string characters out of 5804047
- 1908018 words of memory out of 5000000
- 67843 multiletter control sequences out of 15000+600000
+ 48680 strings out of 476683
+ 978774 string characters out of 5804047
+ 1907018 words of memory out of 5000000
+ 67841 multiletter control sequences out of 15000+600000
  587087 words of font info for 248 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 102i,21n,131p,1493b,32911s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,21n,131p,1493b,32977s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (26 pages).
+Output written on main.pdf (25 pages).
