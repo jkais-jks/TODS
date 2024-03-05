@@ -1,0 +1,42 @@
+%!TEX root = ../main.tex
+
+
+\section{Group-based Acceleration}
+
+As discussed above, we can observe that in Section~\ref{subsec:one}, even with the most efficient imputation-in-the-loop  strategy, \ie  one tuple in  each iteration, the time complexity is  $O(KhnL^2)$, where $K$ is the size of the coreset, $h$ is the sample size, $L$ is a small constant and $n$ is the number of entire dataset. Therefore, obviously, the efficiency is dominated by $n$, which is still low when $n$ is large, and thus it  is necessary to further accelerate this process.
+
+\noindent \textbf{Key observation.}   Recap that in Figure~\ref{fig:overviewSingle}, we can observe that  given a tuple $c$ in the coreset, the tuples in the origin full train set $\trainc$ represented by $c$ are likely to be  closer to each other than other tuples not represented by $c$.
+Based on this observation, we propose to first cluster the full train set into groups, and then compute the coreset based on these groups. This can achieve much acceleration because the number of groups is much smaller than $n$. 
+
+At the following, we will theoretically and empirically show the groups-based solution can accelerate the coreset selection process without sacrificing the effectiveness much.
+
+%the acceleration can be achieved by clustering the 
+
+\subsection{Group-based Solution Overview}
+
+
+As shown in Figure~\ref{}, one of the core parts of coreset computation is to compute the tuple-tuple distance, \ie $s_{ij}$. For the group-based solution, we just need to consider the relationship between tuples and these pre-computed groups, namely tuple-group distance, rather than the large amount of tuple-tuple distances. As we will discuss below, the computation of tuple-group distance does not need to iterate all tuples in the group, and thus  the overall efficiency can be much improved. 
+
+At a high level, the overall process of group-based solution is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without clustering (the modified parts are highlighted in blue fonts).
+
+To be specific, 
+
+
+\input{sec/algo-cluster}
+
+
+
+
+\subsection{Group-based GA Error Bound}
+
+
+\subsection{Algorithm}
+
+
+\subsubsection{Pre-processing}
+
+
+\subsubsection{Computing the upper bound}
+
+
+

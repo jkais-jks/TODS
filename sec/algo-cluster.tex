@@ -1,0 +1,80 @@
+%!TEX root = ../main.tex
+
+\begin{figure}[!t]
+ \vspace{-1em}
+	\begin{algorithm}[H]
+		\normalem
+	\caption{Group-based Overall Solution (imputation-in-the-loop) \label{alg:group}}
+		{\small
+			
+		\KwIn{Incomplete train data $\train$, coreset size $\numcore$, sample size $h$.}
+		
+		\KwOut{A coreset $\core \subseteq \train$, weight $\weightset=\{w_j\}$,$|\core|=|\weightset|=\numcore$.}
+		
+		$C=\emptyset$;\\\nllabel{alg1:init1}
+		
+		\add{Cluster $\train$ into groups $\groups = \{ \group_1, \group_2, ..., \group_\groupsize \}$.}
+		
+		\While{$|\core|< \numcore$}
+		{\nllabel{craig1:loop1}
+			
+		/*1st loop*/  \\
+		
+		Sample $h$ tuples as $T_{sample} \subseteq \train \setminus \core$\\\nllabel{craig1:sample}
+		
+			\For{each tuple $t \in T_{sample}$}  
+			{\nllabel{craig1:loop2}
+				
+				/*2nd loop*/ \\
+				 $\hat{\core} = \core \cup \{t\}$;\\
+			%	}
+			 %$\mathrm{E}[t|\core]=\texttt{ComputeUtility}(t, C,D)$;
+				 %/*3rd loop*/  \\\nllabel{craig1:loop3}
+				 \For{\add{each group $G_k \in \groups$}}  
+				 {
+				 	\add{/*3rd loop*/} \\
+				 
+				 	%	Get the possible worlds of $\hat{\core} \cup \{t_i\}$;\\\nllabel{one:enumw}
+				 	%	Compute $\mathrm{E}[\min_{c_j\in \hat{\core}}s_{ij}]$ using these possible worlds and their probabilities;\\\nllabel{one:exp4pw}
+				 		\add{$\mathrm{E}[\hat{\core}] +\!\!= \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_k|]$, where $\bound_{jk}$ is the upper bound of} \\\quad \add{$\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_k} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$; }\\\nllabel{one:dirtysum}
+			     }
+		         \add{$\mathrm{E}[t|\core] = \mathrm{E}[\core] - \mathrm{E}[\hat{\core}];$}
+				 
+			}		
+
+			$t^*$ = $\argmax_{t\in T_{sample}}\mathrm{E}[t|\core]$ ;\\\nllabel{craig1:maxmulti}
+			\If{$\mathbb{I}[t^*] = 1$} {\nllabel{craig1:oracle1}
+				        Impute $t$ by a  human or automatic method.\\\nllabel{craig1:oracle}
+				    }
+			$\core = \core \cup \{t^*\}$;
+			\\\nllabel{craig1:add2} 
+			
+				%\If{$\mathbb{I}[t^*] = 1$}
+		%	{ \nllabel{alg:if}
+		%		 \cc{Impute $t^*$ (by human or automatic methods).}\\\nllabel{alg:oracle}
+		%	
+			%}					
+		}
+	 %   \For{ $t\in \core$} 
+	  %  {\nllabel{craig1:goodcore1}
+	 %      \If{$\mathbb{I}[t] = 1$} {\nllabel{craig1:oracle1}
+	 %        Impute $t$ by a  human or automatic method.\\\nllabel{craig1:oracle}
+      %       }
+     %   }
+    
+	 	\For{$j = 1$ to $|\core|$} 
+	 	{\nllabel{craig1:cc0}
+	 		%$w_j = \sum_{i=1}^{n}\mathbb{I}'[j=\argmin_{c_{j'}\in\core}  %\max\limits_{\hypo\in\vartheta}\lVert \df_i(\hypo) - \df_{\gamma(j')}(\hypo) \rVert ]$;\\\nllabel{craig1:cc}
+	 		\For{$i = 1$ to n}
+	 		{
+	 		  \If{$c_j=\argmin_{c_{j'}\in\core}\max\limits_{\hypo\in\vartheta}\lVert \df_i(\hypo) - \df_{\gamma(j')}(\hypo) \rVert$}
+	 		  {
+	 		  	$w_j~+\!=~1$;\\\nllabel{craig1:cc}
+	 		  }
+ 		    }
+	 		
+	 	}
+		\Return $\core,\weightset$;\\\nllabel{craig1:return}
+		}
+	\end{algorithm}
+\end{figure}
