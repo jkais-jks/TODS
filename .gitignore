@@ -1,3 +1,16 @@
 .DS_Store
 */.DS_Store
 
+*.aux
+*.log
+*.out
+main.pdf
+main.out
+main.log
+main.blg
+main.bbl
+main.aux
+main.log
+main.synctex.gz
+main.aux
+*.log
