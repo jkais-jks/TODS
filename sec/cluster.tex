@@ -17,10 +17,14 @@ At the following, we will theoretically and empirically show the groups-based so
 
 As shown in Figure~\ref{}, one of the core parts of coreset computation is to compute the tuple-tuple distance, \ie $s_{ij}$. For the group-based solution, we just need to consider the relationship between tuples and these pre-computed groups, namely tuple-group distance, rather than the large amount of tuple-tuple distances. As we will discuss below, the computation of tuple-group distance does not need to iterate all tuples in the group, and thus  the overall efficiency can be much improved. 
 
-At a high level, the overall process of group-based solution is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without clustering (the modified parts are highlighted in blue fonts).
+At a high level, the overall process of group-based \ours solution with imputation in the loop is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without clustering (the modified parts are highlighted in blue fonts).
 
-To be specific, 
-
+To be specific, as shown in Line~\ref{alg4:cluster}, we first cluster $\trainc$ into groups using the efficient local sensitive hash (LSH) approach, where each group $\group_k, k\in[1, \groups]$ denotes the indexes of tuples in $\trainc$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
+%
+ Afterwards, the major difference between group-based \ours and original \ours lies in the 3rd loop. Instead of  selecting a coreset to represent all tuples in the train set, group-based \ours selects a coreset to represent all clusters. As these clusters can well capture the train set distribution, the selected coreset contains enough information to approximate the full gradient of $\trainc$. 
+ 
+ To this end, recap that the typical coreset selection algorithm needs the tuple-tuple distances to approximate the full gradient, while in group-based \ours, we just need to consider the tuple-group distances, \ie  
+$\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_k} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$, which denotes the maximum feature distance between the tuple $c_j$ in the coreset and all tuples in $\group_k$. As tuples in $\group_k$ are close to each other, $\overline{s}_{\gamma(j)k}$ can represent the relationship between $c_j$ and tuples in $\group_k$ to a large extent. But as shown in Line~\ref{alg4:bound}, we finally use an upper bound $\bound_{jk}$ to compute the coreset score because computing $\overline{s}_{\gamma(j)k}$ needs to iterate the tuples in $\group_k$, which is time-consuming. Next, we will theoretically show that using the upper bound can still derive a bounded GA error, leading to a well-performed coreset. 
 
 \input{sec/algo-cluster}
 
