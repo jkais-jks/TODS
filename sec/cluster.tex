@@ -14,8 +14,16 @@ At the following, we will theoretically and empirically show the groups-based so
 
 \subsection{Group-based Solution Overview}
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/Overview-gb}
+   % \vspace{-2.5em}
+    \caption{An Overview of Coreset computation.}
+    \label{fig:overview-gb}
+   % \vspace{-1.5em}
+\end{figure}
 
-As shown in Figure~\ref{}, one of the core parts of coreset computation is to compute the tuple-tuple distance, \ie $s_{ij}$. For the group-based solution, we just need to consider the relationship between tuples and these pre-computed groups, namely tuple-group distance, rather than the large amount of tuple-tuple distances. As we will discuss below, the computation of tuple-group distance does not need to iterate all tuples in the group, and thus  the overall efficiency can be much improved. 
+As shown in Figure~\ref{overview-gb}, one of the core parts of coreset computation is to compute the tuple-tuple distance, \ie $s_{ij}$. For the group-based solution, we just need to consider the relationship between tuples and these pre-computed groups, namely tuple-group distance, rather than the large amount of tuple-tuple distances. As we will discuss below, the computation of tuple-group distance does not need to iterate all tuples in the group, and thus  the overall efficiency can be much improved. 
 
 At a high level, the overall process of group-based \ours solution with imputation in the loop is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without clustering (the modified parts are highlighted in blue fonts).
 
