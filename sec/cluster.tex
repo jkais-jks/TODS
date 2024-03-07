@@ -48,7 +48,7 @@ In this section, following the equations in previous sections, we deduce the GA 
 	& \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
     & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
     &  \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
-    & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk})
+    & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups} \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_u|]
     \end{aligned}
 \end{equation}
 
