@@ -27,12 +27,12 @@ As shown in Figure~\ref{overview-gb}, one of the core parts of coreset computati
 
 At a high level, the overall process of group-based \ours solution with imputation in the loop is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without clustering (the modified parts are highlighted in blue fonts).
 
-To be specific, as shown in Line~\ref{alg4:cluster}, we first cluster $\trainc$ into groups using the efficient local sensitive hash (LSH) approach, where each group $\group_k, k\in[1, \groups]$ denotes the indexes of tuples in $\trainc$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
+To be specific, as shown in Line~\ref{alg4:cluster}, we first cluster $\trainc$ into groups using the efficient local sensitive hash (LSH) approach, where each group $\group_u, u\in[1, \groups]$ denotes the indexes of tuples in $\trainc$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
 %
  Afterwards, the major difference between group-based \ours and original \ours lies in the 3rd loop. Instead of  selecting a coreset to represent all tuples in the train set, group-based \ours selects a coreset to represent all clusters. As these clusters can well capture the train set distribution, the selected coreset contains enough information to approximate the full gradient of $\trainc$. 
  
  To this end, recap that the typical coreset selection algorithm needs the tuple-tuple distances to approximate the full gradient, while in group-based \ours, we just need to consider the tuple-group distances, \ie  
-$\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_k} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$, which denotes the maximum feature distance between the tuple $c_j$ in the coreset and all tuples in $\group_k$. As tuples in $\group_k$ are close to each other, $\overline{s}_{\gamma(j)k}$ can represent the relationship between $c_j$ and tuples in $\group_k$ to a large extent. But as shown in Line~\ref{alg4:bound}, we finally use an upper bound $\bound_{jk}$ to compute the coreset score because computing $\overline{s}_{\gamma(j)k}$ needs to iterate the tuples in $\group_k$, which is time-consuming. Next, we will theoretically show that using the upper bound can still derive a bounded GA error, leading to a well-performed coreset. 
+$\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$, which denotes the maximum feature distance between the tuple $c_j$ in the coreset and all tuples in $\group_u$. As tuples in $\group_u$ are close to each other, $\overline{s}_{\gamma(j)k}$ can represent the relationship between $c_j$ and tuples in $\group_u$ to a large extent. But as shown in Line~\ref{alg4:bound}, we finally use an upper bound $\bound_{jk}$ to compute the coreset score because computing $\overline{s}_{\gamma(j)k}$ needs to iterate the tuples in $\group_u$, which is time-consuming. Next, we will theoretically show that using the upper bound can still derive a bounded GA error, leading to a well-performed coreset. 
 
 \input{sec/algo-cluster}
 
@@ -41,7 +41,18 @@ $\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_k} s_{\gamma(j)v}, s_{\ga
 
 \subsection{Group-based GA Error Bound}
 
-In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. 
+In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. After clustering $\trainc$ to $\{ \group_1 , \group_2, ...\group_u\}$, we have:
+\vspace{-0.5em}
+\begin{equation}\label{eqa:cluster}
+    \begin{aligned}
+	& \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
+    & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
+    &  \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
+    & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk})
+    \end{aligned}
+\end{equation}
+
+In Eq. ~\ref{eqa:cluster}, given these cluster, we can first rewrite the sum of N feature distances (i.e., $\min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to the sum of \groups summations, each of which is the sum of $|\group_u|$ such distances. Second, for each cluster, the sum can be bounded by the cluster size multiplying the maximum distance ($\max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$) in the cluster. However, computing this bound is also expensive. To overcome this, third, we use the max-min inequality ~ref{} to simplify calculations. As show in Section ~\ref{}, we have the last inequlity in In Eq. ~\ref{eqa:cluster}
 
 
 \subsection{Algorithm Details}
