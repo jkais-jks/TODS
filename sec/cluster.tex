@@ -62,9 +62,7 @@ Afterwards, as shown in Equation~\ref{eqa:cluster-2},  the sum of each cluster c
 
 
 
-Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)v} = \Vert\mathbf{x}_v - \mathbf{x}_{\gamma(j)} \Vert, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, i.e., $\min_{c_j\in C_k} s_{\gamma(j)v}$.
- 
-To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)k}|j \in [1,N], k \in [1,\groups]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)k}$. However, the time complexity() is so expensive, so we use efficiently compute an upper bound $b_{jk}$ of  $\overline{s}_{\gamma(j)k}$ to replace $\overline{s}_{\gamma(j)k}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
+Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)v} = \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)v}$. To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)k}|j \in [1,N], k \in [1,\groups]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)k}$. However, as discussed above, computing $\overline{s}_{\gamma(j)k}$ needs to visit every tuple in a cluster, which is still inefficient, so we  efficiently compute an upper bound $b_{jk}$ of  $\overline{s}_{\gamma(j)k}$ to replace $\overline{s}_{\gamma(j)k}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
 \vspace{-0.5em}
 \begin{equation}\label{eqa:cluster-3}
     \begin{aligned}
@@ -72,7 +70,7 @@ To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, w
     \end{aligned}
 \end{equation}
 
-As shown in Sec~\ref{subsec:exp}, intuitively computing the probability and getting the expectation is so expensive that we can convert the expectation computation over the possible worlds of the entiretraining set $\trainc$ to the sum of expectation of each tuple in $\trainc$, as follows:
+Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting the expectation is extremely expensive, and thus we still can convert the expectation computation over the possible worlds associated with all clusters to the sum of expectation of each cluster, as follows:
 \vspace{-0.5em}
 \begin{equation}\label{eqa:cluster-4}
     \begin{aligned}
