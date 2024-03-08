@@ -43,17 +43,33 @@ $\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\ga
 
 In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. After clustering $\trainc$ to $\{ \group_1 , \group_2, ...\group_u\}$, we have:
 \vspace{-0.5em}
-\begin{equation}\label{eqa:cluster}
+\begin{equation}\label{eqa:cluster-1}
     \begin{aligned}
 	& \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
     & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
-    &  \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
-    & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups} \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_u|]
+    &  \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert)
     \end{aligned}
 \end{equation}
 
-In Eq. ~\ref{eqa:cluster}, given these cluster, we can first rewrite the sum of N feature distances (i.e., $\min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to the sum of \groups summations, each of which is the sum of $|\group_u|$ such distances. Second, for each cluster, the sum can be bounded by the cluster size multiplying the maximum distance ($\max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$) in the cluster. However, computing this bound is also expensive. To overcome this, third, we use the max-min inequality ~\ref{} to simplify calculations. As show in Section ~\ref{}, we have the last inequlity in In Eq. ~\ref{eqa:cluster}
+In Eq.~\ref{eqa:cluster-1}, given these cluster, we can first rewrite the sum of N feature distances (i.e., $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to the sum of \groups summations, each of which is the sum of $|\group_u|$ such distances. Second, for each cluster, the sum can be bounded by the cluster size multiplying the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$) in the cluster. However, computing this bound is also expensive. To overcome this, third, we use the max-min inequality ~\ref{} to simplify calculations. 
 
+In this way, instead of iterating $\trainc$, we can iterate the much smaller $\group$ to derive the maximum feature distance(i.e., $s_{\gamma(j)v} = \Vert\mathbf{x}_v - \mathbf{x}_{\gamma(j)} \Vert, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then we can assign the cluster $\group_u$ to the tuple with the minumum distance, i.e., $\min_{c_j\in C_k} s_{\gamma(j)v}$.
+ 
+To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)k}|j \in [1,N], k \in [1,\groups]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)k}$. However, the time complexity() is so expensive, so we use efficiently compute an upper bound $b_{jk}$ of  $\overline{s}_{\gamma(j)k}$ to replace $\overline{s}_{\gamma(j)k}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
+\vspace{-0.5em}
+\begin{equation}\label{eqa:cluster-2}
+    \begin{aligned}
+    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk})
+    \end{aligned}
+\end{equation}
+
+As shown in Sec~\ref{subsec:exp}, intuitively computing the probability and getting the expectation is so expensive that we can convert the expectation computation over the possible worlds of the entiretraining set $\trainc$ to the sum of expectation of each tuple in $\trainc$, as follows:
+\vspace{-0.5em}
+\begin{equation}\label{eqa:cluster-3}
+    \begin{aligned}
+    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups} \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_u|]
+    \end{aligned}
+\end{equation}
 
 \subsection{Algorithm Details}
 
