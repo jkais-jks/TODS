@@ -43,30 +43,37 @@ $\overline{s}_{\gamma(j)k} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\ga
 
 In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. 
 %
-After clustering $\trainc$ to $\{ \group_1 , \group_2, ...\group_u\}$, considering Equation~\ref{eqa:tuple}, we  first rewrite the sum of $n$ feature distances (\ie, $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to   $|\groups|$ summations. Each summation is the sum of $|\group_u|$ feature distances, as shown in the following Equation:
+After clustering $\trainc$ to $\{ \group_1 , \group_2, ...\group_u\}$, considering Equation~\ref{eqa:tuple}, we  first rewrite the sum of $n$ feature distances (\ie $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to   $|\groups|$ summations. Each summation is the sum of $|\group_u|$ feature distances, as shown in the following Equation:
 \vspace{-0.5em}
 \begin{equation}\label{eqa:cluster-1}
  \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert)
 \end{equation}
 
-Afterwards, as shown in Equation~\ref{eqa:cluster-2},  the sum of each cluster can be bounded by  the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$)  multiplying the  cluster size, but the bound is expensive to compute because of iterating $\train$. To address this, we further apply the max-min inequality~\cite{} to simplify the computations. 
+Afterwards, as shown in Equation~\ref{eqa:cluster-2},  the sum of each cluster can be bounded by  the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$)  multiplying the  cluster size, but the bound is expensive to compute because of iterating $\trainc$. To address this, we further apply the max-min inequality~\cite{} to simplify the computations. 
 
 
 \begin{equation}\label{eqa:cluster-2}
 \begin{aligned}
+<<<<<<< HEAD
+&  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
+& \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
+&  \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
+& =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)v})
+=======
   \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} &\min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) 
  \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \\
  & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert)
+>>>>>>> 24f8f599829e50d52804de6e3863631109c36630
 \end{aligned}
 \end{equation}
 
 
 
-Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)v} = \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)v}$. To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)k}|j \in [1,N], k \in [1,\groups]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)k}$. However, as discussed above, computing $\overline{s}_{\gamma(j)k}$ needs to visit every tuple in a cluster, which is still inefficient, so we  efficiently compute an upper bound $b_{jk}$ of  $\overline{s}_{\gamma(j)k}$ to replace $\overline{s}_{\gamma(j)k}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
+Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)k} = \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)v}$. To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)k}|j \in [1,N], k \in [1,\groups]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)k}$. However, as discussed above, computing $\overline{s}_{\gamma(j)k}$ needs to visit every tuple in a cluster, which is still inefficient, so we  efficiently compute an upper bound $b_{jk}$ of  $\overline{s}_{\gamma(j)k}$ to replace $\overline{s}_{\gamma(j)k}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
 \vspace{-0.5em}
 \begin{equation}\label{eqa:cluster-3}
     \begin{aligned}
-    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk})
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)k}) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk})
     \end{aligned}
 \end{equation}
 
@@ -74,7 +81,7 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 \vspace{-0.5em}
 \begin{equation}\label{eqa:cluster-4}
     \begin{aligned}
-    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups} \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_u|]
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups} \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_u|]
     \end{aligned}
 \end{equation}
 
@@ -95,7 +102,7 @@ Then we respectively compute the upper bound of the maximum distance between $a$
 
 \begin{equation}\label{eqa:cluster-5}
     \begin{aligned}
-    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \leq    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}^a_v - \mathbf{x}^a_{\gamma(j)}\rVert)
+    \sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} s_{\gamma(j)k} \leq\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} s^a_{\gamma(j)v}
     \end{aligned}
 \end{equation}
 
