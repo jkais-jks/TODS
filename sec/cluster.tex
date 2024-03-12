@@ -82,9 +82,28 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 
 
 \subsubsection{Pre-processing}
-
+\label{subsec:clustering}
+To cluster $\train$ efficiently,  we use the local sensitive hashing~\cite{} (LSH) to efficiently hash similar tuples to the same group.The basic idea  is to hash $\trainc$ with $r$ random hyperplanes $\{\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_r\}$ in the  $m$-dimensional space.Each hyperplane divides the entire space into two half subspaces, and LSH just hashes the  items according to which subspace they fall in. Specifically, for  hyperplane $\mathbf{h}_w, u\in[1,p]$, LSH hashes tuple $t_i\in \trainc$ to hash value 1 if $\mathbf{h}_w \cdot \mathbf{x}_i> 0$, and 0 otherwise.
+In this way, each $t_i$ is hashed into a $p$-bit 0-1 hash code by $p$ hyperplanes.
+Since the items with the same hash code are highly similar, we take them as a cluster.
+Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
 
 \subsubsection{Computing the upper bound}
+
+Given an item $t_i\in \trainc$ and a cluster $\group_u \in \mathcal{G}$, recap that it is too expensive to  compute $\overline{s}_{\gamma(j)k}$, so we compute an upper bound $b_{jk}$. Next, we propose PQ-based solution to address this, which rely on the key idea that splits the $m$ dimension feature space into $M$ low dimensional subspaces. The feature vector $\mathbf{x}_i$ of  $t_i$ is also splitted into $M$ subvectors, each of which is denoted by $\mathbf{x}^a_i$. 
+Then we respectively compute the upper bound of the maximum distance between $a$-th subvector and vectors of $m$-th feature subspace in $\group_u$, $a\in [1,M]$, and sum them up, producing the upper bound $b_{jk}$ between $t_i$ and $\group_u$. Formally, following Eq. ~\ref{eqa:cluster-3}, we have:
+
+\begin{equation}\label{eqa:cluster-5}
+    \begin{aligned}
+    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert) \leq    \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u} \lVert\mathbf{x}^a_v - \mathbf{x}^a_{\gamma(j)}\rVert)
+    \end{aligned}
+\end{equation}
+
+\noindent we use $s^a_{\gamma(j)v} = \max\limits_{v \in \group_u}\lVert \mathbf{x}^a_v - \mathbf{x}^a_{\gamma(j)}\rVert$ to denote the aforementioned maximum feature distance \wrt the $l$-th subspace. We can take $b_{\gamma(j)v}$ as $\sum_{a=1}^{M} s^a_{\gamma(j)v}$. To compute $b_{\gamma(j)v}$, next, we  discuss how to efficiently compute  $s^a_{iv}, i\in [1,N]$.
+
+We first  introduce the basic concept of PQ widely used in the era of approximate nearest neighbor (ANN) search, which also uses the idea of  decomposing the entire feature space to a Cartesian product of subspaces with low dimensions~\cite{}. Each subspace is quantized separately. Hence, a feature vector can be represented as a short code, and the $a$-th element of the code denotes the  quantization index of the $a$-th subspace of the vector. Finally, in ANN search,  the Euclidean distance between two items can be efficiently estimated from their codes. Next, we will see how to leverage PQ to address our problem.
+
+As shown  in Figure~\ref{}, given the full train data $\trainc$ with $m=$, suppose that we divide it into $M=$ subspaces, each of which has 2 dimensions (the upper left part of Figure~\ref{}).  For each subspace, we can sample some tuples and run $k-$means algorithm~\cite{} over this subspace. Suppose that $B$ denotes the number of clusters produced by $k-$means, so in Figure~\ref{}, $\{b_1^1, b_1^2,..., b_1^B\}$ denote the $k-$means cluster centers in the first subspace, associated with indexes (codes) $\{1, 2,...,B\}$. Then, a codebook $cb_1$ is computed, which records the feature distance between each pair of cluster centers, and we have $M$ codebooks in total (the lower left part of Figure~\ref{}). We use $cb_1[x][y]$ to denote the distance between the $x$-th and $y$-th centers. In this way, any $t_i (\mathbf{x}_i) \in \trainc$ can be quantized to a short code $c_i$ with length $M$, and we use $c_i^a, a\in[1,M]$  to denote the $l$-th code, which means the $c_i^a$-th center is the closest one to $\mathbf{x}_i^a$ among all clusters in the $a$-th subspace (the upper right part of Figure~\ref{}). For example, $c_i^1 =4$ because $b_1^4$ is the closest cluster with $\mathbf{x}_i^1$. For any $d_i, d_j$, their feature distance can be approximated by $s_{ij}=\sum_{l=1}^{M}cb_a[q_i^a][q_j^a]$. 
 
 
 
