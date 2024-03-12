@@ -54,8 +54,7 @@ Afterwards, each summation is the sum of $|\group_u|$ feature distances, as show
 
 \begin{equation}\label{eqa:cluster-2}
     \begin{aligned}
-        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} &\min_{c_j\in C_k} s_{\gamma(j)v}) = \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}s_{\gamma(j)v}) \\
-        & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k} s_{\gamma(j)v}) \\
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups}\sum_{v \in \group_u} & \min_{c_j\in C_k} s_{\gamma(j)v}) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}s_{\gamma(j)v}) \\
         & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u}s_{\gamma(j)v}) \\
         & =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)k})
     \end{aligned}
@@ -75,7 +74,7 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 \vspace{-0.5em}
 \begin{equation}\label{eqa:cluster-4}
     \begin{aligned}
-        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups} \mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk} \times |\group_u|]
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{\groups} |\group_u| \min_{c_j\in C_k} b_{jk}) = \sum_{u=1}^{\groups}  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{jk}]
     \end{aligned}
 \end{equation}
 
