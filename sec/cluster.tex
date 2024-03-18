@@ -118,3 +118,21 @@ We first  introduce the basic concept of PQ widely used in the era of approximat
 As illustrated in Figure~\ref{}, given the full training data $\trainc$ with $m$, we partition it into $M$ subspaces, each of which has 2 dimensions (as depicted in the upper part of Figure~\ref{}). For every subspace, a selection of compelte tuples is sampled, and the $k$-means algorithm~\cite{} is applied to this subspace. Let $B$ represent the number of clusters produced by $k$-means. In Figure~\ref{}, $\{\bound_1^1, \bound_1^2,..., \bound_1^B\}$ denote the $k$-means cluster centers in the first subspace, associated with indices (codes) $\{1, 2,...,B\}$. Consequently, a codebook $c\bound_1$ is constructed, storing the feature distances between each pair of cluster centers. There are $M$ codebooks in total (as depicted in the lower part of Figure~\ref{}). We use $c\bound_1[x][y]$ to denote the distance between the $x$-th and $y$-th centers. Consequently, any $t_i (\mathbf{x}_i) \in \mathcal{T}$ can be quantized to a short code $d_i$ with length $M$. We use $c_i^a, a\in[1,M]$ to denote the $a$-th code, indicating that the $d_i^a$-th center is the closest to $\mathbf{x}_i^a$ among all clusters in the $a$-th subspace. The feature distance between any $t_i$ and $t_j$ can then be approximated by $s_{ij}=\sum_{l=1}^{M}c\bound_a[d_i^a][d_j^a]$.
 
 Given $t_{j_i}$ and $\group_u$, as shown in Figure~\ref{}, we approximate $\hat{s}_{j_iu}^a$ by first quantizing $\mathbf{x}_{j_i}$ and every $\mathbf{x}_{j_i} \in \group_u$ to short codes. Based on the codebooks, for the $a$-th subspace, we compute the maximum distance between the corresponding code of $t_{j_i}$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{j_iu}^a = \max\limits_{v\in\group_u}cb_a[d_{j_i}^a][d_v^a]$ as the approximation. Then, we approximately compute an upper bound $\bound_{\gamma(j)_iv}=\sum_{l=1}^{M}\hat{s}_{j_iu}^a$ by summing the $M$ distances. Although $\hat{s}_{j_iu}^a$ may slightly underestimate $s^a_{j_iu}$ due to quantization bias, the summation $\bound_{j_iu}$ always overestimates $\overline{s}^a_{j_iu}$ since each $\hat{s}_{j_iu}^a$ is close to $s^a_{it}$.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/distance}
+   % \vspace{-2.5em}
+    \caption{Illustration of the Group-based Solution.}
+    \label{fig:distance}
+   % \vspace{-1.5em}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/codebook}
+   % \vspace{-2.5em}
+    \caption{Illustration of the Group-based Solution.}
+    \label{fig:codebook}
+   % \vspace{-1.5em}
+\end{figure}
