@@ -86,15 +86,20 @@ As discussed in Algorithm~\ref{alg:group} Line~2, we need to cluster the entire 
 %
 Note that $\train$ contains some tuples with missing values, an ideal way is to first impute these tuples precisely and then cluster, but we do not know the ground truth in advance. Therefore, we just apply a typical algorithm \ie XXX to impute these missing values, and then conduct the clustering. Although the imputation results may  not be accurate enough, it does not influence much because we just need closer tuples to be included in the same group, and these missing cells do not have a large impact on determining whether two tuples are close. 
 %
-Finally, tuples with the same hash code are highly similar, which are taken as a cluster.
+Finally, tuples with the same hash code are highly similar, which are taken as a cluster,
 %
- Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
+ \add{and it is  efficient to cluster by LSH with a time complexity of  $O(Nrm)$, linear with $|\trainc|$.} 
  
 
 
 %To cluster $\train$ efficiently,  we use the local sensitive hashing~\cite{} (LSH) to efficiently hash similar tuples to the same group.The basic idea  is to hash $\trainc$ with $r$ random hyperplanes $\{\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_r\}$ in the  $m$-dimensional space.Each hyperplane divides the entire space into two half subspaces, and LSH just hashes the  items according to which subspace they fall in. Specifically, for  hyperplane $\mathbf{h}_w, w\in[1,r]$, LSH hashes tuple $t_i\in \trainc$ to hash value 1 if $\mathbf{h}_w \cdot \mathbf{x}_i> 0$, and 0 otherwise. In this way, each $t_i$ is hashed into a $r$-bit 0-1 hash code by $p$ hyperplanes. Since the items with the same hash code are highly similar, we take them as a cluster. Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
 
-\subsubsection{Computing the upper bound}
+\subsubsection{Computing the expected upper bound} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected upper bound, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}] = q_1\min_{c_j\in \hat{\core}}\bound_{ju}^1 + q_2\min_{c_j\in \hat{\core}}\bound_{ju}^2 + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\bound_{ju}^{card(u)}$, where $q_{card(u)}$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, q_{card(u)}])$ denotes the probability of the $x-$th possible world and  $\bound_{ju}^x$ denotes the upper bound of $\overline{s}_{\gamma(j)u}$ corresponding to the $x-$th possible world. 
+
+\noindent \textbf{Computing the upper bound without missing values.} 
+
+
+
 
 Given a tuple $t_j\in \trainc$ and a possible world of cluster $\group_u \in \mathcal{G}$, we first brute all possible worlds of $t_v$ and compute the probability(\ie \{$q_1, q_2, ..., q_k$\}) of each possible world(\ie \{$\world_1, \world_2, ..., \world_k$\}). For each possible world $\world_i$, we use $t_{j_i}$ denote the tuple and then we can get a tuple-group distance(\ie $s_{j_iv}$). Then we can use $s_{jv} = \sum_{i=1}^k q_i s_{j_iv}$ to denote the expectation of tuple-group distance. Formally, following Eq. ~\ref{eqa:cluster-2}, we have:
 
