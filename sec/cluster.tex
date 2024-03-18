@@ -81,12 +81,18 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 \subsection{Algorithm Details}
 
 
-\subsubsection{Clustering}
-\label{subsec:clustering}
-To cluster $\train$ efficiently,  we use the local sensitive hashing~\cite{} (LSH) to efficiently hash similar tuples to the same group.The basic idea  is to hash $\trainc$ with $r$ random hyperplanes $\{\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_r\}$ in the  $m$-dimensional space.Each hyperplane divides the entire space into two half subspaces, and LSH just hashes the  items according to which subspace they fall in. Specifically, for  hyperplane $\mathbf{h}_w, w\in[1,r]$, LSH hashes tuple $t_i\in \trainc$ to hash value 1 if $\mathbf{h}_w \cdot \mathbf{x}_i> 0$, and 0 otherwise.
-In this way, each $t_i$ is hashed into a $r$-bit 0-1 hash code by $p$ hyperplanes.
-Since the items with the same hash code are highly similar, we take them as a cluster.
-Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
+\subsubsection{Clustering}~\label{subsec:clustering}
+As discussed in Algorithm~\ref{alg:group} Line~2, we need to cluster the entire train set as a pre-processing step. To achieve this efficiently, we adopt the local sensitive hashing~\cite{} to assign similar tuples to the same group. 
+%
+Note that $\train$ contains some tuples with missing values, an ideal way is to first impute these tuples precisely and then cluster, but we do not know the ground truth in advance. Therefore, we just apply a typical algorithm \ie XXX to impute these missing values, and then conduct the clustering. Although the imputation results may  not be accurate enough, it does not influence much because we just need closer tuples to be included in the same group, and these missing cells do not have a large impact on this. 
+%
+Tuples with the same hash code are highly similar, which are taken as a cluster.
+%
+ Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
+ 
+
+
+%To cluster $\train$ efficiently,  we use the local sensitive hashing~\cite{} (LSH) to efficiently hash similar tuples to the same group.The basic idea  is to hash $\trainc$ with $r$ random hyperplanes $\{\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_r\}$ in the  $m$-dimensional space.Each hyperplane divides the entire space into two half subspaces, and LSH just hashes the  items according to which subspace they fall in. Specifically, for  hyperplane $\mathbf{h}_w, w\in[1,r]$, LSH hashes tuple $t_i\in \trainc$ to hash value 1 if $\mathbf{h}_w \cdot \mathbf{x}_i> 0$, and 0 otherwise. In this way, each $t_i$ is hashed into a $r$-bit 0-1 hash code by $p$ hyperplanes. Since the items with the same hash code are highly similar, we take them as a cluster. Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
 
 \subsubsection{Computing the upper bound}
 
