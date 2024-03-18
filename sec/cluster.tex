@@ -84,9 +84,9 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 \subsubsection{Clustering}~\label{subsec:clustering}
 As discussed in Algorithm~\ref{alg:group} Line~2, we need to cluster the entire train set as a pre-processing step. To achieve this efficiently, we adopt the local sensitive hashing~\cite{} to assign similar tuples to the same group. 
 %
-Note that $\train$ contains some tuples with missing values, an ideal way is to first impute these tuples precisely and then cluster, but we do not know the ground truth in advance. Therefore, we just apply a typical algorithm \ie XXX to impute these missing values, and then conduct the clustering. Although the imputation results may  not be accurate enough, it does not influence much because we just need closer tuples to be included in the same group, and these missing cells do not have a large impact on this. 
+Note that $\train$ contains some tuples with missing values, an ideal way is to first impute these tuples precisely and then cluster, but we do not know the ground truth in advance. Therefore, we just apply a typical algorithm \ie XXX to impute these missing values, and then conduct the clustering. Although the imputation results may  not be accurate enough, it does not influence much because we just need closer tuples to be included in the same group, and these missing cells do not have a large impact on determining whether two tuples are close. 
 %
-Tuples with the same hash code are highly similar, which are taken as a cluster.
+Finally, tuples with the same hash code are highly similar, which are taken as a cluster.
 %
  Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
  
