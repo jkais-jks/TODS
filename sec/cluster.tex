@@ -92,7 +92,7 @@ Finally, tuples with the same hash code are highly similar, which are taken as a
  
 
 
-\subsubsection{Computing the expected upper bound} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected upper bound, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}] = q_1\min_{c_j\in \hat{\core}}\bound_{ju}^1 + q_2\min_{c_j\in \hat{\core}}\bound_{ju}^2 + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\bound_{ju}^{card(u)}$, where $q_{card(u)}$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, q_{card(u)}])$ denotes the probability of the $x-$th possible world and  $\bound_{ju}^x$ denotes the upper bound of $\overline{s}_{\gamma(j)u}$ corresponding to the $x-$th possible world (each possible world does not contain missing values). 
+\subsubsection{Computing the expected upper bound} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected upper bound, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}] = q_1\min_{c_j\in \hat{\core}}\bound_{ju}^1 + q_2\min_{c_j\in \hat{\core}}\bound_{ju}^2 + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\bound_{ju}^{card(u)}$, where $card(u)$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, q_{card(u)}])$ denotes the probability of the $x-$th possible world and  $\bound_{ju}^x$ denotes the upper bound of $\overline{s}_{\gamma(j)u}$ corresponding to the $x-$th possible world (each possible world does not contain missing values). 
 %
 Therefore, to compute the expected upper bound $\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}]$, we should know how to compute $\bound_{ju}^x$, \ie the upper bound of the maximum feature distance between a tuple $c_j$ and a group $\group_u$ when there are no missing values.
 
@@ -128,27 +128,29 @@ We first  introduce the basic concept of PQ widely used in the era of approximat
 
 As illustrated in Figure~\ref{}, given the full training data $\trainc$ with $m$, we partition it into $M$ subspaces, each of which has 2 dimensions (as depicted in the upper part of Figure~\ref{}). For every subspace, a selection of compelte tuples is sampled, and the $k$-means algorithm~\cite{} is applied to this subspace. Let $B$ represent the number of clusters produced by $k$-means. In Figure~\ref{}, $\{\bound_1^1, \bound_1^2,..., \bound_1^B\}$ denote the $k$-means cluster centers in the first subspace, associated with indices (codes) $\{1, 2,...,B\}$. Consequently, a codebook $c\bound_1$ is constructed, storing the feature distances between each pair of cluster centers. There are $M$ codebooks in total (as depicted in the lower part of Figure~\ref{}). We use $c\bound_1[x][y]$ to denote the distance between the $x$-th and $y$-th centers. Consequently, any $t_i (\mathbf{x}_i) \in \mathcal{T}$ can be quantized to a short code $d_i$ with length $M$. We use $c_i^a, a\in[1,M]$ to denote the $a$-th code, indicating that the $d_i^a$-th center is the closest to $\mathbf{x}_i^a$ among all clusters in the $a$-th subspace. The feature distance between any $t_i$ and $t_j$ can then be approximated by $s_{ij}=\sum_{l=1}^{M}c\bound_a[d_i^a][d_j^a]$.
 
-Given $t_{j}$ and $\group_u$, as shown in Figure~\ref{}, we approximate $\hat{s}_{ju}^a$ by first quantizing $\mathbf{x}_{j}$ and every $\mathbf{x}_{j} \in \group_u$ to short codes. Based on the codebooks, for the $a$-th subspace, we compute the maximum distance between the corresponding code of $t_{j}$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^a = \max\limits_{v\in\group_u}cb_a[d_{j}^a][d_v^a]$ as the approximation. Then, we approximately compute an upper bound $\bound_{\gamma(j)v}=\sum_{l=1}^{M}\hat{s}_{ju}^a$ by summing the $M$ distances. Although $\hat{s}_{ju}^a$ may slightly underestimate $s^a_{ju}$ due to quantization bias, the summation $\bound_{ju}$ always overestimates $\overline{s}^a_{ju}$ since each $\hat{s}_{ju}^a$ is close to $s^a_{it}$.
+Given $t_{j}$ and $\group_u$, as shown in Figure~\ref{}, we approximate $\hat{s}_{ju}^a$ by first quantizing $\mathbf{x}_{j}$ and every $\mathbf{x}_{j} \in \group_u$ to short codes. Based on the codebooks, for the $a$-th subspace, we compute the maximum distance between the corresponding code of $t_{j}$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^a = \max\limits_{v\in\group_u}cb_a[d_{j}^a][d_v^a]$ as the approximation. Then, we approximately compute an upper bound $\bound_{\gamma(j)u}=\sum_{l=1}^{M}\hat{s}_{ju}^a$ by summing the $M$ distances. Although $\hat{s}_{ju}^a$ may slightly underestimate $s^a_{ju}$ due to quantization bias, the summation $\bound_{ju}$ always overestimates $\overline{s}^a_{ju}$ since each $\hat{s}_{ju}^a$ is close to $s^a_{it}$.
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.6\textwidth]{figs/distance}
-   % \vspace{-2.5em}
-    \caption{Illustration of the Group-based Solution.}
-    \label{fig:distance}
-   % \vspace{-1.5em}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figs/codebook}
+    \includegraphics[width=0.3\textwidth]{figs/codebook}
    % \vspace{-2.5em}
     \caption{Illustration of the Group-based Solution.}
     \label{fig:codebook}
    % \vspace{-1.5em}
 \end{figure}
 
-
-
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/distance}
+   % \vspace{-2.5em}
+    \caption{Illustration of the Group-based Solution.}
+    \label{fig:distance}
+   % \vspace{-1.5em}
+\end{figure}
 
 %To cluster $\train$ efficiently,  we use the local sensitive hashing~\cite{} (LSH) to efficiently hash similar tuples to the same group.The basic idea  is to hash $\trainc$ with $r$ random hyperplanes $\{\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_r\}$ in the  $m$-dimensional space.Each hyperplane divides the entire space into two half subspaces, and LSH just hashes the  items according to which subspace they fall in. Specifically, for  hyperplane $\mathbf{h}_w, w\in[1,r]$, LSH hashes tuple $t_i\in \trainc$ to hash value 1 if $\mathbf{h}_w \cdot \mathbf{x}_i> 0$, and 0 otherwise. In this way, each $t_i$ is hashed into a $r$-bit 0-1 hash code by $p$ hyperplanes. Since the items with the same hash code are highly similar, we take them as a cluster. Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
+
+Recap that $\mathrm{E}[\min_{c_j\in \hat \core}\bound_{ju}] = \sum_{i=1}^{card(u)} q_i \min_{c_j \in \hat(C)} b_{ju}^i$. However, it is expensive to brute all possible world and compute the probability to get the expectation. To address this issue, one simple way to boost efficiency is by minimizing the number of possible worlds. To achieve this, we can intuitively prioritize possible worlds with higher probabilities, allowing us to discard those with lower probabilities without significantly impacting the accuracy of expectation calculations. It's important to note that the probability of each possible world is determined by multiplying the probabilities of incomplete tuples within that world, as these tuples can be considered independent. Hence, we can eliminate possible worlds containing tuples with low probabilities (\ie reducing $L$), effectively reducing the overall number of possible worlds in the coreset.
+
+
+
