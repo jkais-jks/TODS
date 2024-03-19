@@ -43,30 +43,30 @@ $\overline{s}_{\gamma(j)u} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\ga
 
 In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. 
 %
-After clustering $\trainc$ to $\{ \group_1 , \group_2, ...\group_u\}$, considering Equation~\ref{eqa:tuple}, we  first rewrite the sum of $n$ feature distances (\ie $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to   $|\groups|$ summations. And we use $s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$, as shown in the following Equation:
+After clustering $\trainc$ to $\{ \group_1 , \group_2, ...\group_U\}$, considering Equation~\ref{eqa:tuple}, we  first rewrite the sum of $n$ feature distances (\ie $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to $U$ summations. And we use $s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$, as shown in the following Equation:
 
 \begin{equation}\label{eqa:cluster-1}
-    \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|}\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert)
+    \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert)
 \end{equation}
 
-Afterwards, each summation is the sum of $|\group_u|$ feature distances, as shown in Equation~\ref{eqa:cluster-2},  the sum of each cluster can be bounded by  the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k} s_{\gamma(j)v}$)  multiplying the  cluster size, but the bound is expensive to compute because of iterating $\trainc$. To address this, we further apply the max-min inequality~\cite{} to simplify the computations. 
+Afterwards, each summation is the sum of $U$ feature distances, as shown in Equation~\ref{eqa:cluster-2},  the sum of each cluster can be bounded by  the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k} s_{\gamma(j)v}$)  multiplying the  cluster size, but the bound is expensive to compute because of iterating $\trainc$. To address this, we further apply the max-min inequality~\cite{} to simplify the computations. 
 
 
 \begin{equation}\label{eqa:cluster-2}
     \begin{aligned}
-        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|}\sum_{v \in \group_u} & \min_{c_j\in C_k} s_{\gamma(j)v}) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|} |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}s_{\gamma(j)v}) \\
-        & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|} |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u}s_{\gamma(j)v}) \\
-        & =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|} |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)u})
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U\sum_{v \in \group_u} & \min_{c_j\in C_k} s_{\gamma(j)v}) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U |\group_u| \max_{v \in \group_u} \min_{c_j\in C_k}s_{\gamma(j)v}) \\
+        & \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U |\group_u| \min_{c_j\in C_k} \max_{v \in \group_u}s_{\gamma(j)v}) \\
+        & =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)u})
     \end{aligned}
 \end{equation}
 
 
 
-Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)u} = \max_{v \in \group_u}s_{\gamma(j)v}, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)u}$. To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)u}|j \in [1,N], u \in [1,|\groups|]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)u}$. However, as discussed above, computing $\overline{s}_{\gamma(j)u}$ needs to visit every tuple in a cluster, which is still inefficient, so we  efficiently compute an upper bound $\bound_{ju}$ of  $\overline{s}_{\gamma(j)u}$ to replace $\overline{s}_{\gamma(j)u}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
+Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)u} = \max_{v \in \group_u}s_{\gamma(j)v}, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)u}$. To achieve efficient coreset selection, given $\trainc$ and clusters $\group$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)u}|j \in [1,N], u \in [1,U]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)u}$. However, as discussed above, computing $\overline{s}_{\gamma(j)u}$ needs to visit every tuple in a cluster, which is still inefficient, so we  efficiently compute an upper bound $\bound_{ju}$ of  $\overline{s}_{\gamma(j)u}$ to replace $\overline{s}_{\gamma(j)u}$. Theoretically, following Eq.~\ref{eqa:cluster-1}, we have:
 
 \begin{equation}\label{eqa:cluster-3}
     \begin{aligned}
-        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|} |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)u}) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|} |\group_u| \min_{c_j\in C_k} \bound_{ju})
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U |\group_u| \min_{c_j\in C_k} \overline{s}_{\gamma(j)u}) \leq \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U |\group_u| \min_{c_j\in C_k} \bound_{ju})
     \end{aligned}
 \end{equation}
 
@@ -74,7 +74,7 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 
 \begin{equation}\label{eqa:cluster-4}
     \begin{aligned}
-        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^{|\groups|} |\group_u| \min_{c_j\in C_k} \bound_{ju}) = \sum_{u=1}^{|\groups|}  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}]
+        \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U |\group_u| \min_{c_j\in C_k} \bound_{ju}) = \sum_{u=1}^U  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\bound_{ju}]
     \end{aligned}
 \end{equation}
 
@@ -88,7 +88,7 @@ Note that $\train$ contains some tuples with missing values, an ideal way is to 
 %
 Finally, tuples with the same hash code are highly similar, which are taken as a cluster,
 %
- \add{and it is  efficient to cluster by LSH with a time complexity of  $O(Nrm)$, linear with $|\trainc|$.} 
+ \add{and it is  efficient to cluster by LSH with a time complexity of  $O(nrm)$, linear with $|\trainc|$.} 
  
 
 
@@ -145,7 +145,9 @@ Given $t_{j}$ and $\group_u$, as shown in Figure~\ref{}, we approximate $\hat{s}
 
 %To cluster $\train$ efficiently,  we use the local sensitive hashing~\cite{} (LSH) to efficiently hash similar tuples to the same group.The basic idea  is to hash $\trainc$ with $r$ random hyperplanes $\{\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_r\}$ in the  $m$-dimensional space.Each hyperplane divides the entire space into two half subspaces, and LSH just hashes the  items according to which subspace they fall in. Specifically, for  hyperplane $\mathbf{h}_w, w\in[1,r]$, LSH hashes tuple $t_i\in \trainc$ to hash value 1 if $\mathbf{h}_w \cdot \mathbf{x}_i> 0$, and 0 otherwise. In this way, each $t_i$ is hashed into a $r$-bit 0-1 hash code by $p$ hyperplanes. Since the items with the same hash code are highly similar, we take them as a cluster. Clustering by LSH is highly efficient as it has a complexity of  $O(Nrm)$, linear with $|\trainc|$. 
 
-Recap that $\mathrm{E}[\min_{c_j\in \hat \core}\bound_{ju}] = \sum_{i=1}^{card(u)} q_i \min_{c_j \in \hat{C}} b_{ju}^i$. However, it is expensive to brute all possible world and compute the probability to get the expectation. To address this issue, one simple way to boost efficiency is by minimizing the number of possible worlds. To achieve this, we can intuitively prioritize possible worlds with higher probabilities, allowing us to discard those with lower probabilities without significantly impacting the accuracy of expectation calculations. It's important to note that the probability of each possible world is determined by multiplying the probabilities of incomplete tuples within that world, as these tuples can be considered independent. Hence, we can eliminate possible worlds containing tuples with low probabilities (\ie reducing $L$), effectively reducing the overall number of possible worlds in the coreset.
+\noindent \textit{\underline{Time complexity analysis.}} First, the cluster centers in PQ can be computed using only a small sampling of $\trainc$, which takes negligible time. Then the codebooks can be computed in $O(mB^2)$ and the short codes of $\trainc$ can be computed in $O(mnB)$. Recap that for the $a$-th subspace the largest distance between corresponding codes of complete $t_j$ and codes of tuples in $\group_u$ without missing values by $\hat{s}_{ju}^a = \max\limits_{v\in\group_u}cb_a[d_{j}^a][d_v^a]$. Since $d_a^j$ only takes from $B$ different values $\{1, 2, \dots, B\}$, we can precompute $\max\limits_{v\in\group_u}cb_a[i][d_v^a], i\in[1, B]$ for each $\group_u$, which takes $O(UB^2)$. In this way, we can compute each $b_{ju}=\sum_{a=1}^{M}\hat{s}^l_{ju}$ in $O(M)$, and all the upper bounds $b_{ju}$, $j\in [1,N]$, $v\in [1,U]$ can be computed in  $O(card(u)MnU)$, much faster than the $O(card(u)mn^2)$. Hence, the overall time complexity is $O()$, which is much faster than $O(KhnL^2)$ because $U \ll n$.
+
+Recap that $\mathrm{E}[\min_{c_j\in \hat \core}\bound_{ju}] = \sum_{i=1}^{card(u)} q_i \min_{c_j \in \hat{C}} b_{ju}^i$. However, it is expensive to brute all possible world and compute the probability to get the expectation. To address this issue, one simple way to boost efficiency is by minimizing the number of possible worlds. To achieve this, we can intuitively prioritize possible worlds with higher probabilities, allowing us to discard those with lower probabilities without significantly impacting the accuracy of expectation calculations. It's important to note that the probability of each possible world is determined by multiplying the probabilities of incomplete tuples within that world, as these tuples can be considered independent. Hence, we can eliminate possible worlds containing tuples with low probabilities (\ie reducing $L$), effectively reducing the overall number of possible worlds in the coreset. For example, we can keep top-l(e.g., l = 5) possible worlds (\ie 5 different possible worlds of imputations of $\group$ with high probabilities) of a cluster $\group$. For the number of possible worlds of $\group \cup \hat{C}$, we let $L = L^{\group} * L^t$, where $L^{\group}$ donotes the number of possible worlds of $\group_u$ and $l^t$ denotes the number of possible worlds of $t$.
 
 
 
