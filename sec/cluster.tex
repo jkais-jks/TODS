@@ -120,18 +120,22 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
 %
 %
  Recap that the reason why we do not directly compute the  $\overline{s}_{\gamma(j)u}$ is that iterating $\group_u$ to compute the maximum distance is expensive.
-  To solve this, we propose to leverage the idea of product quantization (PQ) to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then using $\hat{s}_{ju}$ to compute the coreset score still very likely leads to a bounded GA error.
+  To solve this, we propose to leverage the idea of product quantization  to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then using $\hat{s}_{ju}$ to compute the coreset score still very likely leads to a bounded GA error.
   
   
   
   %We first  introduce the basic concept of PQ widely used in the era of approximate nearest neighbor (ANN) search, which also uses the idea of  decomposing the entire feature space to a Cartesian product of subspaces with low dimensions~\cite{}. Each subspace is quantized separately. Hence, a feature vector can be represented as a short code, and the $a$-th element of the code denotes the  quantization index of the $a$-th subspace of the vector. Finally, in ANN search,  the Euclidean distance between two items can be efficiently estimated from their codes. Next, we will see how to leverage PQ to address our problem.
   
-  \noindent  \textbf{PQ-based solution.} PQ has been widely used for approximate nearest neighbor (ANN) search.  The key idea of PQ is to split the $m$ dimension feature space into a Cartesian product of $M$ low dimensional subspaces, and then quantize each subspace separately. 
-  %
-  In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficient estimated based on their short codes. In our scenario, we use the short codes to efficiently estimate an upper bound.
-  %
+  \noindent  \underline{\textit{Product quantization (PQ)}}  has been widely used for approximate nearest neighbor (ANN) search.  The key idea of PQ is to split the $m$ dimension feature space into a Cartesian product of $M$ low dimensional subspaces, and then quantize each subspace separately.  
+ The quantization is conducted by applying $k$-means algorithm~\cite{} over the vectors in each subspace, where $B$ clusters are generated.  
+  In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index (\ie cluster ID) of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficiently estimated based on their short codes. 
   
-  To be specific, we also split  $\mathbf{x}_{j}$ of $c_j$  into $M$ subvectors, each of which is represented  as $\mathbf{x}^z_{j}$. If we can respectively compute the maximum distance (denoted by $\overline{s}_{ju}^z$) of the $z$-th subvector and vectors in the $z$-th  subspace of $\group_u$, $z\in [1,M]$, and sum them up, we can derive  an upper bound  between $c_j$ and $\group_u$, \ie $ \overline{s}_{ju} \leq  \sum_{z = 1}^M  \overline{s}_{ju}^z$.
+  
+  
+  In our scenario, we use the short codes to efficiently estimate an upper bound.
+  %
+  %
+  To be specific, we also split  $\mathbf{x}_{j}$ of $c_j$  into $M$ subvectors, each of which is represented  as $\mathbf{x}^z_{j}$. If we can respectively compute the maximum distance (denoted by $\overline{s}_{ju}^z$) between the $z$-th subvector and vectors in the $z$-th  subspace of $\group_u$, $z\in [1,M]$, and sum them up, we can derive  an upper bound  between $c_j$ and $\group_u$, \ie $ \overline{s}_{ju} \leq  \sum_{z = 1}^M  \overline{s}_{ju}^z$.
 
 %\begin{equation}\label{eqa:cluster-6}
    % \begin{aligned}
@@ -148,9 +152,20 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
 
 % Given $c_j$ and $\group_u$, as shown in Figure ~\ref{}, we compute an approximation of $\hat{s}_{ju}^a$ by first quantizing $\mathbf{x}_{j}$ and $\forall\mathbf{x}_{j} \in \group_u$ to short codes. Then based on the codebooks, for the $a$-th subspace, we compute the largest distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, \ie $\hat{s}_{ju}^a = \max\limits_{v\in\group_u}cb_a[d_{j}^a][d_u^a]$ as the approximation. Then we approximately compute an upper bound $\bound_{\gamma(j)v}=\sum_{l=1}^{M}\hat{s}_{ju}^a$ by summing the $M$ distances up. Although $\hat{s}_{ju}^a$  may be a little smaller than $s^a_{ju}$ because of the   quantization bias, the above summation $\bound_{ju}$ is always larger than $\overline{s}^a_{ju}$ as each $\hat{s}_{ju}^a$ is close to $s^a_{it}$.
 
-\noindent  \textbf{Computing $b_{ju}$ with PQ.} As illustrated in Figure~\ref{}, given the full training data $\trainc$ with $m$, we partition it into $M$ subspaces, each of which has 2 dimensions (as depicted in the upper part of Figure~\ref{}). For every subspace, a selection of compelte tuples is sampled, and the $k$-means algorithm~\cite{} is applied to this subspace. Let $B$ represent the number of clusters produced by $k$-means. In Figure~\ref{}, $\{\bound_1^1, \bound_1^2,..., \bound_1^B\}$ denote the $k$-means cluster centers in the first subspace, associated with indices (codes) $\{1, 2,...,B\}$. Consequently, a codebook $c\bound_1$ is constructed, storing the feature distances between each pair of cluster centers. There are $M$ codebooks in total (as depicted in the lower part of Figure~\ref{}). We use $c\bound_1[x][y]$ to denote the distance between the $x$-th and $y$-th centers. Consequently, any $t_i (\mathbf{x}_i) \in \mathcal{T}$ can be quantized to a short code $d_i$ with length $M$. We use $c_i^z, z\in[1,M]$ to denote the $z$-th code, indicating that the $d_i^z$-th center is the closest to $\mathbf{x}_i^z$ among all clusters in the $a$-th subspace. The feature distance between any $t_i$ and $c_j$ can then be approximated by $s_{ij}=\sum_{z=1}^{M}c\bound_z[d_i^z][d_j^z]$.
+\noindent  \underline{\textit{Computing $\hat{s}_{ju}$ with PQ.}}
+Directly computing $\overline{s}_{ju}^z$ still needs to iterate every tuple in $\group_u$, so we leverage these  clusters in each subspace to represent all the vectors in the $z$-th subspace. Since the number of clusters is much smaller than that of all vectors, the efficiency is much improved, which is the key idea of our solution.
+%
 
-Given $c_j$ and $\group_u$, as shown in Figure~\ref{}, we approximate $\overline{s}_{ju}^z$ by first quantizing $\mathbf{x}_{j}$ and every $\mathbf{x}_{j} \in \group_u$ to short codes. Based on the codebooks, for the $z$-th subspace, we compute the maximum distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}cb_z[d_{j}^z][d_v^z]$ as the approximation. Then, we approximately compute an upper bound $\bound_{ju}=\sum_{z=1}^{M}\hat{s}_{ju}^z$ by summing the $M$ distances. Although $\hat{s}_{ju}^z$ may slightly underestimate $s^z_{ju}$ due to quantization bias, the summation $\bound_{ju}$ always overestimates $\overline{s}^z_{ju}$ since each $\hat{s}_{ju}^z$ is close to $s^z_{it}$.
+
+ Specifically, as shown in Figure~\ref{}, we use $\{\bound_1^1, \bound_1^2,..., \bound_1^B\}$ to represent the  cluster centers in the first subspace. %, associated with indices (codes) $\{1, 2,...,B\}$. 
+ Hence, we can build a matrix $mr_1$ to store the feature distances (denoted by $mr_1[x][y]$) between every two cluster center, in total  $M$ matrices are built.  %$c\bound_1[x][y]$ is utilized to denote the distance between the $x$-th and $y$-th centers. 
+ %
+ %   
+ %
+ In this way, we can quantize each $t_i (\mathbf{x}_i) \in \mathcal{T}$  to a short code $d_i$, where $d_i^z, z\in[1,M]$  denotes the $z$-th element, indicating that the $d_i^z$-th center has the shortest distance with $\mathbf{x}_i^z$ among all clusters of the $z$-th subspace. 
+ Then, the feature distance between  $t_i$ and $c_j$ can then be approximated by $\sum_{z=1}^{M}mr_z[d_i^z][d_j^z]$.
+
+Given $c_j$ and $\group_u$, we approximate $\overline{s}_{ju}^z$ by first quantizing $\mathbf{x}_{j}$ and  $\forall \mathbf{x} \in \group_u$ to short codes. Based on these matrices, for the $z$-th subspace, we compute the maximum distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ as the approximation. Then, we approximately compute an upper bound $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}_{ju}^z$ by summing the $M$ distances. Although $\hat{s}_{ju}^z$ may slightly underestimate $\overline{s}^z_{ju}$ due to the quantization bias, the summation $\hat{s}_{ju}$ always overestimates $\overline{s}_{ju}$ since each $\hat{s}_{ju}^z$ is close to $\overline{s}^z_{ju}$, leading to a bounded GA error.
 
 \begin{figure}[t]
     \centering
