@@ -154,7 +154,7 @@ As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can pre
  Section~\ref{subsec:batch},  we can reduce the number ($L$) of possible worlds of each tuple, and just keep several top possible worlds, say 3, with the highest probabilities. Next, suppose that there are $b$ tuples with missing values, and thus $3^b$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration,   we can  select top-$l_G$ (\eg 5)possible worlds from the $3^b$ ones to compute the expectation. Overall, the time complexity is $O(KhUl_{\group})$, which is much faster than the $O(Khnl^2)$ because $U \ll n$ and $l_G$ is also small. Similarly, the above framework is easy to generalize to the scenario of one batch per iteration, where the only difference is that in the coreset, we have a small batch of tuples with missing values rather than just one, indicating that the number of possible worlds that should be considered increases. However, we can still reduce the possible world number following the above method. 
  
  
-  $\sum_{u=1}^U  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$
+ % $\sum_{u=1}^U  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$
  
 \noindent \textbf{Convergence analysis.}  
 Considering the proof in Section~5.3, 
