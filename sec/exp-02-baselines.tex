@@ -31,7 +31,7 @@
 
 
 
-In this part, we compare \ours solutions with baselines. We use $\rho = \frac{K}{|\train|}$ to denote the proportion of coreset  to the entire train set.  %\cc{
+In this part, we compare \ours \jks{and \ours$^+$} solutions with baselines. We use $\rho = \frac{K}{|\train|}$ to denote the proportion of coreset  to the entire train set.  %\cc{
 We set  $\rho=0.005$ for datasets (1)-(4), $\rho=0.001$ for datasets (5) and  $\rho=0.0005$ for larger datasets (6)-(8).
 %}
  We  will further  conduct evaluation by varying the coreset size  in Section~\ref{exp:sec:end2end}.
@@ -39,22 +39,8 @@ We set  $\rho=0.005$ for datasets (1)-(4), $\rho=0.001$ for datasets (5) and  $\
 
 
 
-
-
-
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=\columnwidth]{figs/humancost}
-%	\vspace{-2em}
-%	\caption{Human cost of \ours.}
-%	\label{fig:humancost}
-%\end{figure}
-
-
-%\noindent{\bf Evaluation of model accuracy.}
-%\noindent{\bf Evaluation of model accuracy.}
 \subsubsection{Evaluation of model accuracy.}
-The results are provided in Figure~\ref{fig:effectiveness}. To summarize, the result could be generally ranked as $\seven/\one/\truth > $ $\eight/\boostclean/\gain$ > $\two$ > $\mixcore$ > $\actclean$ > $\three/\four$ > $\noclean$.
+The results are provided in Figure~\ref{fig:effectiveness_old} \jks{and Figure~\ref{fig:effectiveness_new}}. To summarize, the result could be generally ranked as $\seven/\one/\truth$ >  $\eight/\boostclean/\gain$ > $\two$ > $\mixcore$ > $\actclean$ > $\three/\four$ > $\noclean$.
 Next, we explain the results.
 
 In general, on all datasets, our method $\seven$, \truth~ and $\one$~   perform the best. 
@@ -71,7 +57,7 @@ In general, on all datasets, our method $\seven$, \truth~ and $\one$~   perform 
 
 \subsubsection{Evaluation of the efficiency.}~\label{sec:exp:efficiency} We  evaluate the efficiency of all methods, including the machine cost and human cost.
 
-\noindent{\bf Machine cost.} Machine cost is shown  in Figure~\ref{fig:efficiency}.  The results could be ranked as $\three/\four/\seven/\eight/\one/\mixcore < \two < \truth < \noclean < \actclean < \boostclean/\gain$. We can observe that the first 5 methods in the ranking have low machine cost, mainly because they train based on the selected coreset and do not need iterative training. $\seven$ and  $\eight$ are slightly slower  because they need to iterate several possible repairs during the process of coreset selection.  But $\seven$ is still more efficient than \noclean, \truth, \boostclean and \gain by more than one order of magnitude,  because they need to train on the entire training data. 
+\noindent{\bf Machine cost.} Machine cost is shown  in Figure~\ref{fig:efficiency_old}.  The results could be ranked as $\three/\four/\seven/\eight/\one/\mixcore < \two < \truth < \noclean < \actclean < \boostclean/\gain$. We can observe that the first 5 methods in the ranking have low machine cost, mainly because they train based on the selected coreset and do not need iterative training. $\seven$ and  $\eight$ are slightly slower  because they need to iterate several possible repairs during the process of coreset selection.  But $\seven$ is still more efficient than \noclean, \truth, \boostclean and \gain by more than one order of magnitude,  because they need to train on the entire training data. 
  Moreover, \actclean~  and \boostclean are  not efficient either because they incorporate multiple training times, so as to estimate the gradient while data imputation. \gain is slow because training multiple imputation models takes time.
 
 

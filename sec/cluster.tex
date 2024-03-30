@@ -2,6 +2,7 @@
 
 
 \section{Group-based Acceleration}
+\label{group}
 
 As discussed above, we can observe that in Section~\ref{subsec:one}, even with the most efficient imputation-in-the-loop  strategy, \ie  one tuple in  each iteration, the time complexity is  $O(KhnL^2)$, where $K$ is the size of the coreset, $h$ is the sample size, $L$ is a small constant and $n$ is the number of entire dataset. Therefore, obviously, the efficiency is dominated by $n$, which is still low when $n$ is large, and thus it  is necessary to further accelerate this process.
 
@@ -44,6 +45,7 @@ However, since computing $\overline{s}_{\gamma(j)u}$ needs to iterate the tuples
 
 
 \subsection{Group-based GA Error Bound}
+\label{group-ea}
 
 In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. 
 %
@@ -90,7 +92,7 @@ Finally, tuples with the same hash code are highly similar, which are taken as a
  
 
 
-\subsubsection{Computing the expected maximum distance.} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected maximum distance, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}] = q_1\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[1] + q_2\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[2] + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[card(u)]$, where $card(u)$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, q_{card(u)}])$ denotes the probability of the $x-$th possible world and  $\overline{s}_{\gamma(j)u}[x]$ denotes the maximum distance  corresponding to the $x-$th possible world (each possible world does not contain missing values). 
+\subsubsection{Computing the expected maximum distance.}~\label{subsec:pq} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected maximum distance, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}] = q_1\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[1] + q_2\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[2] + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[card(u)]$, where $card(u)$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, q_{card(u)}])$ denotes the probability of the $x-$th possible world and  $\overline{s}_{\gamma(j)u}[x]$ denotes the maximum distance  corresponding to the $x-$th possible world (each possible world does not contain missing values). 
 %
 %
 %
