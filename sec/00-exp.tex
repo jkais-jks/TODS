@@ -6,135 +6,30 @@
 
 In this section, we sufficiently compare our proposed methods with multiple baselines on real datasets to demonstrate our effectiveness and efficiency. 
 
-\begin{table}
-	\centering
-	\caption{Statistics of datasets}
-	\vspace{-1em}
-	{\small
-	\begin{tabular}{ccccc}
-		\hline
-		{\bf Dataset} & {\bf $|\train|$} & {\bf $M$} & {\bf $\#$ Incomp. Tuples} & {\bf Task}\\
-		\hline	
-		\nursery & 	10960 & 9 & 3218 & Multi-Class. \\
-		\hr & 18287 & 12 & 5475 & Binary Class. \\
-		\adult & 32842 & 14 & 10752 & Binary Class. \\
-		\credit & 131,000 & 11 & 76813 & Binary Class. \\
-		\bike & 13300 & 15 & 4821 & Regression \\
-		\air & 437,200  & 18 & 128,372 & Regression\\
-		\imdb & 1,000,000 & 40 & 331,189 & Multi-Class.\\
-		\imdbl & 4,000,000 & 40 & 1,312,908 & Multi-Class.\\
-		\hline
-	\end{tabular}
-	}
-	\label{tbl:dataset}
-%	\vspace{-1.8em}
-\end{table}
-
-
-
-\begin{figure*}
-	\centering
-	\includegraphics[width=\textwidth]{figs/effectiveness_old.pdf}
-%	\vspace{-2.5em}
-	\caption{Effectiveness of different methods.}
-	\label{fig:effectiveness_old}
-%	\vspace*{-1.2em}
-\end{figure*}
-
-\begin{figure*}
-	\centering
-	\includegraphics[width=\textwidth]{figs/effectiveness_new.pdf}
-%	\vspace{-2.5em}
-	\caption{Effectiveness of $G$ and $G^+$.}
-	\label{fig:effectiveness_new}
-%	\vspace*{-1.2em}
-\end{figure*}
-
-
-\begin{figure*}
-	\centering
-	\includegraphics[width=\textwidth]{figs/efficiency_old.pdf}
-%	\vspace{-2.5em}
-	\caption{Efficiency of different methods. Note that only machine cost (i.e., runtime of machine) is considered.}
-	\label{fig:efficiency_old}
-%	\vspace*{-1.5em}
-\end{figure*}
-
-\begin{figure*}
-	\centering
-	\includegraphics[width=\textwidth]{figs/efficiency_new.pdf}
-%	\vspace{-2.5em}
-	\caption{Efficiency of $G$ and $G^+$. Note that only machine cost (i.e., runtime of machine) is considered.}
-	\label{fig:efficiency_new}
-%	\vspace*{-1.5em}
-\end{figure*}
-
-
-
 \input{sec/exp-01-setting}
-
-\begin{figure}
-	\vspace{-1em}
-	\centering
-	\includegraphics[width=0.6\textwidth]{figs/e2e}
-%	\vspace{-2.5em}
-	\caption{ Coreset size selection of \ours.}
-	\label{fig:e2e}
-%	\vspace{-1.8em}
-\end{figure}
-
-
-
-
-
-\begin{figure}   
-	\centering
-	\begin{minipage}[t]{0.32\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/batchsize}
-		\vspace{-2.5em}
-		\caption{\ours for batch algorithm.}
-		\label{fig:batchalg}
-	\end{minipage}
-	\begin{minipage}[t]{0.32\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/vary_l_effectiveness}
-		\vspace{-2.5em}
-		\caption{Effectiveness when varying $l$.}
-		\label{fig:vary_l_effect}
-	\end{minipage}
-	\begin{minipage}[t]{0.32\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/vary_l_efficiency}
-		\vspace{-2.5em}
-		\caption{Efficiency when varying $l$.}
-		\label{fig:vary_l_efficient}
-	\end{minipage}
-%	\vspace*{-1.8em}   
-\end{figure}
-
-
-
-
 
 \input{sec/exp-02-baselines}
 
+\input{sec/exp-03-G+}
 
 
+\input{sec/exp-04-end2end}
 
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\columnwidth]{figs/batchsize}
-%	\vspace{-1.5em}
-%	\caption{\ours for batch algorithm.}
-%	\label{fig:batchalg}
-%	\vspace{-2em}
-%\end{figure}
+\input{sec/exp-05-batchalg}
 
+\input{sec/exp-06-pq}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{figs/M}
+%	\vspace{-1em}
+	\caption{Varying Hyperparameters in LSH and PQ.}
+	\label{fig:pq-exp}
+%	\vspace{-1em}
+\end{figure}
 
-\input{sec/exp-03-end2end}
+\input{sec/exp-07-converge}
 
 \begin{figure}[t]   
 	\centering
@@ -174,46 +69,7 @@ In this section, we sufficiently compare our proposed methods with multiple base
 	\vspace*{-1em}   
 \end{figure}
 
-
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.7\columnwidth]{figs/G_a}
-% %	\vspace{-1.5em}
-% 	\caption{Convergence of \ours.}
-% 	\label{fig:converge_G}
-% %	\vspace{-1.5em}
-% \end{figure}
-
-
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.7\columnwidth]{figs/G}
-% %	\vspace{-1.5em}
-% 	\caption{Loss of \ours.}
-% 	\label{fig:real_loss_G}
-% %	\vspace{-1.5em}
-% \end{figure}
-
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.7\columnwidth]{figs/G+_a}
-% %	\vspace{-1.5em}
-% 	\caption{Convergence of \ours.}
-% 	\label{fig:converge_G+}
-% %	\vspace{-1.5em}
-% \end{figure}
-
-
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.7\columnwidth]{figs/G+}
-% %	\vspace{-1.5em}
-% 	\caption{Loss of \ours.}
-% 	\label{fig:real_loss_G+}
-% %	\vspace{-1.5em}
-% \end{figure}
-
-
+\input{sec/exp-08-sensitive}
 
 \begin{figure}[t]   
 	\centering
@@ -233,112 +89,6 @@ In this section, we sufficiently compare our proposed methods with multiple base
 	\end{minipage}
 	\vspace*{-1em}   
 \end{figure}
-
-
-
-%\begin{figure} 
-%	\centering
-%	\begin{minipage}[t]{0.48\columnwidth}
-%		\centering
-%		\includegraphics[width=\columnwidth]{figs/missingrate_all}
-%		\vspace{-1.5em}
-%		\caption{Varying missing tuple rate.}
-%		\label{fig:vary_misstuple_all}
-%	\end{minipage}
-%	\begin{minipage}[t]{0.48\columnwidth}
-%		\centering
-%		\includegraphics[width=\columnwidth]{figs/missingrate}
-%		\vspace{-2.5em}
-%		\caption{Varying missing value rate.}
-%		\label{fig:missrate}
-%	\end{minipage}
-%	\vspace*{-1.8em}   
-%\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\textwidth]{figs/missingrate_all}
-%	\vspace{-1em}
-	\caption{Varying missing tuple rate.}
-	\label{fig:vary_misstuple_all}
-%	\vspace{-1em}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\textwidth]{figs/missingrate_real}
-%	\vspace{-1em}
-	\caption{Varying missing value rate.}
-	\label{fig:realmissrate}
-%	\vspace{-1em}
-\end{figure}
-
-
-
-
-%\begin{figure*}[t]   
-%	\centering
-%	\begin{minipage}[t]{0.28\textwidth}
-%		\centering
-%		\includegraphics[width=\columnwidth]{figs/samplesize}
-%		\vspace{-2.5em}
-%		\caption{Varying sample size.}
-%		\label{fig:samplesize}
-%	\end{minipage}
-%	\begin{minipage}[t]{0.43\textwidth}
-%		\centering
-%		\includegraphics[width=\columnwidth]{figs/downstream_all}
-%		\vspace{-2.5em}
-%		\caption{Varying downstream model.}
-%		\label{fig:downmodel}
-%	\end{minipage}
-%	\begin{minipage}[t]{0.28\textwidth}
-%		\centering
-%		\includegraphics[width=\columnwidth]{figs/missingrate}
-%		\vspace{-2.5em}
-%		\caption{Varying missing value rate.}
-%		\label{fig:missrate}
-%	\end{minipage}
-%	\vspace*{-1.8em}   
-%\end{figure*}
-
-\input{sec/exp-04-batchalg}
-
-
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\columnwidth]{figs/converge}
-%	\vspace{-2em}
-%	\caption{Convergence of \ours.}
-%	\label{fig:converge}
-%\end{figure}
-\input{sec/exp-05-pq}
-
-\input{sec/exp-06-converge}
-\input{sec/exp-07-sensitive}
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.7\columnwidth]{figs/missingrate_all}
-%	\vspace{-1.5em}
-%	\caption{Varying missing tuple rate.}
-%	\label{fig:vary_misstuple_all}
-%	\vspace{-1em}
-%\end{figure}
-
-
-
-
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.5\columnwidth]{figs/downstream_fail}
-%	\vspace{-1.5em}
-%	\caption{Varying downsteam model (Non-convex model fails).}
-%	\label{fig:downstream_fail}
-%	\vspace{-2.2em}
-%\end{figure}
 
 
 
