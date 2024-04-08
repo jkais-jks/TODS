@@ -74,7 +74,7 @@ Apparently, users desire both data-effective ML (for training better ML models) 
 				(3) $\humanfunc(\corefunc(D))$	& Low	& Low	& Low	\\ \hline
 				(4) $\autofunc(\corefunc(D))$	& Low	& None	& Low	\\ \hline
 				\rowcolor{black!10}
-				Our goal	& High	& None or Low	& Low	\\ \hline
+				Our goal	& High	& None or Low	& Low or Very Low	\\ \hline
 				\rowcolor{black!10}
 				(5) $\humanfunc(\goodfunc(\train))$	& High	& Low	& High 	\\ \hline
 				\rowcolor{black!10}
@@ -82,11 +82,15 @@ Apparently, users desire both data-effective ML (for training better ML models) 
 				\rowcolor{black!10}
 				(7) $\goodfunc(\train,\circlearrowleft^\humanfunc)$	& High	& Low	& Low 	\\ \hline
 				\rowcolor{black!10}
-				(8) $\goodfunc(\train,\circlearrowleft^\autofunc)$	& Medium& None 	& Low	\\ \hline		
+				(8) $\goodfunc(\train,\circlearrowleft^\autofunc)$	& Medium& None 	& Low	\\ \hline
+				\rowcolor{black!10}	
+				(9) $\goodfunc^+(\train,\circlearrowleft^\humanfunc)$	& High	& Low	& Very Low 	\\ \hline
+				\rowcolor{black!10}
+				(10) $\goodfunc^+(\train,\circlearrowleft^\autofunc)$	& Medium& None 	& Very Low	\\ \hline		
 			\end{tabular}
 		\end{center}
 		\vspace{-1em}
-		\caption{A comparison of different approaches (1--4: sequential methods; 5--8: our solutions).}
+		\caption{A comparison of different approaches (1--4: sequential methods; 5--10: our solutions).}
 		\label{fig:comparison}
 		\vspace{2ex}
 	\end{minipage}
@@ -173,7 +177,7 @@ We further elaborate these two methods below:
 	\item[(6)] \ours: $\goodfunc(D)$ $\ra$ Impute-Auto: $\autofunc(\goodfunc(D))$
 \ei
 
-However, one main drawback is that modeling possible worlds of $D$ is computationally expensive, which hinders the practicability of the \ours algorithm.  To address this high computational cost problem, we further propose {\bf optimization} methods to integrate imputation-in-the-loop (with either humans or automatic methods) into the \ours algorithm (see methods 7 and 8 in Figure~\ref{fig:ours}). To this end, the optimized algorithms can significantly reduce the number of possible worlds, thus achieving low computational cost. 
+However, one main drawback is that modeling possible worlds of $D$ is computationally expensive, which hinders the practicability of the \ours algorithm.  To address this high computational cost problem, we further propose  imputation-in-the-loop optimization (with either humans or automatic methods) into the \ours algorithm (see methods 7 and 8 in Figure~\ref{fig:ours}). To this end, the optimized algorithms can significantly reduce the number of possible worlds, thus achieving low computational cost. 
 
 \bi
 	\item[(7)] \ours with human-in-the-loop imputation: $\goodfunc(D, \circlearrowleft^\humanfunc)$ 
@@ -181,7 +185,19 @@ However, one main drawback is that modeling possible worlds of $D$ is computatio
 \ei
 
 
-A comparison of methods (5)--(8) is given in Figure~\ref{fig:comparison}. Note that method (7) is the best solution because it can achieve a high ML accuracy with low human cost and low machine cost. 
+
+
+
+
+\cc{Besides, since the above methods for coreset selection incorporate at least one iteration over the entire dataset, it is not very efficient when the dataset is large, so we propose a group-based acceleration strategy to further improve the machine cost. The key idea is to cluster similar tuples in $D$ into a group, and thus the coreset is selected to represent these groups. Since the groups can still represent the distribution of $D$, the selected coreset is still well-performed. More importantly, we only need to iterate these groups, with a much smaller number than the tuples of $D$, and thus the efficiency is improved. We also provide a theoretical analysis with respect to the group-based strategy.}
+
+\bi
+\item[(9)] \cc{Group-based \ours with human-in-the-loop imputation: $\goodfunc^+(D, \circlearrowleft^\humanfunc)$}
+\item[(10)] \cc{Group-based \ours with machine-in-the-loop imputation: $\goodfunc^+(D, \circlearrowleft^\autofunc)$}
+\ei
+
+\cc{A comparison of methods (5)--(10) is given in Figure~\ref{fig:comparison}. Note that method (10) is the best solution because it can achieve a high ML accuracy with low human cost and low machine cost.}
+%
 
 
 \stitle{Contributions}
@@ -196,15 +212,19 @@ We make the following contributions.
 	We prove the NP-hardness of the problem. We propose a greedy algorithm with an approximate ratio. 
 	(Section~\ref{sec:without})
 
-	\item[(iii)] \textit{Optimizations.}
+	\item[(iii)] \textit{Imputation-in-the-loop optimizations.}
 	We develop optimization techniques that integrate imputation-in-the-loop into the coreset selection process, to improve the efficiency while achieving high accuracy. We also analyze the convergence rate of our method and theoretically prove that it can converge fast. 
 	(Section~\ref{sec:human})
+	
+	\item[(iv)] \textit{Group-based acceleration.}
+	We develop group-based techniques to further improve the efficiency. We also analyze the theoretical guarantee and convergence of the proposed techniques. 
+	(Section~\ref{sec:group})
 
 
 	%\item[(iv)] \textit{Convergence rate analysis.}\nan{Add this section as a contribution. Otherwise, the reviewers may not even know you have this section.}
 
-	\item[(iv)] \textit{Experiments.}
-	We conduct extensive experiment on 6 real-world datasets and compare with 10 baselines to show that \ours can select a well-performed coreset to achieve both data-effective and data-efficient ML while consuming a low human cost. 
+	\item[(v)] \textit{Experiments.}
+	We conduct extensive experiment on 8 real-world datasets and compare with 10 baselines to show that \ours can select a well-performed coreset to achieve both data-effective and data-efficient ML while consuming a low human cost. 
 	(Section~\ref{sec:exp})
 \ee
 

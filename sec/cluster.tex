@@ -2,12 +2,12 @@
 
 
 \section{Group-based Acceleration}
-\label{group}
+\label{sec:group}
 
 As discussed above, we can observe that in Section~\ref{subsec:one}, even with the most efficient imputation-in-the-loop  strategy, \ie  one tuple in  each iteration, the time complexity is  $O(KhnL^2)$, where $K$ is the size of the coreset, $h$ is the sample size, $L$ is a small constant and $n$ is the number of entire dataset. Therefore, obviously, the efficiency is dominated by $n$, which is still low when $n$ is large, and thus it  is necessary to further accelerate this process.
 
 \noindent \textbf{Key observation.}   Recap that in Figure~\ref{fig:overviewSingle}, we can observe that  given a tuple $c$ in the coreset, the tuples in the origin full train set $\train$ represented by $c$ are likely to be  closer to each other than other tuples not represented by $c$.
-Based on this observation, we propose to first cluster the full train set into groups, and then compute the coreset based on these groups. This can achieve much acceleration because the number of groups is much smaller than $n$. 
+Based on this observation, we propose to first group the full train set, and then compute the coreset based on the groups. This can achieve much acceleration because the number of groups is much smaller than $n$. 
 
 At the following, we will theoretically and empirically show the group-based solution can accelerate the coreset selection process without sacrificing the effectiveness much.
 
@@ -15,27 +15,28 @@ At the following, we will theoretically and empirically show the group-based sol
 
 \subsection{Group-based Solution Overview}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figs/Overview-gb}
+%\begin{figure}[t]
+ %   \centering
+  %  \includegraphics[width=0.6\textwidth]{figs/Overview-gb}
    % \vspace{-2.5em}
-    \caption{Illustration of the Group-based Solution.}
-    \label{fig:overview-gb}
+   % \caption{Illustration of the Group-based Solution.}
+    %\label{fig:overview-gb}
    % \vspace{-1.5em}
-\end{figure}
+%\end{figure}
 
-As shown in Figure~\ref{fig:overview-gb}, one of the core parts of coreset computation is to compute the tuple-tuple distance, \ie $s_{ij}$. For the group-based solution, we just need to consider the relationship between tuples and these pre-computed groups, namely tuple-group distance, rather than the large amount of tuple-tuple distances. As we will discuss below, the computation of tuple-group distance does not need to iterate all tuples in the group, and thus  the overall efficiency can be much improved. 
+%As shown in Figure~\ref{fig:overview-gb}, o
+One of the core parts of coreset computation is to compute the tuple-tuple distance, \ie $s_{ij}$. For the group-based solution, we just need to consider the relationship between tuples and these pre-computed groups, namely tuple-group distance, rather than the large amount of tuple-tuple distances. As we will discuss below, the computation of tuple-group distance does not need to iterate all tuples in the group, and thus  the overall efficiency can be much improved. 
 
-At a high level, the overall process of group-based \ours solution with imputation in the loop is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without clustering (the modified parts are highlighted in blue fonts).
+At a high level, the overall process of group-based \ours solution with imputation in the loop is shown in Algorithm~\ref{alg:group}. To be more explicit, we illustrate Algorithm~\ref{alg:group} in comparison with Algorithm~\ref{alg:framework} in Section~\ref{subsec:framework} without grouping (the modified parts are highlighted in blue fonts).
 
-To be specific, as shown in Line~\ref{alg4:cluster}, we first cluster $\train$ into groups using the efficient LSH approach, where each group $\group_u, u\in[1, U]$ denotes the indexes of tuples in $\train$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
+To be specific, as shown in Line~\ref{alg4:cluster}, we first group $\train$   using the efficient local sensitive hash (LSH) approach, where each group $\group_u, u\in[1, U]$ denotes the indexes of tuples in $\train$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
 %
  Afterwards, the major difference between group-based \ours and original \ours lies in the 3rd loop. Instead of  selecting a coreset to represent all tuples in the train set, group-based \ours selects a coreset to represent all clusters. As these clusters can well capture the train set distribution, the selected coreset contains enough information to approximate the full gradient of the entire train set. 
  
  To this end, recap that the typical coreset selection algorithm needs the tuple-tuple distances to approximate the full gradient, while for group-based \ours, we just need to consider the tuple-group distances, \ie  
 $\overline{s}_{\gamma(j)u} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$, which denotes the maximum feature distance between the tuple $c_j$ in the coreset and all tuples in $\group_u$. As tuples in $\group_u$ are close to each other, $\overline{s}_{\gamma(j)u}$ can represent the relationship between $c_j$ and tuples in $\group_u$ to a large extent.
 %
-We will theoretically show that using the maximum distance can still derive a bounded GA error. 
+We will theoretically show that using this maximum distance can still derive a bounded GA error. 
 However, since computing $\overline{s}_{\gamma(j)u}$ needs to iterate the tuples in $\group_u$, which is time-consuming, we finally estimate an upper bound $\hat{s}_{ju}$ to compute the coreset score (as shown in Line~11), which still leads to a well-performed coreset. 
 %
 
@@ -49,13 +50,13 @@ However, since computing $\overline{s}_{\gamma(j)u}$ needs to iterate the tuples
 
 In this section, following the equations in previous sections, we deduce the GA error bound for our group-based solution. 
 %
-After clustering $\train$ to $\{ \group_1 , \group_2, ...\group_U\}$, considering Equation~\ref{eqa:tuple}, we  first rewrite the sum of $n$ feature distances (\ie $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to $U$ summations. And we use $s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert$, as shown in the following Equation:
+If we group $\train$ to $\{ \group_1 , \group_2, ...\group_U\}$, considering Equation~\ref{eqa:tuple}, we  can rewrite the sum of $n$ feature distances (\ie $\min_{c_j\in \core_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert$) to $U$ summations as follows:
 
 \begin{equation}\label{eqa:cluster-1}
     \mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\lVert\mathbf{x}_i - \mathbf{x}_{\gamma(j)}\rVert) =  \sum_{k= 1}^{|\worlds|} p_k (\sum_{u=1}^U\sum_{v \in \group_u} \min_{c_j\in C_k}\lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert)
 \end{equation}
 
-Afterwards, each summation is the sum of $U$ feature distances, as shown in Equation~\ref{eqa:cluster-2},  the sum of each cluster can be bounded by  the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k} s_{\gamma(j)v}$)  multiplying the  cluster size, but the bound is expensive to compute because of iterating $\train$. To address this, we further apply the max-min inequality~\cite{boyd2004convex} to simplify the computations. 
+Afterwards, each summation is the sum of $U$ feature distances, as shown in Equation~\ref{eqa:cluster-2},  the sum of each group can be bounded by  the maximum distance ($\max_{v \in \group_u} \min_{c_j\in \core_k} s_{\gamma(j)v}$)  multiplying the  group size, but the bound is expensive to compute because of iterating $\train$. To address this, we further apply the max-min inequality~\cite{boyd2004convex} to simplify the computations. 
 
 
 \begin{equation}\label{eqa:cluster-2}
@@ -68,9 +69,9 @@ Afterwards, each summation is the sum of $U$ feature distances, as shown in Equa
 
 
 
-Therefore,  we are able to iterate the much smaller cluster $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)u} = \max_{v \in \group_u}s_{\gamma(j)v}, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each cluster $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the cluster $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)u}$. To achieve efficient coreset selection, given $\train$ and these clusters $\groups$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)u}|j \in [1,N], u \in [1,U]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)u}$.
+Therefore,  we are able to iterate the much smaller group $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)u} = \max_{v \in \group_u}s_{\gamma(j)v}, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each group $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the group $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)u}$. To achieve efficient coreset selection, given $\train$ and these clusters $\groups$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)u}|j \in [1,N], u \in [1,U]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)u}$.
 
-Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting the expectation is extremely expensive, and thus we still can convert the expectation computation over the possible worlds associated with all clusters to the sum of expectation of each cluster, as follows:
+Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting the expectation is extremely expensive, and thus we still can convert the expectation computation over the possible worlds associated with all groups to the sum of expectation of each cluster, as follows:
 
 \begin{equation}\label{eqa:cluster-4}
     \begin{aligned}
@@ -82,12 +83,12 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 
 \vspace{.5em}
 
-\subsubsection{Clustering}~\label{subsec:clustering}
-As discussed in Algorithm~\ref{alg:group} Line~2, we need to cluster the entire train set as a pre-processing step. To achieve this efficiently, we adopt the local sensitive hashing~\cite{DBLP:conf/focs/AndoniI06} to assign similar tuples to the same group, with a time complexity linear with $|\train|$.
+\subsubsection{Grouping}~\label{subsec:clustering}
+As discussed in Algorithm~\ref{alg:group} Line~2, we need to group the entire train set as a pre-processing step. To achieve this efficiently, we adopt the local sensitive hashing~\cite{DBLP:conf/focs/AndoniI06} to assign similar tuples to the same group, with a time complexity linear with $|\train|$.
 %
-Note that $\train$ contains some tuples with missing values, an ideal way is to first impute these tuples precisely and then cluster, but we do not know the ground truth in advance. Therefore, we just apply a typical algorithm \ie MICE~\cite{royston2011multiple} to impute these missing values, and then conduct the clustering. Although the imputation results may  not be accurate enough, it does not influence much because we just need closer tuples to be included in the same group, and these missing cells do not have a large impact on determining whether two tuples are close. 
+Note that $\train$ contains some tuples with missing values, an ideal way is to first impute these tuples precisely and then group, but we do not know the ground truth in advance. Therefore, we just apply a typical algorithm \ie MICE~\cite{royston2011multiple} to impute these missing values, and then conduct the grouping. Although the imputation results may  not be accurate enough, it does not influence much because we just need closer tuples to be included in the same group, and these missing cells do not have a large impact on determining whether two tuples are close. 
 %
-Finally, tuples with the same hash code are highly similar, which are taken as a cluster.
+Finally, tuples with the same hash code are highly similar, which are taken as a group.
 
  
 
@@ -106,8 +107,8 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
   To solve this, we propose to leverage the idea of product quantization  to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then using $\hat{s}_{ju}$ to compute the coreset score still very likely leads to a bounded GA error.
   
   \noindent  \underline{\textit{Product quantization (PQ)}}  has been widely used for approximate nearest neighbor (ANN) search.  The key idea of PQ is to split the $m$ dimension feature space into a Cartesian product of $M$ low dimensional subspaces, and then quantize each subspace separately.  
- The quantization is conducted by applying $k$-means algorithm~\cite{hartigan1979algorithm} over the vectors in each subspace, where $R$ clusters are generated.  
-  In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index (\ie cluster ID) of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficiently estimated based on their short codes. 
+ The quantization is conducted by applying $k$-means algorithm~\cite{hartigan1979algorithm} over the vectors in each subspace, where $R$ groups are generated.  
+  In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index (\ie group ID) of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficiently estimated based on their short codes. 
   
   
   
@@ -117,7 +118,7 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
   To be specific, we also split  $\mathbf{x}_{j}$ of $c_j$  into $M$ subvectors, each of which is represented  as $\mathbf{x}^z_{j}$. If we can respectively compute the maximum distance (denoted by $\overline{s}_{ju}^z$) between the $z$-th subvector and vectors in the $z$-th  subspace of $\group_u$, $z\in [1,M]$, and sum them up, we can derive  an upper bound  between $c_j$ and $\group_u$, \ie $ \overline{s}_{ju} \leq  \sum_{z = 1}^M  \overline{s}_{ju}^z$.
 
 \noindent  \underline{\textit{Computing $\hat{s}_{ju}$ with PQ.}}
-Directly computing $\overline{s}_{ju}^z$ still needs to iterate every tuple in $\group_u$, so we leverage these  clusters in each subspace to represent all the vectors in the $z$-th subspace. Since the number of clusters is much smaller than that of all vectors, the efficiency is much improved, which is the key idea of our solution.
+Directly computing $\overline{s}_{ju}^z$ still needs to iterate every tuple in $\group_u$, so we leverage these  groups in each subspace to represent all the vectors in the $z$-th subspace. Since the number of groups is much smaller than that of all vectors, the efficiency is much improved, which is the key idea of our solution.
 %
 
 
