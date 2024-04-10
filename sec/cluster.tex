@@ -69,7 +69,7 @@ Afterwards, each summation is the sum of $U$ feature distances, as shown in Equa
 
 
 
-Therefore,  we are able to iterate the much smaller group $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)u} = \max_{v \in \group_u}s_{\gamma(j)v}, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each group $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the group $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)u}$. To achieve efficient coreset selection, given $\train$ and these clusters $\groups$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)u}|j \in [1,N], u \in [1,U]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)u}$.
+Therefore,  we are able to iterate the much smaller group $\group$ to compute  the maximum feature distance (\ie $\overline{s}_{\gamma(j)u} = \max_{v \in \group_u}s_{\gamma(j)v}, j \in [1,|\core_k|]$) between each $c_j \in \core_k$ and tuples in each group $\group_u$. Then, similar to assigning tuples of the full train set to the tuple of the coreset in previous sections, we can assign the group $\group_u$ to the tuple  with the minumum distance, \ie $\min_{c_j\in C_k} \overline{s}_{\gamma(j)u}$. To achieve efficient coreset selection, given $\train$ and these groups $\groups$, we should precompute all the maximum feature distances $\{\overline{s}_{\gamma(j)u}|j \in [1,N], u \in [1,U]\}$. In this way, we can directly get the value of $\overline{s}_{\gamma(j)u}$.
 
 Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting the expectation is extremely expensive, and thus we still can convert the expectation computation over the possible worlds associated with all groups to the sum of expectation of each cluster, as follows:
 
@@ -104,11 +104,13 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
 %
 %
  Recap that the reason why we do not directly compute the  $\overline{s}_{\gamma(j)u}$ is that iterating $\group_u$ to compute the maximum distance is expensive.
-  To solve this, we propose to leverage the idea of product quantization  to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then using $\hat{s}_{ju}$ to compute the coreset score still very likely leads to a bounded GA error.
+ %
+  To solve this, we propose to leverage the  quantization technique to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then use $\hat{s}_{ju}$ to compute the coreset score still very likely leads to a bounded GA error.
   
-  \noindent  \underline{\textit{Product quantization (PQ)}}  has been widely used for approximate nearest neighbor (ANN) search.  The key idea of PQ is to split the $m$ dimension feature space into a Cartesian product of $M$ low dimensional subspaces, and then quantize each subspace separately.  
- The quantization is conducted by applying $k$-means algorithm~\cite{hartigan1979algorithm} over the vectors in each subspace, where $R$ groups are generated.  
-  In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index (\ie group ID) of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficiently estimated based on their short codes. 
+  \noindent  \underline{\textit{Basic idea.}} 
+  At a high level, if we consider each tuple individually, it is time-consuming as discussed above. However, if we take all tuples in a group as a whole, we cannot distinguish these tuples and the maximum distance is impossible to estimate. Hence, we propose a more fine-grained  method that  splits the $m$ dimension feature space into  $M$ low dimensional subspaces, and then quantize each subspace separately.  
+ The quantization is conducted by applying $k$-means algorithm~\cite{hartigan1979algorithm} over the vectors in each subspace, where $R$ clusters are generated.  
+  In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index (\ie cluster ID) of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficiently estimated based on their short codes. 
   
   
   
@@ -117,23 +119,22 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
   %
   To be specific, we also split  $\mathbf{x}_{j}$ of $c_j$  into $M$ subvectors, each of which is represented  as $\mathbf{x}^z_{j}$. If we can respectively compute the maximum distance (denoted by $\overline{s}_{ju}^z$) between the $z$-th subvector and vectors in the $z$-th  subspace of $\group_u$, $z\in [1,M]$, and sum them up, we can derive  an upper bound  between $c_j$ and $\group_u$, \ie $ \overline{s}_{ju} \leq  \sum_{z = 1}^M  \overline{s}_{ju}^z$.
 
-\noindent  \underline{\textit{Computing $\hat{s}_{ju}$ with PQ.}}
-Directly computing $\overline{s}_{ju}^z$ still needs to iterate every tuple in $\group_u$, so we leverage these  groups in each subspace to represent all the vectors in the $z$-th subspace. Since the number of groups is much smaller than that of all vectors, the efficiency is much improved, which is the key idea of our solution.
+\noindent  \underline{\textit{Computing $\hat{s}_{ju}$.}}
+As discussed before,
+directly computing $\overline{s}_{ju}^z$ is time-consuming, so we leverage these  clusters in each subspace to represent all the vectors in the $z$-th subspace. %Since the number of groups is much smaller than that of all vectors, the efficiency is much improved, which is the key idea of our solution.
 %
-
-
  Specifically, as shown on the left part of Figure~\ref{fig:codebook}, we use $\{r_1^1, r_1^2,..., r_1^R\}$ to represent the  cluster centers in the first subspace. %, associated with indices (codes) $\{1, 2,...,B\}$. 
  Hence, we can build a matrix $mr_1$ to store the feature distances (denoted by $mr_1[x][y]$) between every two cluster center, in total  $M$ matrices are built, which is shown in the middle part of Figure~\ref{fig:codebook}.
  In this way, we can quantize each $t_i (\mathbf{x}_i) \in \mathcal{T}$  to a short code $d_i$, where $d_i^z, z\in[1,M]$  denotes the $z$-th element, indicating that the $d_i^z$-th center has the shortest distance with $\mathbf{x}_i^z$ among all clusters of the $z$-th subspace. 
  Then, the feature distance between  $t_i$ and $c_j$ can then be approximated by $\sum_{z=1}^{M}mr_z[d_i^z][d_j^z]$.
 
-Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebook}, we approximate $\overline{s}_{ju}^z$ by first quantizing $\mathbf{x}_{j}$ and  $\forall \mathbf{x} \in \group_u$ to short codes. Based on these matrices, for the $z$-th subspace, we compute the maximum distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ as the approximation. Then, we approximately compute an upper bound $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}_{ju}^z$ by summing the $M$ distances. Although $\hat{s}_{ju}^z$ may slightly underestimate $\overline{s}^z_{ju}$ due to the quantization bias, the summation $\hat{s}_{ju}$ always overestimates $\overline{s}_{ju}$ since each $\hat{s}_{ju}^z$ is close to $\overline{s}^z_{ju}$, leading to a bounded GA error.
+Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebook}, we approximate $\overline{s}_{ju}^z$ by first quantizing $\mathbf{x}_{j}$ and  $\forall \mathbf{x} \in \group_u$ to short codes. Based on these matrices, for the $z$-th subspace, we compute the maximum distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ as the approximation. Then, we approximately compute an upper bound $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}_{ju}^z$ by summing the $M$ distances. Although $\hat{s}_{ju}^z$ may slightly underestimate $\overline{s}^z_{ju}$ due to the quantization bias, the summation $\hat{s}_{ju}$ always overestimates $\overline{s}_{ju}$ since each $\hat{s}_{ju}^z$ is close to $\overline{s}^z_{ju}$, and thus the GA error can be always bounded.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/pq}
    % \vspace{-2.5em}
-    \caption{Example of Product Quantization Method.}
+    \caption{Example of  Quantization-based Method.}
     \label{fig:codebook}
    % \vspace{-1.5em}
 \end{figure}
@@ -154,7 +155,7 @@ As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can pre
  %And the time complexity is $O(KhUL_{\group}L_t)$, where $L_{\group}$ donotes the number of possible worlds of $\group_u$ and $L_t$ denotes the number of possible worlds of a tuple $t$.
  Hence, since each group contains multiple tuples, possibly multiple missing values,  it is expensive to enumerate $card(u)$ possible worlds and  to get the expectation. 
  To address this, similar to the method discussed in
- Section~\ref{subsec:batch},  we can reduce the number ($L$) of possible worlds of each tuple, and just keep several top possible worlds, say l, with the highest probabilities. 
+ Section~\ref{subsec:batch},  we can reduce the number ($L$) of possible worlds of each tuple, and just keep several top possible worlds, say $l$, with the highest probabilities. 
 %  Next, suppose that there are $b$ tuples with missing values, and thus $3^b$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration,   we can  select top-$l_G$ (\eg 3)possible worlds from the $3^b$ ones to compute the expectation. 
 \jks{Next, suppose that there are $x+1$ tuples (x tuples in $G_u$ and one tuple in $\hat{C}$) with missing values, and thus $l^{x+1}$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration, we can select top-$l_G$ (\eg 3)possible worlds from the $l^x$ ones to compute the expectation.}
  Overall, the time complexity is $O(KhUll_{\group})$, which is much faster than the $O(Khnl^2)$ because $U \ll n$ and $l_G$ is also small. Similarly, the above framework is easy to generalize to the scenario of one batch per iteration, where the only difference is that in the coreset, we have a small batch of tuples with missing values rather than just one, indicating that the number of possible worlds that should be considered increases. However, we can still reduce the possible world number following the above method. \jks{Finally, the time complexity of one batch per iteration is $O(KhUll_{\group}^b)$}
