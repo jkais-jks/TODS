@@ -139,16 +139,7 @@ Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebo
    % \vspace{-1.5em}
 \end{figure}
 
-\noindent \textbf{Time complexity analysis.}
-We can sample a small subset to compute the clusters in each subspace, and thus the time complexity of this part can be ignored. 
-%
-Then the matrices can be computed in $O(mR^2)$ and the short codes of $\train$ can be computed in $O(mnR)$. 
-%
-%
-As discussed above,  the largest distance between corresponding codes of  $c_j$ and codes of tuples in $\group_u$ can be computed by $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ in the $z$-th subspace. 
-%
-%
-As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can precompute $\max\limits_{v\in\group_u}mr_z[i][d_v^z], i\in[1, R]$ for each $\group_u$, which takes $O(UR^2)$. In this way, we can compute each $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}^z_{ju}$ in $O(M)$, and all the upper bounds $\hat{s}_{ju}$, $j\in [1,N]$, $u\in [1,U]$ can be computed in  $O(MnU)$.%, much faster than the $O(mn^2card(u))$.
+
 
 \noindent \textbf{Reducing the number of possible worlds.} Recap that $\mathrm{E}[\min_{c_j\in \hat \core}\hat{s}_{ju}] = \sum_{x=1}^{card(u)} q_x \min_{c_j \in \hat{C}} \hat{s}_{ju}[x]$.
 %
@@ -162,6 +153,18 @@ As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can pre
  
  
  % $\sum_{u=1}^U  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$
+ 
+ 
+ \noindent \textbf{Time complexity analysis.}
+ We can sample a small subset to compute the clusters in each subspace, and thus the time complexity of this part can be ignored. 
+ %
+ Then the matrices can be computed in $O(mR^2)$ and the short codes of $\train$ can be computed in $O(mnR)$. 
+ %
+ %
+ As discussed above,  the largest distance between corresponding codes of  $c_j$ and codes of tuples in $\group_u$ can be computed by $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ in the $z$-th subspace. 
+ %
+ %
+ As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can precompute $\max\limits_{v\in\group_u}mr_z[i][d_v^z], i\in[1, R]$ for each $\group_u$, which takes $O(UR^2)$. In this way, we can compute each $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}^z_{ju}$ in $O(M)$, and all the upper bounds $\hat{s}_{ju}$, $j\in [1,N]$, $u\in [1,U]$ can be computed in  $O(MnU)$.%, much faster than the $O(mn^2card(u))$.
  
 \noindent \textbf{Convergence analysis.}  
 Considering the proof in Section~5.3, 
