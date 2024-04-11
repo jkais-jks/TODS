@@ -148,15 +148,19 @@ Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebo
  To address this, similar to the method discussed in
  Section~\ref{subsec:batch},  we can reduce the number ($L$) of possible worlds of each tuple, and just keep several top possible worlds, say $l$, with the highest probabilities. 
 %  Next, suppose that there are $b$ tuples with missing values, and thus $3^b$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration,   we can  select top-$l_G$ (\eg 3)possible worlds from the $3^b$ ones to compute the expectation. 
-\jks{Next, suppose that there are $x+1$ tuples (x tuples in $G_u$ and one tuple in $\hat{C}$) with missing values, and thus $l^{x+1}$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration, we can select top-$l_G$ (\eg 3)possible worlds from the $l^x$ ones to compute the expectation.}
- Overall, the time complexity is $O(KhUll_{\group})$, which is much faster than the $O(Khnl^2)$ because $U \ll n$ and $l_G$ is also small. Similarly, the above framework is easy to generalize to the scenario of one batch per iteration, where the only difference is that in the coreset, we have a small batch of tuples with missing values rather than just one, indicating that the number of possible worlds that should be considered increases. However, we can still reduce the possible world number following the above method. \jks{Finally, the time complexity of one batch per iteration is $O(KhUll_{\group}^b)$}
+Next, suppose that there are $y+1$ tuples ($y$ tuples in $G_u$ and one tuple in $\hat{C}$) with missing values, and thus $l^{y+1}$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration, we can select top-$l_g$ (\eg 3) possible worlds from the $l^y$ ones to compute the expectation.
+  Similarly, the above framework is easy to generalize to the scenario of one batch per iteration, where the only difference is that in the coreset, we have a small batch $b$ of tuples with missing values rather than just one, indicating that the number of possible worlds that should be considered increases. However, we can still reduce the possible world number following the above method. 
+ 
+ 
  
  
  % $\sum_{u=1}^U  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$
  
+
+ 
  
  \noindent \textbf{Time complexity analysis.}
- We can sample a small subset to compute the clusters in each subspace, and thus the time complexity of this part can be ignored. 
+ For the quantization step, we can sample a small subset to compute the clusters in each subspace, and thus the time complexity of this part can be ignored. 
  %
  Then the matrices can be computed in $O(mR^2)$ and the short codes of $\train$ can be computed in $O(mnR)$. 
  %
@@ -164,14 +168,18 @@ Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebo
  As discussed above,  the largest distance between corresponding codes of  $c_j$ and codes of tuples in $\group_u$ can be computed by $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ in the $z$-th subspace. 
  %
  %
- As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can precompute $\max\limits_{v\in\group_u}mr_z[i][d_v^z], i\in[1, R]$ for each $\group_u$, which takes $O(UR^2)$. In this way, we can compute each $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}^z_{ju}$ in $O(M)$, and all the upper bounds $\hat{s}_{ju}$, $j\in [1,N]$, $u\in [1,U]$ can be computed in  $O(MnU)$.%, much faster than the $O(mn^2card(u))$.
+ As $d_j^z$ only takes from $R$ different values $\{1, 2, \dots, R\}$, we can precompute $\max\limits_{v\in\group_u}mr_z[i][d_v^z], i\in[1, R]$ for each $\group_u$, which takes $O(UR^2)$. In this way, we can compute each $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}^z_{ju}$ in $O(M)$, and considering that $l$, $l_g$ and  $b$ are all small constants, all the upper bounds $\hat{s}_{ju}$, $j\in [1,N]$, $u\in [1,U]$ can be computed in  $O(MnU)$, which is much faster than $O(mn^2)$ that enumerates every tuple and tuples in each group to compute the upper bounds, because $m \ll M$ and $U \ll n$. %, much faster than the $O(mn^2card(u))$. 
+ Then, 
+ considering the three-loop framework, the overall time complexity is $O(KhU)$, which is much faster than the $O(Khn)$ because $U \ll n$.
+%
+% \cc{For the scenario of one batch per iteration, the time complexity is $O(KhUl^bl_g)$, where $b$ is a small constant.}
  
 \noindent \textbf{Convergence analysis.}  
 Considering the proof in Section~5.3, 
 obviously, given a dataset, $\overline{s}_{\gamma(j)u}$ can be bounded (suppose that $\overline{s}_{\gamma(j)u} \leq s_{0}$). Then we have
 $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}] = \sum_{x=1}^{card(u)} q_x \min_{c_j \in \hat{C}} \overline{s}_{ju}[x] \leq \sum_{x= 1}^{card(u)} q_x * s_{0} = s_{0}$, and thus  $\mathrm{E}[C] = \sum_{u=1}^U  |\group_u| \times\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}] \leq n * s_{0} = \kappa_1$. And we also have $max_{\hypo \in \vartheta} \Vert \sum_{i=1}^{n} \nabla \fun_{i}(\hypo) - \sum_{j=1}^{\vert \core \vert} w_j \nabla \fun_{\gamma(j)}(\hypo) \Vert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core}\lVert \df_i(\hypo) - \df_{\gamma(j)}(\hypo) \rVert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core} \dist_{ij}  \leq \kappa_1$.
 %Thus, given a coreset $\core$, $\sum\limits_{i=1}^n \min \limits_{c_j\in\core} \dist_{ij}  \leq \sum\limits_{i=1}^n s_{0} \leq n * s_{0} = \kappa_0$.Apparently, we have $\kappa_0 = \kappa_1$. Then, we have $max_{\hypo \in \vartheta} \Vert \sum_{i=1}^{n} \nabla \fun_{i}(\hypo) - \sum_{j=1}^{\vert \core \vert} w_j \nabla \fun_{\gamma(j)}(\hypo) \Vert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core}\lVert \df_i(\hypo) - \df_{\gamma(j)}(\hypo) \rVert \leq \sum\limits_{i=1}^n \min \limits_{c_j\in\core}\lVert \dist_{ij} \rVert \leq \kappa_1$. In addition, we use incremental gradient method in Algorithm~\ref{alg:framework}, we have $\Vert \hypo_t - \hypo^{*} \Vert \le \kappa_2$.
-Then we can still apply Cauchy-Schwarz inequlity~\cite{strang2006linear} to justify the convergence of the group-based method.
+Then we can still apply Cauchy-Schwarz inequlity~\cite{strang2006linear} to justify the convergence of the group-based method following the proof in Section~5.3.
  
  %one simple way to boost efficiency is by minimizing the number of possible worlds. To achieve this, we can intuitively prioritize possible worlds with higher probabilities, allowing us to discard those with lower probabilities without significantly impacting the accuracy of expectation calculations. It's important to note that the probability of each possible world is determined by multiplying the probabilities of incomplete tuples within that world, as these tuples can be considered independent. Hence, we can eliminate possible worlds containing tuples with low probabilities, effectively reducing the overall number of possible worlds in the coreset. 
  

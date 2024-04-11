@@ -14,8 +14,8 @@
 {\bf (5) \bike}~\cite{bike} is a regression task that predicts ``{\it the number of bike sharing in a given time}''. %There are 15 attributes in this dataset, 5 of which are numerical data. %The size of train, validation and test dataset are 13300, 2000 and 2000. In the train dataset, there are 5100 incomplete tuples.
 {\bf (6) \air}~\cite{auctus} is a regression task that predicts ``{\it the air quality at a certain time}''. %There are 18 attributes in this dataset, 12 of which are numerical data.
 {\bf (7) \imdb}~\cite{DBLP:journals/pvldb/LeisGMBK015} refers to a dataset that \textit{predicts the rating (1-10) of movies}, which contains the basic information of movies, \eg \texttt{movie\_id, title, production\_year}.
-
-{\bf (8) \imdbl}~\cite{DBLP:journals/pvldb/LeisGMBK015} is the large vision of \imdb, which contains 4000000 records with the same attributes.
+%
+{\bf (8) \imdbl}~\cite{DBLP:journals/pvldb/LeisGMBK015} is the large vision of \imdb, which contains 4,000,000 records with the same attributes.
 
 %Table~\ref{xxx} shows the statistics of these datasets.
 
@@ -103,7 +103,7 @@ For efficiency, we focus on the machine cost (\ie the runtime of machine) as wel
 
 \noindent{\bf (12) $\eight$} is similar to $\goodfunc(\train,\circlearrowleft^\humanfunc)$, but the automatic  MICE  method is used.
 
-\noindent{\bf (13) $\nine$} uses group-based method to accelerate \ours, which select the coreset and iteratively asks human to impute incomplete tuples (one tuple per human iteration) during the coreset selection process.
+\noindent{\bf (13) $\nine$} uses group-based method to accelerate \ours, which selects the coreset and iteratively asks human to impute incomplete tuples (one tuple per human iteration) during the coreset selection process.
 
 \noindent{\bf (14) $\ten$} is similar to $\nine$, but the automatic  MICE  method is used.
 
