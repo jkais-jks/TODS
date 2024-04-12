@@ -7,7 +7,7 @@
 	\caption{Group-based \ours Solution (imputation-in-the-loop) \label{alg:group}}
 		{\small
 			
-		\KwIn{Incomplete train data $\train$, coreset size $\numcore$, sample size $h$.}
+		\KwIn{Incomplete train data $\train$, coreset size $\numcore$, sample size $h$\jks{, batch size $b$}.}
 		
 		\KwOut{A coreset $\core \subseteq \train$, weight $\weightset=\{w_j\}$,$|\core|=|\weightset|=\numcore$.}
 		
@@ -43,11 +43,21 @@
 			}		
 
 			$t^*$ = $\argmax_{t\in T_{sample}}\mathrm{E}[t|\core]$ ;\\\nllabel{craig1:maxmulti}
-			\If{$\mathbb{I}[t^*] = 1$} {\nllabel{craig1:oracle1}
-				        Impute $t$ by a  human or automatic method.\\\nllabel{craig1:oracle}
-				    }
-			$\core = \core \cup \{t^*\}$;
-			\\\nllabel{craig1:add2} 
+			% \If{$\mathbb{I}[t^*] = 1$} {\nllabel{craig1:oracle1}
+			% 	        Impute $t$ by a  human or automatic method.\\\nllabel{craig1:oracle}
+			% 	    }
+			% $\core = \core \cup \{t^*\}$;
+			% \\\nllabel{craig1:add2} 
+			\jks{\If{$\mathbb{I}[t^*] = 1$}
+			{ \nllabel{batch:ifincomp}
+				$cnt++$; \\\nllabel{batch:batchadd}
+			}}
+			
+			\jks{\If{$cnt = b$}
+			{\nllabel{batch:batchenough}
+				Ask the human to impute the incomplete tuples;\\\nllabel{batch:batchoracle}
+				$cnt = 0$; \\\nllabel{batch:batchzero}
+			}}
 			
 				%\If{$\mathbb{I}[t^*] = 1$}
 		%	{ \nllabel{alg:if}

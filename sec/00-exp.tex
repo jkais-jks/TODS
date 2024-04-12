@@ -6,6 +6,30 @@
 
 In this section, we sufficiently compare our proposed methods with multiple baselines on real datasets to demonstrate our effectiveness and efficiency. 
 
+\begin{table}
+	\centering
+	\caption{Statistics of datasets}
+	\vspace{-1em}
+	{\small
+	\begin{tabular}{ccccc}
+		\hline
+		{\bf Dataset} & {\bf $|\train|$} & {\bf $m$} & {\bf $\#$ Incomp. Tuples} & {\bf Task}\\
+		\hline	
+		\nursery & 	10960 & 9 & 3218 & Multi-Class. \\
+		\hr & 18287 & 12 & 5475 & Binary Class. \\
+		\adult & 32842 & 14 & 10752 & Binary Class. \\
+		\credit & 131,000 & 11 & 76813 & Binary Class. \\
+		\bike & 13300 & 15 & 4821 & Regression \\
+		\air & 437,200  & 18 & 128,372 & Regression\\
+		\imdb & 1,000,000 & 40 & 331,189 & Multi-Class.\\
+		\imdbl & 4,000,000 & 40 & 1,312,908 & Multi-Class.\\
+		\hline
+	\end{tabular}
+	}
+	\label{tbl:dataset}
+%	\vspace{-1.8em}
+\end{table}
+
 \input{sec/exp-01-setting}
 
 \input{sec/exp-02-baselines}
@@ -20,54 +44,53 @@ In this section, we sufficiently compare our proposed methods with multiple base
 
 \input{sec/exp-06-pq}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{figs/M}
-%	\vspace{-1em}
-	\caption{Varying Hyperparameters in LSH and PQ.}
-	\label{fig:pq-exp}
-%	\vspace{-1em}
-\end{figure}
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=1\textwidth]{figs/M}
+% 	\vspace{-1em}
+% 	\caption{Varying Hyperparameters in LSH and Quantization-based Method.}
+% 	\label{fig:pq-exp}
+% 	\vspace{-1em}
+% \end{figure}
 
 \input{sec/exp-07-converge}
+% \begin{figure}[t]   
+% 	\centering
+% 	\begin{minipage}[t]{0.49\textwidth}
+% 		\centering
+% 		\includegraphics[width=\columnwidth]{figs/G_a}
+% 	    \vspace{-1.5em}
+% 		\caption{Convergence of \ours.}
+% 		\label{fig:converge_G}
+% 	\end{minipage}
+% 	\begin{minipage}[t]{0.49\textwidth}
+% 		\centering
+% 		\includegraphics[width=\columnwidth]{figs/G}
+% 	    \vspace{-1.5em}
+% 		\caption{Loss of \ours.}
+% 		\label{fig:real_loss_G}
+% 	\end{minipage}
+% 	\vspace*{-1em}   
+% \end{figure}
 
-\begin{figure}[t]   
-	\centering
-	\begin{minipage}[t]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/G_a}
-	%	\vspace{-1.5em}
-		\caption{Convergence of \ours.}
-		\label{fig:converge_G}
-	\end{minipage}
-	\begin{minipage}[t]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/G}
-	%	\vspace{-1.5em}
-		\caption{Loss of \ours.}
-		\label{fig:real_loss_G}
-	\end{minipage}
-	\vspace*{-1em}   
-\end{figure}
-
-\begin{figure}[t]   
-	\centering
-	\begin{minipage}[t]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/G+_a}
-	%	\vspace{-1.5em}
-		\caption{Convergence of \texttt{GoodCore}$^+$.}
-		\label{fig:converge_G+}
-	\end{minipage}
-	\begin{minipage}[t]{0.49\textwidth}
-		\centering
-		\includegraphics[width=\columnwidth]{figs/G+}
-	%	\vspace{-1.5em}
-		\caption{Loss of \texttt{GoodCore}$^+$.}
-		\label{fig:real_loss_G+}
-	\end{minipage}
-	\vspace*{-1em}   
-\end{figure}
+% \begin{figure}[t]   
+% 	\centering
+% 	\begin{minipage}[t]{0.49\textwidth}
+% 		\centering
+% 		\includegraphics[width=\columnwidth]{figs/G+_a}
+% 		\vspace{-1.5em}
+% 		\caption{Convergence of \texttt{GoodCore}$^+$.}
+% 		\label{fig:converge_G+}
+% 	\end{minipage}
+% 	\begin{minipage}[t]{0.49\textwidth}
+% 		\centering
+% 		\includegraphics[width=\columnwidth]{figs/G+}
+% 		\vspace{-1.5em}
+% 		\caption{Loss of \texttt{GoodCore}$^+$.}
+% 		\label{fig:real_loss_G+}
+% 	\end{minipage}
+% 	\vspace*{-1em}   
+% \end{figure}
 
 \input{sec/exp-08-sensitive}
 
@@ -90,8 +113,41 @@ In this section, we sufficiently compare our proposed methods with multiple base
 	\vspace*{-1em}   
 \end{figure}
 
+% \begin{figure}[t]   
+% 	\centering
+% 	\begin{minipage}[t]{0.49\textwidth}
+% 		\centering
+% 		\includegraphics[width=\columnwidth]{figs/entropy_acc}
+% 	    \vspace{-1.5em}
+% 		\caption{Effectiveness of \ours$^+$ for different Threshold.}
+% 		\label{fig:entropy_acc}
+% 	\end{minipage}
+% 	\begin{minipage}[t]{0.49\textwidth}
+% 		\centering
+% 		\includegraphics[width=\columnwidth]{figs/entropy_time}
+% 	    \vspace{-1.5em}
+% 		\caption{Efficiency of \ours$^+$ for different Threshold.}
+% 		\label{fig:entropy_time}
+% 	\end{minipage}
+% 	\vspace*{-1em}   
+% \end{figure}
+\input{sec/exp-09-entropy}
 
-
-
-
-
+\begin{figure}[t]   
+	\centering
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\columnwidth]{figs/entropy_acc}
+	    \vspace{-1.5em}
+		\caption{Effectiveness of \ours$^+$ for different Threshold.}
+		\label{fig:entropy_acc}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\columnwidth]{figs/entropy_time}
+	    \vspace{-1.5em}
+		\caption{Efficiency of \ours$^+$ for different Threshold.}
+		\label{fig:entropy_time}
+	\end{minipage}
+	\vspace*{-1em}   
+\end{figure}

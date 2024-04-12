@@ -44,29 +44,30 @@ For efficiency, we focus on the machine cost (\ie the runtime of machine) as wel
 %\noindent{\bf (5) \missf} is a tree-based imputation method. It recasts data imputation as a prediction task and uses random forest to predict the missing values.
 
 %Data are imputed by regressing each variable in turn against all other variables and then predicting missing data for the dependent variable using the fitted forest.
-\begin{table}
-	\centering
-	\caption{Statistics of datasets}
-	\vspace{-1em}
-	{\small
-	\begin{tabular}{ccccc}
-		\hline
-		{\bf Dataset} & {\bf $|\train|$} & {\bf $m$} & {\bf $\#$ Incomp. Tuples} & {\bf Task}\\
-		\hline	
-		\nursery & 	10960 & 9 & 3218 & Multi-Class. \\
-		\hr & 18287 & 12 & 5475 & Binary Class. \\
-		\adult & 32842 & 14 & 10752 & Binary Class. \\
-		\credit & 131,000 & 11 & 76813 & Binary Class. \\
-		\bike & 13300 & 15 & 4821 & Regression \\
-		\air & 437,200  & 18 & 128,372 & Regression\\
-		\imdb & 1,000,000 & 40 & 331,189 & Multi-Class.\\
-		\imdbl & 4,000,000 & 40 & 1,312,908 & Multi-Class.\\
-		\hline
-	\end{tabular}
-	}
-	\label{tbl:dataset}
-%	\vspace{-1.8em}
-\end{table}
+
+% \begin{table}
+% 	\centering
+% 	\caption{Statistics of datasets}
+% 	\vspace{-1em}
+% 	{\small
+% 	\begin{tabular}{ccccc}
+% 		\hline
+% 		{\bf Dataset} & {\bf $|\train|$} & {\bf $m$} & {\bf $\#$ Incomp. Tuples} & {\bf Task}\\
+% 		\hline	
+% 		\nursery & 	10960 & 9 & 3218 & Multi-Class. \\
+% 		\hr & 18287 & 12 & 5475 & Binary Class. \\
+% 		\adult & 32842 & 14 & 10752 & Binary Class. \\
+% 		\credit & 131,000 & 11 & 76813 & Binary Class. \\
+% 		\bike & 13300 & 15 & 4821 & Regression \\
+% 		\air & 437,200  & 18 & 128,372 & Regression\\
+% 		\imdb & 1,000,000 & 40 & 331,189 & Multi-Class.\\
+% 		\imdbl & 4,000,000 & 40 & 1,312,908 & Multi-Class.\\
+% 		\hline
+% 	\end{tabular}
+% 	}
+% 	\label{tbl:dataset}
+% %	\vspace{-1.8em}
+% \end{table}
 
 \noindent{\bf (1) \noclean}~refers to just training on $\train$.
 
