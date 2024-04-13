@@ -105,7 +105,7 @@ Finally, tuples with the same hash code are highly similar, which are taken as a
  
 
 
-\subsubsection{Computing the expected maximum distance.}~\label{subsec:pq} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected maximum distance, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}] = q_1\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[1] + q_2\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[2] + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[card(u)]$, where $card(u)$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, q_{card(u)}])$ denotes the probability of the $x-$th possible world and  $\overline{s}_{\gamma(j)u}[x]$ denotes the maximum distance  corresponding to the $x-$th possible world (each possible world does not contain missing values). 
+\subsubsection{Computing the expected maximum distance.}~\label{subsec:pq} In this part, we focus on computing Equation~\ref{eqa:cluster-4}, where the key part is the expected maximum distance, \ie $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}]$. To be specific, we expand $\mathrm{E}[\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}] = q_1\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[1] + q_2\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[2] + ... +q_{card(u)}\min_{c_j\in \hat{\core}}\overline{s}_{\gamma(j)u}[card(u)]$, where $card(u)$ denotes the number of possible world of $\group_u \cup \hat{C}$, $q_x    (x\in [1, card(u)])$ denotes the probability of the $x-$th possible world and  $\overline{s}_{\gamma(j)u}[x]$ denotes the maximum distance  corresponding to the $x-$th possible world (each possible world does not contain missing values). 
 %
 %
 %
@@ -117,15 +117,13 @@ For ease of representation, we just use $\overline{s}_{ju}$ to represent  $\over
 %
  Recap that the reason why we do not directly compute the  $\overline{s}_{\gamma(j)u}$ is that iterating $\group_u$ to compute the maximum distance is expensive.
  %
-To solve this, we propose to leverage the  quantization technique to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then use $\hat{s}_{ju}$ to compute the coreset score still very likely leads to a bounded GA error.
+To solve this, we propose to leverage the  quantization technique to estimate an upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$, and then use $\hat{s}_{ju}$ to compute the coreset score  that still very likely leads to a bounded GA error.
   
 \noindent  \underline{\textit{Basic idea.}} 
-At a high level, if we consider each tuple individually, it is time-consuming as discussed above. However, if we take all tuples in a group as a whole, we cannot distinguish these tuples and the maximum distance is impossible to estimate. Hence, we propose a more fine-grained  method that  splits the $m$ dimension feature space into  $M$ low dimensional subspaces, and then quantize each subspace separately.  
+At a high level, if we consider each tuple individually, it is time-consuming as discussed above. However, if we take all tuples in a group as a whole, we cannot distinguish these tuples from each other and the maximum distance is impossible to estimate. Hence, we propose a more fine-grained  method that  splits the $m$ dimension feature space into  $M$ low dimensional subspaces, and then quantize each subspace separately.  
 The quantization is conducted by applying $k$-means algorithm~\cite{hartigan1979algorithm} over the vectors in each subspace, where $R$ clusters are generated.  
 In this way, a feature vector will be represented as a short code, where the $z$-th element corresponds to the quantization index (\ie cluster ID) of the $z$-th subspace, and thus the Euclidean distance between two vectors can be efficiently estimated based on their short codes. 
-  
-  
-  
+  %
   In our scenario, we use the short codes to efficiently estimate an upper bound.
   %
   %
@@ -136,11 +134,11 @@ As discussed before,
 directly computing $\overline{s}_{ju}^z$ is time-consuming, so we leverage these  clusters in each subspace to represent all the vectors in the $z$-th subspace. %Since the number of groups is much smaller than that of all vectors, the efficiency is much improved, which is the key idea of our solution.
 %
  Specifically, as shown on the left part of Figure~\ref{fig:codebook}, we use $\{r_1^1, r_1^2,..., r_1^R\}$ to represent the  cluster centers in the first subspace. %, associated with indices (codes) $\{1, 2,...,B\}$. 
- Hence, we can build a matrix $mr_1$ to store the feature distances (denoted by $mr_1[x][y]$) between every two cluster center, in total  $M$ matrices are built, which is shown in the middle part of Figure~\ref{fig:codebook}.
+ Hence, we can build a matrix $mr_1$ to store the feature distances (denoted by $mr_1[x][y]$) between every two cluster centers, in total  $M$ matrices are built, which is shown in the middle part of Figure~\ref{fig:codebook}.
  In this way, we can quantize each $t_i (\mathbf{x}_i) \in \mathcal{T}$  to a short code $d_i$, where $d_i^z, z\in[1,M]$  denotes the $z$-th element, indicating that the $d_i^z$-th center has the shortest distance with $\mathbf{x}_i^z$ among all clusters of the $z$-th subspace. 
  Then, the feature distance between  $t_i$ and $c_j$ can then be approximated by $\sum_{z=1}^{M}mr_z[d_i^z][d_j^z]$.
 
-Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebook}, we approximate $\overline{s}_{ju}^z$ by first quantizing $\mathbf{x}_{j}$ and  $\forall \mathbf{x} \in \group_u$ to short codes. Based on these matrices, for the $z$-th subspace, we compute the maximum distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, i.e., $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ as the approximation. Then, we approximately compute an upper bound $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}_{ju}^z$ by summing the $M$ distances. Although $\hat{s}_{ju}^z$ may slightly underestimate $\overline{s}^z_{ju}$ due to the quantization bias, the summation $\hat{s}_{ju}$ always overestimates $\overline{s}_{ju}$ since each $\hat{s}_{ju}^z$ is close to $\overline{s}^z_{ju}$, and thus the GA error can be always bounded.
+Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebook}, we approximate $\overline{s}_{ju}^z$ by first quantizing $\mathbf{x}_{j}$ and  $\forall \mathbf{x} \in \group_u$ to short codes. Based on these matrices, for the $z$-th subspace, we compute the maximum distance between the corresponding code of $c_j$ and codes of tuples in $\group_u$, \ie $\hat{s}_{ju}^z = \max\limits_{v\in\group_u}mr_z[d_{j}^z][d_v^z]$ as the approximation. Then, we approximately compute an upper bound $\hat{s}_{ju}=\sum_{z=1}^{M}\hat{s}_{ju}^z$ by summing the $M$ distances. Although $\hat{s}_{ju}^z$ may slightly underestimate $\overline{s}^z_{ju}$ due to the quantization bias, the summation $\hat{s}_{ju}$ always overestimates $\overline{s}_{ju}$ since each $\hat{s}_{ju}^z$ is close to $\overline{s}^z_{ju}$, and thus the GA error can be always bounded.
 
 \begin{figure}[t]
     \centering
@@ -157,22 +155,25 @@ Given $c_j$ and $\group_u$, as shown on the right part of Figure~\ref{fig:codebo
 %
  %And the time complexity is $O(KhUL_{\group}L_t)$, where $L_{\group}$ donotes the number of possible worlds of $\group_u$ and $L_t$ denotes the number of possible worlds of a tuple $t$.
 Hence, since each group contains multiple tuples, possibly multiple missing values,  it is expensive to enumerate $card(u)$ possible worlds and  to get the expectation. 
-To address this, similar to the method discussed in
-Section~\ref{subsec:batch},  we can reduce the number ($L$) of possible worlds of each tuple, and just keep several top possible worlds, say $l$, with the highest probabilities. 
+To address this,   we can reduce the number ($L$) of possible worlds of each tuple, and just keep several top possible worlds, say $l$, with the highest probabilities as discussed before. 
 %  Next, suppose that there are $b$ tuples with missing values, and thus $3^b$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration,   we can  select top-$l_G$ (\eg 3)possible worlds from the $3^b$ ones to compute the expectation. 
-Next, suppose that there are $y+1$ tuples ($y$ tuples in $G_u$ and one tuple in $\hat{C}$) with missing values, and thus $l^{y+1}$ possible worlds are generated for $G_u \cup \hat{C}$. To achieve further acceleration, we can select top-$l_g$ (\eg 3) possible worlds from the $l^y$ ones to compute the expectation.
-Similarly, the above framework is easy to generalize to the scenario of one batch per iteration, where the only difference is that in the coreset, we have a small batch $b$ of tuples with missing values rather than just one, indicating that the number of possible worlds that should be considered increases. However, we can still reduce the possible world number following the above method. 
+Next, suppose that there are $y+1$ tuples ($y$ tuples in $G_u$ and one tuple in $\hat{C}$) with missing values, and thus there exist $l^{y+1}$ possible worlds for $G_u \cup \hat{C}$. To achieve further acceleration, we can just select top-$l_g$ (\eg 3) possible worlds and normalize them to compute the expectation.
+Similarly, the above framework is easy to generalize to the scenario of one batch per iteration, where the only difference is that in the coreset, we have a small batch $b$ of tuples with missing values rather than just one, indicating that the number of possible worlds that should be considered increases. 
 
+Furthermore, we can continue to  reduce the number of possible world considering the following entropy-based method. Considering a missing cell value with 3 possible values to be imputed, if the probability distribution predicted by an imputation algorithm  is (0.8, 0.1, 0.1), \ie with a low entropy,  it is certain enough to directly impute the value corresponding to the probability 0.8 rather than considering the possible worlds of this value.
+Formally,  we use $H(X) = -\sum_{i=1}^{n_X} p(x_i)\log p(x_i)$ to denote the entropy~\cite{entropy} of a cell value $X$, where $n_x$ denotes the number of possible values of $X$, and $H(X) \in [0, \log n_x ]$. Therefore, we can set a threshold (\eg $10\% \log n_x$) that if $H(X) \leq 10\%\log n_x$, we directly impute the values. In this way, the number of possible world can be further reduced.
 
-\jks{\noindent \textbf{Information entropy}The information entropy~\cite{entropy} is calculated based on the probability distribution of events to describe the uncertainty or amount of information associated with a random variable, as follows:}
+ %The information entropy~\cite{entropy} is calculated based on the probability distribution of events to describe the uncertainty or amount of information associated with a random variable, as follows:
 
-  \begin{equation}\label{eqa:entropy}
+\iffalse
+ \begin{equation}\label{eqa:entropy}
     \begin{aligned}
         H(X) = -\sum_{i=1}^n p(x_i)log_2p(x_i)
     \end{aligned}
 \end{equation}
+\fi
 
-\jks{In Eq.~\ref{eqa:entropy}, $H(X)$ represents the entropy of the random variable $X$, and $p(x_i)$ is the probability of event $x_i$ occurring.And We can intuitively see that when the entropy of a random variable is higher, its uncertainty is greater because more information is needed to describe or predict it. Conversely, when the information entropy is lower, it indicates that more information has already been acquired to describe this random variable, hence reducing its uncertainty. So we can reduce the number of incomplete tuples by setting a threshold for the maximum information entropy (\ie 5\%) to preemptively fill in some missing values. In this way, we can significantly reduce the algorithm's runtime.}
+%\jks{In Eq.~\ref{eqa:entropy}, $H(X)$ represents the entropy of the random variable $X$, and $p(x_i)$ is the probability of event $x_i$ occurring.And We can intuitively see that when the entropy of a random variable is higher, its uncertainty is greater because more information is needed to describe or predict it. Conversely, when the information entropy is lower, it indicates that more information has already been acquired to describe this random variable, hence reducing its uncertainty. So we can reduce the number of incomplete tuples by setting a threshold for the maximum information entropy (\ie 5\%) to preemptively fill in some missing values. In this way, we can significantly reduce the algorithm's runtime.}
  
  
  
