@@ -98,7 +98,7 @@ Suppose that the number of tuples with missing values is $O(n)$, so the number o
 
 \stitle{Tuple-based expectation computation.} To further elaborate, we can easily expand $\mathrm{E}[C]$ as follows:
 
-\vspace{-0.5em}
+
 \begin{equation*}
 \begin{aligned}
 	\mathrm{E}[C] =& \uwave{p_1(\min_{c_j\in C_1}s_{1j}} + \min_{c_j\in C_1}s_{2j} + \cdots + \min_{c_j\in C_1}s_{nj})\\
@@ -116,7 +116,7 @@ Therefore, many of these underlined terms  have identical variable parts, \ie $\
 
 In short, we can convert the expectation computation over the possible worlds of the entire training set $\train$ to the sum of expectation of each tuple in $\train$, as follows:
 
-\vspace{-0.5em}
+
 \begin{equation}\label{eqa:tuple}
 	\mathrm{E}[C] = \sum_{k= 1}^{|\worlds|} p_k (\sum_{i=1}^n \min_{c_j\in C_k}\dist_{ij})= \sum_{i=1}^n \mathrm{E}[\min_{c_j\in C}s_{ij}]
 \end{equation}

@@ -7,13 +7,13 @@
 	\caption{Group-based \ours Solution (imputation-in-the-loop) \label{alg:group}}
 		{\small
 			
-		\KwIn{Incomplete train data $\train$, coreset size $\numcore$, sample size $h$\jks{, batch size $b$}.}
+		\KwIn{Incomplete train data $\train$, coreset size $\numcore$, sample size $h$, batch size $b$.}
 		
 		\KwOut{A coreset $\core \subseteq \train$, weight $\weightset=\{w_j\}$,$|\core|=|\weightset|=\numcore$.}
 		
 		$C=\emptyset$;\\\nllabel{alg1:init1}
 		
-		\add{Group $\train$ into groups $\groups = \{ \group_1, \group_2, ..., \group_U \}$;}\\\nllabel{alg4:cluster}
+		Group $\train$ into groups $\groups = \{ \group_1, \group_2, ..., \group_U \}$;\\\nllabel{alg4:cluster}
 		
 		\While{$|\core|< \numcore$}
 		{\nllabel{craig1:loop1}
@@ -30,15 +30,15 @@
 			%	}
 			 %$\mathrm{E}[t|\core]=\texttt{ComputeUtility}(t, C,D)$;
 				 %/*3rd loop*/  \\\nllabel{craig1:loop3}
-				 \For{\add{each group $G_u \in \groups$}}  
+				 \For{each group $G_u \in \groups$}  
 				 {
-				 	\add{/*3rd loop*/} \\
+				 	/*3rd loop*/ \\
 				 
 				 	%	Get the possible worlds of $\hat{\core} \cup \{t_i\}$;\\\nllabel{one:enumw}
 				 	%	Compute $\mathrm{E}[\min_{c_j\in \hat{\core}}s_{ij}]$ using these possible worlds and their probabilities;\\\nllabel{one:exp4pw}
-				 		\add{$\mathrm{E}[\hat{\core}] +\!\!= \mathrm{E}[\min_{c_j\in \hat{\core}}\hat{s}_{ju} \times |\group_u|]$, where $\hat{s}_{ju}$ is the estimated upper bound of} \\\quad\quad  \add{$\overline{s}_{\gamma(j)u} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$; }\\\nllabel{one:dirtysum}
+				 		$\mathrm{E}[\hat{\core}] +\!\!= \mathrm{E}[\min_{c_j\in \hat{\core}}\hat{s}_{ju} \times |\group_u|]$, where $\hat{s}_{ju}$ is the estimated upper bound of \\\quad\quad  $\overline{s}_{\gamma(j)u} = \max\limits_{v \in \group_u} s_{\gamma(j)v}, s_{\gamma(j)v} = \lVert\mathbf{x}_v - \mathbf{x}_{\gamma(j)}\rVert, \gamma(j)\in[1, n]$;\\\nllabel{one:dirtysum}
 			     }
-		         \add{$\mathrm{E}[t|\core] = \mathrm{E}[\core] - \mathrm{E}[\hat{\core}];$}
+		         $\mathrm{E}[t|\core] = \mathrm{E}[\core] - \mathrm{E}[\hat{\core}];$
 				 
 			}		
 
@@ -48,16 +48,16 @@
 			% 	    }
 			% $\core = \core \cup \{t^*\}$;
 			% \\\nllabel{craig1:add2} 
-			\jks{\If{$\mathbb{I}[t^*] = 1$}
+			\If{$\mathbb{I}[t^*] = 1$}
 			{ \nllabel{batch:ifincomp}
 				$cnt++$; \\\nllabel{batch:batchadd}
-			}}
+			}
 			
-			\jks{\If{$cnt = b$}
+			\If{$cnt = b$}
 			{\nllabel{batch:batchenough}
 				Ask the human to impute the incomplete tuples;\\\nllabel{batch:batchoracle}
 				$cnt = 0$; \\\nllabel{batch:batchzero}
-			}}
+			}
 			
 				%\If{$\mathbb{I}[t^*] = 1$}
 		%	{ \nllabel{alg:if}

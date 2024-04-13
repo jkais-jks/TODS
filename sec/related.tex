@@ -13,8 +13,11 @@ Besides,
 but it is rather time-consuming because of the training process. 
  To solve this problem, works~\cite{DBLP:conf/icml/CampbellB18, DBLP:journals/corr/BravermanFL16}   selected the coreset without training in advance, but they can only be customized to particular model types respectively. %The basic idea is to compute a sensitive score for each tuple, and the higher the score, the more likely the tuple should be in the coreset. 
  Some works~\cite{sener2017active,chen2012super} study how to select a subset of data only considering the data distribution rather than   the model performance.
- Another line of works~\cite{DBLP:conf/icml/MirzasoleimanBL20,  recon, fastcore, DBLP:conf/emnlp/KirchhoffB14} focused on selecting the coreset to approximate the full gradient without training in advance for multiple model types, which is regarded as an optimization problem as discussed in Section~\ref{subset:sigletable}.
+ Gradient-based methods~\cite{DBLP:conf/icml/MirzasoleimanBL20,  recon, fastcore, DBLP:conf/emnlp/KirchhoffB14} focused on selecting the coreset to approximate the full gradient without training in advance for multiple model types, which is regarded as an optimization problem as discussed in Section~\ref{subset:sigletable}.
+ Coreset selection can also be formulated as a bilevel optimization problem~\cc{\cite{}},
 In short, none of the above methods except~\cite{goodcore}  consider coreset selection over incomplete data.
+
+% Coreset selection can be formulated as a bilevel optimization problem, where the outer objective involves choosing a subset and the inner objective entails optimizing model parameters on the subset, the ultimate goal is to select a subset such that the model's empirical risk on this subset closely approximates that of the model trained on the complete dataset. But it is time consuming because it requires solving an inner optimization problem during each outer iteration. 
 
 \noindent{\bf Data cleaning for ML.} Recently, there have  been several works that clean the data to optimize the ML model. 
 In contrast to the above discussion about task-agnostic incomplete data imputation, data cleaning for ML is task-aware, which triggers new technical challenges.

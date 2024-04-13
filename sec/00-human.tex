@@ -36,7 +36,7 @@ Specifically, to compute $\mathrm{E}[\hat{\core}]$, we will use the tuple-based 
  (lines~\ref{one:enumw}-\ref{one:exp4pw}).
   Note that since there are at most two tuples (\ie $t_i$ and $t$) have missing values, the number of possible worlds is small because other missing values in $\hat{\core}$ have been imputed by humans in previous iterations.
 
-\stitle{Time complexity analysis.} As discussed above, using this human-in-the-loop strategy, the number of possible worlds to be considered is greatly reduced. For   Algorithm~\ref{alg:one}, the time complexity is $O(nL^2)$ because there are at most two incomplete tuples in $\hat{\core}$. For the entire three loops framework, the time complexity is  $O(KhnL^2)$, which is much lower  than the solution without imputation in the loop.
+\stitle{Time complexity analysis.} As discussed above, using this human-in-the-loop strategy, the number of possible worlds to be considered is greatly reduced. For   Algorithm~\ref{alg:one}, the time complexity is $O(nL^2)$ because there are at most two incomplete tuples in $\hat{\core}$. For the entire three loops framework, the time complexity can be regarded as   $O(Khn)$ because $L$ is a constant, which is much lower  than the solution without imputation in the loop.
   
   However,  if we utilize the human for imputation, the above method  will incorporate many human iterations. In the following,  we propose to ask human to impute a small batch of missing tuples in each iteration, so as to reduce the  number of human iterations.
   
@@ -56,7 +56,7 @@ To be specific, as shown in Algorithm~\ref{alg:batch}, compared with the one tup
 
 \stitle{Reducing the number of possible worlds.} 
 A straightforward method of improving the efficiency is to reduce the number of possible worlds. To this end, intuitively, we should focus more on the possible world with a high probability, so these possible worlds with low probabilities can be pruned without sacrificing the accuracy of expectation computation much. Note that for each possible world, the probability is computed by the multiplication of the probabilities of incomplete tuples in the  world because the tuples can be considered independent~\cite{miao2022experimental}. Therefore,  we can remove the possible worlds of each tuple with low probabilities (\ie  reducing $L$), and thus the number of possible worlds of the entire coreset is greatly reduced. 
-For example, we can keep top-$l$ (\eg $l=3$) possible worlds (\ie 3 different possible imputations of $t$ with high probabilities) of a tuple $t$. Then for the batch of $b$ incomplete tuples, the number of possible worlds is $l^b$ and the complexity of computing $\mathrm{E}[t|\core]$ is $O(nl^b)$, where both $l$ and $b$ are small enough. Overall, the time complexity is $O(Khnl^b)$. Besides, we can also apply this heuristic method to make the algorithm in Section~\ref{sec:without} practical, which is evaluated in Section~\ref{exp:sec:batchalgo}.
+For example, we can keep top-$l$ (\eg $l=3$) possible worlds (\ie 3 different possible imputations of $t$ with high probabilities) of a tuple $t$. Then for the batch of $b$ incomplete tuples, the number of possible worlds is $l^b$ and the complexity of computing $\mathrm{E}[t|\core]$ is $O(nl^b)$, where both $l$ and $b$ are small enough. Therefore, the time complexity is $O(Khn)$. Besides, we can also apply this heuristic method to make the algorithm in Section~\ref{sec:without} practical, which is evaluated in Section~\ref{exp:sec:batchalgo}.
 
 
 
