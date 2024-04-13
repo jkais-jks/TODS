@@ -1,7 +1,7 @@
 %!TEX root = ../main.tex
 
 
-\section{Group-based Acceleration}
+\section{\texttt{GoodCore}$^+$: Group-based Acceleration}
 \label{sec:group}
 
 As discussed above, we can observe that in Section~\ref{subsec:one}, even with the most efficient imputation-in-the-loop  strategy, \ie  one tuple in  each iteration, the time complexity is  $O(Khn)$, where $K$ is the size of the coreset, $h$ is the sample size,  and $n$ is the cardinality of the entire dataset. Therefore, obviously, the efficiency is dominated by $n$, which is still low when $n$ is large, and thus it  is necessary to further accelerate this process.
@@ -13,7 +13,7 @@ At the following, we will theoretically and empirically show that the group-base
 
 %the acceleration can be achieved by clustering the 
 
-\subsection{Group-based Solution Overview}
+\subsection{Solution Overview}
 
 %\begin{figure}[t]
  %   \centering
@@ -91,7 +91,7 @@ Similar to Sec~\ref{subsec:exp}, directly computing the probability and getting 
 	\end{aligned}
 \end{equation}
 
-\subsection{Technical Details of Group-based Solution}
+\subsection{Technical Details of \texttt{GoodCore}$^+$}
 
 \vspace{.5em}
 
