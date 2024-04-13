@@ -13,7 +13,7 @@
 \noindent{\bf Hyperparamaters for grouping.}
 %
 We use LSH to efficiently group the entire dataset, and test the impact of  different numbers of hyperplanes, which is a significant parameter in LSH.
- As shown in Figure~\ref{fig:pq-exp} (a), with the number increasing, more groups are generated, and the tuples within each cluster are closer, so the  accuracy increases at the beginning. Afterwards, the accuracy remains stable because tuples in each cluster are similar enough for  approximating the gradient. Therefore, empirically, using  64 hyperplanes is the most appropriate because more groups will reduce the efficiency.
+ As shown in Figure~\ref{fig:pq-exp} (a), with the number increasing, more groups are generated, and the tuples within each group are closer, so the  accuracy increases at the beginning. Afterwards, the accuracy remains stable because tuples in each cluster are similar enough for  approximating the gradient. Therefore, empirically, using  64 hyperplanes is the most appropriate because more groups will reduce the efficiency.
 
 \noindent{\bf Hyperparamaters in quantization-based method.} In Section~\ref{subsec:pq}, we use quantization-based method to estimate the upper bound $\hat{s}_{ju}$ of $\overline{s}_{ju}$. Recap that \texttt{GoodCore}$^+$ needs the user-specified cluster centers size $R$, which is important for computing the maximum feature distances.
 %
@@ -44,7 +44,7 @@ We also test the performance of different feature splitting ways (corresponding 
 %
 In this part, we start to use the entropy to further eliminate the number of possible world by imputing the missing cells with low entropy in advance, as discussed in Section~\ref{subsec:clustering}. 
 %
-Specifically, we test the impact of different entropy thresholds. As shown in Figure~\ref{fig:entropy_acc} and Figure~\ref{fig:entropy_time}, when the threshold is less than  15\% (\ie we directly impute the cell if its corresponding entropy is no larger than 15\% $\log n_x$), the accuracy almost remains unchanged, but the efficiency is improved by up to \cc{XX\%}. However, when the threshold exceeds 15\%, the accuracy begins to decrease because in this situation, directly imputing a value is not accurate enough. In short, setting an appropriate threshold (\eg 15\%) is helpful to improve the efficiency without sacrificing the accuracy. 
+Specifically, we test the impact of different entropy thresholds. As shown in Figure~\ref{fig:entropy_acc} and Figure~\ref{fig:entropy_time}, when the threshold is less than  15\% (\ie we directly impute the cell if its corresponding entropy is no larger than 15\% $\log n_x$), the accuracy almost remains unchanged, while the efficiency is improved by up to 20\%. However, when the threshold exceeds 15\%, the accuracy begins to decrease because in this situation, directly imputing a value is not accurate enough. In short, setting an appropriate threshold (\eg 15\%) is helpful to improve the efficiency without sacrificing the accuracy. 
 
 % rate of decrease accelerates. This is because when the threshold is low, all the candidate words filled in for the missing values have a high probability(\ie 90\%) and the threshold increases, the maximum probability gradually decreases, making the selection of candidate words for missing values more challenging. For example, on dataset \imdbl, when threshold is 15\%, the accuracy of \ours$^+$ is 71\%, which is only 0.4\% lower than when no processing is done at all.
 
