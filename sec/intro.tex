@@ -192,8 +192,8 @@ However, one main drawback is that modeling possible worlds of $D$ is computatio
 Besides, since the above methods for coreset selection incorporate at least one iteration over the entire dataset, it is not very efficient when the dataset is large, so we propose a group-based acceleration strategy to further reduce the machine cost. The key idea is to assign similar tuples in $D$ into a group, and thus the coreset is selected to represent these groups. Since the groups can still represent the distribution of $D$, the selected coreset is still well-performed. In this way, we only need to iterate these groups, with a much smaller number than the tuples of $D$, and thus the efficiency is improved. We also provide a theoretical analysis with respect to the group-based strategy. Hence, we further have the following 2 methods.
 
 \bi
-\item[(9)] Group-based \ours with human-in-the-loop imputation: $\goodfunc^+(D, \circlearrowleft^\humanfunc)$.
-\item[(10)] Group-based \ours with machine-in-the-loop imputation: $\goodfunc^+(D, \circlearrowleft^\autofunc)$.
+\item[(9)] Group-based \ours (\texttt{GoodCore}$^+$) with human-in-the-loop imputation: $\goodfunc^+(D, \circlearrowleft^\humanfunc)$.
+\item[(10)] \texttt{GoodCore}$^+$ with machine-in-the-loop imputation: $\goodfunc^+(D, \circlearrowleft^\autofunc)$.
 \ei
 
 A comparison of methods (5)--(10) is given in Figure~\ref{fig:comparison}. Note that method (10) is likely to be a good choice because it can achieve a high ML accuracy with low human cost and low machine cost.
