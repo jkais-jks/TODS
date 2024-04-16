@@ -5,16 +5,26 @@
 \noindent{\bf Task-agnostic incomplete data imputation.}
 Data imputation has been widely studied for  years. Existing  methods can be divided into two categories: statistic-based methods and learning-based methods. The former one always uses the statistic information~\cite{DBLP:journals/tsmc/FarhangfarKP07, DBLP:conf/sigmod/MayfieldNP10} (like mean, median or mode) to impute the missing values. Also, some methods compute the similarity of the incomplete tuples to the complete tuples and use the most similar one to impute the missing values~\cite{altman1992introduction, DBLP:journals/artmed/JerezMGARMF10, DBLP:conf/isese/TwalaCS05}. Recently, to improve the imputation accuracy,   many learning-based methods focus on how to use ML to learn the data distribution (\eg MissForest imputation~\cite{DBLP:journals/bioinformatics/StekhovenB12}, MICE~\cite{royston2011multiple},  IIM~\cite{DBLP:conf/icde/ZhangSSW19}), and then  use the trained model to predict the missing values. Besides traditional ML models, some deep learning models are also used for data imputation (\eg  autoencoder~\cite{DBLP:journals/corr/GondaraW17, mccoy2018variational, DBLP:journals/pr/NazabalOGV20}, GANs~\cite{DBLP:journals/nn/SpinelliSU20, DBLP:conf/icml/YoonJS18}).
  
-\noindent{\bf Coreset selection.} A previous work~\cite{goodcore} has studied how to select a well-performed coreset over incomplete tuples. The extension to the previous study in this work is four-fold. First, we propose a new framework that incorporates the group-based strategy into the coreset selection process with incomplete data. Secondly, we theoretically analyze that the group-based strategy can still have a bounded GA error. Third, we propose an efficient solution to estimate the upper bound, and several strategies to reduce the number of possible worlds. Fourth, two large datasets are added and multiple experiments are conducted to demonstrate the efficacy of our proposed methods. 
+\noindent{\bf Coreset selection.} A previous work~\cite{goodcore} has studied how to select a well-performed coreset over incomplete tuples.  Another work~\cite{fastcore} studies to use group-based method to accelerate the coreset selection process without incomplete data. The extension to the previous studies in this work is five-fold. 
+%
+First, we propose a new framework that incorporates the group-based strategy into the coreset selection process with incomplete data.
+%
+ Second, we theoretically analyze that incorporating the group-based strategy   still leads to a bounded GA error, considering the possible worlds produced by the incomplete data. 
+ %
+ Third, given these groups, the number of possible worlds further increases, more strategies are proposed to  reduce the number of possible worlds to improve the efficiency.
+ %
+ Fourth, we theoretically and empirically  prove that incorporating the group-based method still guarantees the convergence.
+ %
+  Fifth, two large datasets  and ten new experiments are added   to demonstrate the efficacy of our proposed methods. 
 %
 %borsos2020coresets, killamsetty2021retrieve
+% 
 %
-Besides, 
-  Huang et al.~\cite{DBLP:conf/icml/HuangHLFD21} studied how to compute and continuously update the coreset while training, %, which aims  to utilize the loss of training tuples  to approximate the overall training loss of the entire training set. 
+  In addition, Huang et al.~\cite{DBLP:conf/icml/HuangHLFD21} studied how to compute and continuously update the coreset while training, %, which aims  to utilize the loss of training tuples  to approximate the overall training loss of the entire training set. 
 but it is rather time-consuming because of the training process. 
  To solve this problem, works~\cite{DBLP:conf/icml/CampbellB18, DBLP:journals/corr/BravermanFL16}   selected the coreset without training in advance, but they can only be customized to particular model types respectively. %The basic idea is to compute a sensitive score for each tuple, and the higher the score, the more likely the tuple should be in the coreset. 
  Some works~\cite{sener2017active,chen2012super, Zhang2019SmallGAN, Agarwal2020Context} study how to select a subset of data only considering the data distribution rather than   the model performance.
- Gradient-based methods~\cite{DBLP:conf/icml/MirzasoleimanBL20,  recon, DBLP:conf/emnlp/KirchhoffB14, Mirzasoleiman2020Coresetnoisy, fastcore} focused on selecting the coreset to approximate the full gradient without training in advance for multiple model types, which is regarded as an optimization problem as discussed in Section~\ref{subset:sigletable}.
+ Gradient-based methods~\cite{DBLP:conf/icml/MirzasoleimanBL20,  recon, DBLP:conf/emnlp/KirchhoffB14, Mirzasoleiman2020Coresetnoisy} focused on selecting the coreset to approximate the full gradient without training in advance for multiple model types, which is regarded as an optimization problem as discussed in Section~\ref{subset:sigletable}.
  Coreset selection can also be formulated as a bilevel optimization problem~\cite{borsos2020coresets, killamsetty2021retrieve, Killamsetty2022GLISTER}, where the outer objective involves choosing a subset and the inner objective entails optimizing model parameters on the subset, the ultimate goal is to select a subset such that the model empirical risk on this subset  approximates that of the model trained on the complete dataset. However it is rather time-consuming because it requires solving an inner optimization problem during each outer iteration. 
  
 In short, none of the above methods except~\cite{goodcore}  consider coreset selection over incomplete data.
