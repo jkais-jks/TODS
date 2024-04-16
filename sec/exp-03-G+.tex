@@ -2,7 +2,7 @@
 \subsection{Evalution of \texttt{GoodCore}$^+$}
 \label{exp:sec:G+}
 
-In this part, we compare \texttt{GoodCore}$^+$ solutions with \ours. For the hyperparameters, it's same as the Section~\ref{exp:sec:overall}.
+In this part, we evaluate the efficacy of  \texttt{GoodCore}$^+$. 
 
 \begin{figure*}
 	\centering
@@ -23,11 +23,11 @@ In this part, we compare \texttt{GoodCore}$^+$ solutions with \ours. For the hyp
 \end{figure*}
 
 \subsubsection{Evaluation of model accuracy.}
-The results are provided in Figure~\ref{fig:effectiveness_new}. We can found that the accuracy of \texttt{GoodCore}$^+$ and \ours are roughly the same on all datasets. For example, on dataset \imdbl,  $\nine$and $\seven$ achieve accuracy of 74.7\% and 74.9\% and they differ from each other by 0.2\%. This is because both of them   select a good coreset. In addition, we can observe that $\nine$ performs better than $\ten$ because human imputation is more accurate than automatic methods. For example, on \imdbl,  $\nine$ has an accuracy of 74.7\%, while $\eight$ is below 70\%.
+The results are provided in Figure~\ref{fig:effectiveness_new}. We can found that the accuracy of \texttt{GoodCore}$^+$ and \ours are roughly the same on all datasets. For example, on dataset \imdbl,  $\nine$and $\seven$ achieve accuracy of 74.7\% and 74.9\% and they differ from each other by 0.2\%. This is because both of them   select a good coreset because of a bounded GA error. In addition, we can observe that $\nine$ performs better than $\ten$ because human imputation is more accurate than automatic methods. For example, on \imdbl,  $\nine$ has an accuracy of 74.7\%, higher than that of $\eight$.
 
 \subsubsection{Evaluation of the efficiency.}~\label{sec:exp:efficiency_g} We  evaluate the efficiency of \texttt{GoodCore}$^+$ and \ours, including the machine cost and human cost.
 
-\noindent{\bf Machine cost.} Machine cost is shown  in Figure~\ref{fig:efficiency_new}.  \texttt{GoodCore}$^+$ is more efficient than \ours. For example, on \imdbl, $\nine$ spends about 12min, which is $4.8\times$ (similar to $5\times$) faster than $\seven$. That is because $\nine$ have the lower time complexity than $\seven$, which is discussed in Section~\ref{subsec:pq}
+\noindent{\bf Machine cost.} Machine cost is shown  in Figure~\ref{fig:efficiency_new}.  \texttt{GoodCore}$^+$ is more efficient than \ours. For example, on \imdbl, $\nine$ spends about 12min, which is $4.8\times$ faster than $\seven$. That is because $\nine$ have the lower time complexity than $\seven$, which is discussed in Section~\ref{subsec:pq}.
 
 
 \noindent{\bf Human cost.} In terms of the human cost, as shown in~Table~\ref{tbl:humancost}, $\nine$ and $\seven$ are cost-effective because humans just need to impute missing tuples in the much smaller coreset. For example, they only cost 520 and 511 tuples on dataset \imdbl respectively. 
