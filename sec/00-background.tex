@@ -10,7 +10,7 @@ In this section, we introduce the background of coreset selection on complete da
 {\bf Gradient descent}~\cite{lemarechal2012cauchy} is the most typical optimization algorithm to train ML models. 
 At a high level, it  tweaks the parameters iteratively to minimize a given convex and differentiable function to its local minimum.
 
-Let $\trainc = \{t_1, t_2, ..., t_n \}$ be a set of train tuples (without missing values), where $t_i = (\mathbf{x}_i, \mathbf{y}_i)$, $\mathbf{x}_i \in \mathbb{R}^d$ denotes the vector of features and $\mathbf{y}_i$ denotes the corresponding label. The goal of training on $\trainc$ is to find the best parameter  $\hypo^*$ of an model by minimizing the loss:
+Let $\trainc = \{t_1, t_2, ..., t_n \}$ be a set of train tuples (without missing values), where $t_i = (\mathbf{x}_i, \mathbf{y}_i)$, $\mathbf{x}_i \in \mathbb{R}^d$ denotes the vector of features and $\mathbf{y}_i$ denotes the corresponding label. The goal of training on $\trainc$ is to find the best parameter  $\hypo^*$ of a model by minimizing the loss:
 
 \vspace{-0.5em}
 \begin{equation}\label{eqa:loss}
@@ -174,6 +174,8 @@ Note that, for other ML algorithms such as deep neural networks, they can also b
 
 % \cc{For other ML algorithms, like
 % deep learning, can also train on the selected the coreset. As shown in Section~\ref{sec:exp}, good performance can also be achieved although it is hard to have a theoretical gradient bound.}
+
+\input{sec/related}
 
 \section{Coreset Over Incomplete Data} % ($\train$)}
 \label{sec:overview}
