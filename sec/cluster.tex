@@ -29,7 +29,7 @@ One of the core parts of coreset computation is to compute the tuple-tuple dista
 %
 At a high level, the overall process of group-based \ours solution with imputation in the loop is shown in Algorithm~\ref{alg:group}.% To be more explicit, we illustrate it in  Algorithm~\ref{alg:group}.
 
-To be specific, as shown in Algorithm~\ref{alg:group} Line~\ref{alg4:cluster}, we first group $\train$   using the efficient local sensitive hash (LSH) approach, where each group $\group_u, u\in[1, U]$ includes the indexes of tuples in $\train$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
+To be specific, as shown in Line~\ref{alg4:cluster}, we first group $\train$   using the efficient local sensitive hash (LSH) approach, where each group $\group_u, u\in[1, U]$ includes the indexes of tuples in $\train$. In this way, every pair of tuples in the same group is close to each other in the feature distance.
 %
  Afterwards, the major difference between group-based \ours and original \ours lies in the 3rd loop. Instead of  selecting a coreset to represent all tuples in the train set, group-based \ours selects a coreset to represent all groups. As these groups can well capture the train set distribution, the selected coreset contains enough information to approximate the full gradient of the entire train set. 
  
