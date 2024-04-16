@@ -3,6 +3,25 @@
 \subsection{Sensitivity Analysis}
 \label{exp:sec:sensitivity}
 
+\begin{figure}[t]   
+	\centering
+	\begin{minipage}[t]{0.38\textwidth}
+		\centering
+		\includegraphics[width=\columnwidth]{figs/samplesize}
+		\vspace{-2.5em}
+		\caption{Varying sample size.}
+		\label{fig:samplesize}
+	\end{minipage}
+	\begin{minipage}[t]{0.58\textwidth}
+		\centering
+		\includegraphics[width=\columnwidth]{figs/downstream_all}
+		\vspace{-2.5em}
+		\caption{Varying downstream model.}
+		\label{fig:downmodel}
+	\end{minipage}
+	\vspace*{-1em}   
+\end{figure}
+
 
 \noindent{\bf Varying the sample size.} In this part, we vary the sample size $h$ and evaluate the performance. The experimental results are shown in Figure~\ref{fig:samplesize}. We vary the sample size $h$ from $2^2$ to $2^{10}$. We can see that when $h$ is too small, the performance is low. The reason is that \ours cannot precisely estimate the utilities of tuples when $h$ is  small.  When the sample size increases, we can see that the performance improves rapidly and finally becomes stable, which indicates that \ours is not much sensitive to the sample size when $h$ is not too small.
 
