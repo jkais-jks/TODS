@@ -30,7 +30,7 @@ The results are provided in Figure~\ref{fig:effectiveness_new}. We can found tha
 \noindent{\bf Machine cost.} Machine cost is shown  in Figure~\ref{fig:efficiency_new}.  \texttt{GoodCore}$^+$ is more efficient than \ours. For example, on \imdbl, $\nine$ spends about 12min, which is $4.8\times$ faster than $\seven$. That is because $\nine$ have the lower time complexity than $\seven$, which is discussed in Section~\ref{subsec:pq}.
 
 
-\noindent{\bf Human cost.} In terms of the human cost, as shown in~Table~\ref{tbl:humancost}, $\nine$ and $\seven$ are cost-effective because humans just need to impute missing tuples in the much smaller coreset. For example, they only cost 520 and 511 tuples on dataset \imdbl respectively. 
+\noindent{\bf Human cost.} In terms of the human cost, as shown in~Table~\ref{tbl:humancost}, $\nine$ and $\seven$ are cost-effective because humans just need to impute missing tuples in a much smaller coreset. For example, they only cost 520 and 511 tuples on dataset \imdbl respectively. 
 
 \noindent \textbf{Summary.} 
 Based on the results, we have the following conclusions. (1) Although we group tuples over the entire train set, our proposed methods $\nine$ and $\ten$ still achieve high  accuracy because the gradient approximation error can still be bounded. (2) The efficiency is much improved compared with \ours because we just need to iterate these groups rather than  the entire train set within the 3-loop coreset selection process. (3) The human cost is competitive with $\seven$ because the group-based solution has low impact on the number of tuples to be imputed by humans.
